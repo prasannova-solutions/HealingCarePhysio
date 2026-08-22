@@ -124,10 +124,10 @@
             <div class="flex flex-col items-start pr-1">
                 <!-- Badge -->
                 <div
-                    class="mb-3 inline-flex items-center gap-1.5 rounded-full border border-slate-200/90 bg-white/95 px-2.5 py-1 text-[9px] sm:text-[10px] font-bold uppercase tracking-wide text-slate-900 shadow-xs"
+                    class="mb-3 inline-flex items-center gap-1.5 rounded-full border border-slate-200/90 bg-white/95 px-2 sm:px-2.5 py-1 text-[8.5px] min-[360px]:text-[9px] sm:text-[10px] font-bold uppercase tracking-wide text-slate-900 shadow-xs whitespace-nowrap"
                 >
-                    <span class="h-2 w-2 rounded-full bg-[#0D9488]"></span>
-                    <span>Trusted Physiotherapy Care</span>
+                    <span class="h-1.5 w-1.5 sm:h-2 sm:w-2 shrink-0 rounded-full bg-[#0D9488]"></span>
+                    <span class="whitespace-nowrap">Pain-Free Living Starts Here</span>
                 </div>
 
                 <!-- Heading -->
@@ -228,7 +228,7 @@
                             <p
                                 class="text-[10.5px] sm:text-[12px] font-extrabold text-slate-900 leading-tight truncate"
                             >
-                                Dr. Vrishab Mahavir Kasar
+                                Dr. Vrishab Kasar
                             </p>
                             <p
                                 class="text-[9px] sm:text-[10.5px] font-bold text-teal-700 leading-tight"
@@ -318,7 +318,7 @@
                 <span
                     class="h-2.5 w-2.5 rounded-full bg-[#0D9488] ring-4 ring-teal-50"
                 ></span>
-                <span>Trusted Physiotherapy Care</span>
+                <span>Pain-Free Living Starts Here</span>
             </div>
 
             <!-- Cohesive Bold Heading -->
@@ -370,7 +370,7 @@
                 </div>
                 <div class="h-10 w-px bg-slate-300"></div>
                 <div>
-                    <p class="text-3xl font-extrabold text-[#0F172A]">1K+</p>
+                    <p class="text-3xl font-extrabold text-[#0F172A]">10K+</p>
                     <p class="text-sm font-semibold text-[#1E293B]">
                         Patients Helped
                     </p>
@@ -510,62 +510,19 @@
             preserveAspectRatio="none"
             xmlns="http://www.w3.org/2000/svg"
         >
+            <!-- Border wave layer (placed behind the main fill) -->
+            <path
+                d="M0 69C280 134 500 -31 820 14C1080 64 1260 114 1440 4V100H0Z"
+                fill="url(#tealWaveGrad2)"></path>
+
+            <!-- Main top wave layer -->
             <path
                 d="M0 75C280 140 500 -25 820 20C1080 70 1260 120 1440 10V100H0Z"
-                fill="white"
-            >
-            </path>
+                fill="white"></path>
         </svg>
     </div>
 
     <!-- ==============================================================
        MOBILE STATS SECTION (Single horizontal line below the wave)
     =============================================================== -->
-    <div class="relative z-30 bg-white px-3 sm:px-6 pt-3 pb-8 lg:hidden">
-        <div
-            class="max-w-md mx-auto grid grid-cols-3 gap-1 sm:gap-2 text-center divide-x divide-slate-200"
-        >
-            <!-- Stat 1 -->
-            <div class="px-1">
-                <p
-                    class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight leading-none"
-                >
-                    10+
-                </p>
-                <p
-                    class="text-[10px] sm:text-xs font-bold text-slate-700 mt-1.5 leading-tight"
-                >
-                    Years Experience
-                </p>
-            </div>
-
-            <!-- Stat 2 -->
-            <div class="px-1">
-                <p
-                    class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight leading-none"
-                >
-                    10K+
-                </p>
-                <p
-                    class="text-[10px] sm:text-xs font-bold text-slate-700 mt-1.5 leading-tight"
-                >
-                    Patients Helped
-                </p>
-            </div>
-
-            <!-- Stat 3 -->
-            <div class="px-1">
-                <p
-                    class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight leading-none"
-                >
-                    4.9/5
-                </p>
-                <p
-                    class="text-[10px] sm:text-xs font-bold text-slate-700 mt-1.5 leading-tight"
-                >
-                    Patient Rating
-                </p>
-            </div>
-        </div>
-    </div>
 </section>
