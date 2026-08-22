@@ -1,0 +1,415 @@
+<!-- =========================================================
+     ABOUT / CARE TEAM
+     Premium responsive section
+========================================================= -->
+<section
+    id="care-team"
+    class="relative overflow-hidden bg-[#f7fbfa] py-20 sm:py-24 lg:py-32"
+>
+    <!-- =========================
+         DECORATIVE BACKGROUND
+    ========================== -->
+
+    <!-- Soft glow -->
+    <div
+        class="pointer-events-none absolute -left-32 top-20 h-80 w-80 rounded-full bg-teal-200/20 blur-3xl"
+    >
+    </div>
+
+    <div
+        class="pointer-events-none absolute -right-40 bottom-0 h-[28rem] w-[28rem] rounded-full bg-cyan-200/20 blur-3xl"
+    >
+    </div>
+
+    <!-- Large decorative circle -->
+    <div
+        class="pointer-events-none absolute right-[7%] top-[12%] hidden h-40 w-40 rounded-full border border-teal-200/40 lg:block"
+    >
+    </div>
+
+    <div
+        class="pointer-events-none absolute right-[10%] top-[16%] hidden h-24 w-24 rounded-full border border-teal-300/30 lg:block"
+    >
+    </div>
+
+    <!-- Decorative dots -->
+    <svg
+        class="pointer-events-none absolute left-[4%] top-[18%] hidden h-28 w-28 text-teal-300/40 lg:block"
+        viewBox="0 0 100 100"
+        fill="currentColor"
+    >
+        <pattern id="dots" width="12" height="12" patternUnits="userSpaceOnUse">
+            <circle cx="2" cy="2" r="1.5"></circle>
+        </pattern>
+        <rect width="100" height="100" fill="url(#dots)"></rect>
+    </svg>
+
+    <div class="relative mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
+        <!-- =================================================
+             TOP INTRO
+        ================================================== -->
+        <div class="max-w-3xl">
+            <!-- Section tag -->
+            <div class="mb-5 flex items-center gap-3">
+                <span class="h-px w-8 bg-teal-600"></span>
+
+                <span
+                    class="text-[11px] font-bold uppercase tracking-[0.22em] text-teal-700 sm:text-xs"
+                >
+                    Meet Your Care Team
+                </span>
+            </div>
+
+            <!-- Heading -->
+            <h2
+                class="max-w-3xl text-[2.5rem] font-semibold leading-[1.05] tracking-[-0.045em] text-slate-900 sm:text-5xl lg:text-[4.4rem]"
+            >
+                The People
+                <span class="relative inline-block text-teal-700">
+                    Behind
+                    <!-- small underline -->
+                    <svg
+                        class="absolute -bottom-2 left-0 h-2 w-full"
+                        viewBox="0 0 180 10"
+                        preserveAspectRatio="none"
+                    >
+                        <path
+                            d="M2 7C42 2 91 2 178 5"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"></path>
+                    </svg>
+                </span>
+                Your Recovery
+            </h2>
+
+            <!-- Intro -->
+            <p
+                class="mt-6 max-w-xl text-base leading-7 text-slate-600 sm:text-lg sm:leading-8"
+            >
+                Two experts, one mission — bringing advanced physiotherapy to
+                Gadhinglaj.
+            </p>
+        </div>
+
+        <!-- =================================================
+             MAIN DOCTORS AREA
+        ================================================== -->
+        <div
+            class="mt-14 grid items-center gap-10 lg:mt-20 lg:grid-cols-[1.08fr_0.92fr] lg:gap-16"
+        >
+            <!-- =================================================
+                 IMAGE SIDE
+            ================================================== -->
+            <div class="relative">
+                <!-- Background frame -->
+                <div
+                    class="absolute -inset-3 rounded-[2rem] bg-gradient-to-br from-teal-100/70 via-transparent to-cyan-100/60 sm:-inset-5 sm:rounded-[2.5rem]"
+                >
+                </div>
+
+                <!-- Decorative offset border -->
+                <div
+                    class="absolute -bottom-4 -right-4 h-[88%] w-[88%] rounded-[2rem] border border-teal-200/70 sm:-bottom-6 sm:-right-6 sm:rounded-[2.5rem]"
+                >
+                </div>
+
+                <!-- Image container -->
+                <div
+                    class="group relative overflow-hidden rounded-[1.7rem] bg-slate-200 shadow-[0_30px_80px_-30px_rgba(15,118,110,0.30)] sm:rounded-[2.3rem]"
+                >
+                    <img
+                        src="/AboutDoctors.jpg"
+                        alt="Dr. Vrishabh Kasar and Dr. Tejaswini Kasar"
+                        class="aspect-[4/4.2] w-full object-cover object-center transition duration-700 ease-out group-hover:scale-[1.025] sm:aspect-[4/3.8]"
+                    />
+
+                    <!-- Image gradient -->
+                    <div
+                        class="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-950/35 via-transparent to-transparent"
+                    >
+                    </div>
+
+                    <!-- Image corner mark -->
+                    <div
+                        class="absolute right-4 top-4 flex h-11 w-11 items-center justify-center rounded-full border border-white/30 bg-white/15 text-white backdrop-blur-md sm:right-6 sm:top-6 sm:h-14 sm:w-14"
+                    >
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            class="h-5 w-5 sm:h-6 sm:w-6"
+                        >
+                            <path
+                                d="M12 21s7-4.35 7-10.5A4.5 4.5 0 0 0 12 8a4.5 4.5 0 0 0-7 2.5C5 16.65 12 21 12 21Z"
+                                stroke="currentColor"
+                                stroke-width="1.5"></path>
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- =================================================
+                     EXPERIENCE FLOATING CARD
+                ================================================== -->
+                <div
+                    class="absolute -bottom-7 left-4 z-10 w-[calc(100%-2rem)] max-w-[290px] rounded-2xl border border-white/80 bg-white/90 p-4 shadow-[0_20px_50px_-20px_rgba(15,23,42,0.25)] backdrop-blur-xl sm:-bottom-8 sm:left-8 sm:max-w-[330px] sm:p-5"
+                >
+                    <div class="flex items-center gap-4">
+                        <div
+                            class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-teal-50 text-teal-700 sm:h-14 sm:w-14"
+                        >
+                            <svg
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                class="h-6 w-6"
+                            >
+                                <path
+                                    d="M12 3v18M3 12h18"
+                                    stroke="currentColor"
+                                    stroke-width="1.8"
+                                    stroke-linecap="round"></path>
+                            </svg>
+                        </div>
+
+                        <div>
+                            <p
+                                class="text-xl font-bold tracking-tight text-slate-900 sm:text-2xl"
+                            >
+                                5+ years
+                            </p>
+
+                            <p class="mt-0.5 text-xs text-slate-500 sm:text-sm">
+                                of dedicated patient care
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- =================================================
+                 DOCTORS INFORMATION
+            ================================================== -->
+            <div class="pt-8 lg:pt-0">
+                <!-- Doctor 01 -->
+                <article
+                    class="relative border-b border-slate-200 pb-8 sm:pb-9"
+                >
+                    <div class="flex items-start justify-between gap-4">
+                        <div class="flex items-start gap-4 sm:gap-5">
+                            <!-- Avatar with verified check badge -->
+                            <div class="relative shrink-0 pt-0.5">
+                                <div
+                                    class="relative h-16 w-16 sm:h-20 sm:w-20 overflow-hidden rounded-2xl border-2 border-teal-500/25 bg-teal-50/80 shadow-md shadow-teal-900/5 transition-all duration-300"
+                                >
+                                    <img
+                                        src="/Avatar Dr vrishabh.png"
+                                        alt="Dr. Vrishabh Kasar"
+                                        class="h-full w-full object-cover object-top"
+                                    />
+                                </div>
+                                <div
+                                    class="absolute -bottom-1 -right-1 flex h-5 w-5 sm:h-6 sm:w-6 items-center justify-center rounded-full bg-teal-600 text-white ring-2 ring-white shadow-xs"
+                                >
+                                    <svg
+                                        class="h-3 w-3 sm:h-3.5 sm:w-3.5"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2.5"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                </div>
+                            </div>
+
+                            <div>
+                                <p
+                                    class="mb-1.5 text-[10px] font-bold uppercase tracking-[0.2em] text-teal-600 sm:text-xs"
+                                >
+                                    Founder · Physiotherapist
+                                </p>
+
+                                <h3
+                                    class="text-xl sm:text-2xl lg:text-3xl font-semibold tracking-[-0.025em] text-slate-900"
+                                >
+                                    Dr. Vrishabh Kasar
+                                </h3>
+
+                                <p
+                                    class="mt-1 text-xs sm:text-sm font-medium text-slate-500"
+                                >
+                                    BPT, Certified Dietician
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Number -->
+                        <span
+                            class="hidden font-serif text-4xl font-medium text-slate-200 sm:block"
+                        >
+                            01
+                        </span>
+                    </div>
+
+                    <!-- Quote -->
+                    <div class="mt-5 sm:mt-6 flex gap-4">
+                        <div
+                            class="mt-1 h-10 w-1 shrink-0 rounded-full bg-teal-500"
+                        >
+                        </div>
+
+                        <p
+                            class="text-sm italic leading-7 text-slate-600 sm:text-base sm:leading-8"
+                        >
+                            “Our goal has always been to bring advanced
+                            physiotherapy to Gadhinglaj and help people
+                            understand its true importance.”
+                        </p>
+                    </div>
+                </article>
+
+                <!-- Doctor 02 -->
+                <article class="relative pt-8 sm:pt-9">
+                    <div class="flex items-start justify-between gap-4">
+                        <div class="flex items-start gap-4 sm:gap-5">
+                            <!-- Avatar with verified check badge -->
+                            <div class="relative shrink-0 pt-0.5">
+                                <div
+                                    class="relative h-16 w-16 sm:h-20 sm:w-20 overflow-hidden rounded-2xl border-2 border-teal-500/25 bg-teal-50/80 shadow-md shadow-teal-900/5 transition-all duration-300"
+                                >
+                                    <img
+                                        src="/Avatar Dr Tejashwini.png"
+                                        alt="Dr. Tejaswini Kasar"
+                                        class="h-full w-full object-cover object-top"
+                                    />
+                                </div>
+                                <div
+                                    class="absolute -bottom-1 -right-1 flex h-5 w-5 sm:h-6 sm:w-6 items-center justify-center rounded-full bg-teal-600 text-white ring-2 ring-white shadow-xs"
+                                >
+                                    <svg
+                                        class="h-3 w-3 sm:h-3.5 sm:w-3.5"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2.5"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                </div>
+                            </div>
+
+                            <div>
+                                <p
+                                    class="mb-1.5 text-[10px] font-bold uppercase tracking-[0.2em] text-teal-600 sm:text-xs"
+                                >
+                                    Co-Founder · Sports Medicine
+                                </p>
+
+                                <h3
+                                    class="text-xl sm:text-2xl lg:text-3xl font-semibold tracking-[-0.025em] text-slate-900"
+                                >
+                                    Dr. Tejaswini Kasar
+                                </h3>
+
+                                <p
+                                    class="mt-1 text-xs sm:text-sm font-medium text-slate-500"
+                                >
+                                    MPT Sports Medicine
+                                </p>
+                            </div>
+                        </div>
+
+                        <span
+                            class="hidden font-serif text-4xl font-medium text-slate-200 sm:block"
+                        >
+                            02
+                        </span>
+                    </div>
+
+                    <!-- Quote -->
+                    <div class="mt-5 sm:mt-6 flex gap-4">
+                        <div
+                            class="mt-1 h-10 w-1 shrink-0 rounded-full bg-cyan-500"
+                        >
+                        </div>
+
+                        <p
+                            class="text-sm italic leading-7 text-slate-600 sm:text-base sm:leading-8"
+                        >
+                            “No matter the challenges, our focus stays on giving
+                            every patient proper, effective care.”
+                        </p>
+                    </div>
+                </article>
+
+                <!-- =================================================
+                     CLOSING PROMISE
+                ================================================== -->
+                <div
+                    class="mt-10 rounded-2xl border border-teal-100 bg-white/75 p-5 shadow-[0_15px_40px_-25px_rgba(15,118,110,0.25)] sm:mt-12 sm:p-6"
+                >
+                    <div class="flex items-center gap-4">
+                        <div
+                            class="hidden h-10 w-10 shrink-0 items-center justify-center rounded-full bg-teal-700 text-white sm:flex"
+                        >
+                            <svg
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                class="h-5 w-5"
+                            >
+                                <path
+                                    d="M5 12.5 9.5 17 19 7"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"></path>
+                            </svg>
+                        </div>
+
+                        <p
+                            class="text-sm font-medium leading-6 text-slate-700 sm:text-base"
+                        >
+                            <span class="font-bold text-slate-900">
+                                5+ years.
+                            </span>
+
+                            <span class="text-teal-700">10,000+ patients.</span>
+
+                            <span class="text-slate-500">
+                                One promise — care that actually works.
+                            </span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- =================================================
+             BOTTOM MICRO DETAILS
+        ================================================== -->
+        <div
+            class="mt-16 flex flex-wrap items-center gap-x-8 gap-y-3 border-t border-slate-200/80 pt-6 text-xs font-medium text-slate-500 sm:mt-20 sm:pt-7"
+        >
+            <div class="flex items-center gap-2">
+                <span class="h-1.5 w-1.5 rounded-full bg-teal-500"></span>
+                Patient-first approach
+            </div>
+
+            <div class="flex items-center gap-2">
+                <span class="h-1.5 w-1.5 rounded-full bg-teal-500"></span>
+                Evidence-based treatment
+            </div>
+
+            <div class="flex items-center gap-2">
+                <span class="h-1.5 w-1.5 rounded-full bg-teal-500"></span>
+                Advanced physiotherapy
+            </div>
+        </div>
+    </div>
+</section>
