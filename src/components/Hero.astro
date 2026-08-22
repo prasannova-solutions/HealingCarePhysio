@@ -1,583 +1,571 @@
-<!-- =========================
-   BACKGROUND IMAGE
-========================== -->
-<div
-    class="absolute inset-0 z-0 h-full w-full overflow-hidden pointer-events-none"
->
-    <img
-        src="/HeroBackground.jpg"
-        alt="Clinic Background"
-        class="h-full w-full object-cover object-center opacity-70"
-    />
+---
+// Hero Component for Healing Care Physio
+---
 
-    <div
-        class="absolute inset-0
-        bg-gradient-to-r
-        from-white/95
-        via-white/70
-        to-teal-900/10
-        lg:from-white/90
-        lg:via-white/50
-        lg:to-transparent"
-    >
-    </div>
-</div>
-
-<!-- =========================
-   BACKGROUND GLOW
-========================== -->
-
-<div
-    class="absolute -right-20 -top-20
-    h-[500px] w-[500px]
-    rounded-full
-    bg-teal-200/40
-    blur-3xl
-    pointer-events-none"
->
-</div>
-
-<!-- =========================
-   RIGHT TEAL WAVE
-========================== -->
-
-<div
-    class="absolute right-0 top-0
-    z-[1]
-    h-full
-    w-[58%]
-    overflow-hidden
-    pointer-events-none
-    sm:w-[60%]
-    md:w-[68%]
-    lg:w-[60%]"
->
-    <svg
-        class="absolute right-0 top-0
-        h-full
-        w-[125%]
-        sm:w-[115%]"
-        viewBox="0 0 900 720"
-        preserveAspectRatio="none"
-        xmlns="http://www.w3.org/2000/svg"
-    >
-        <defs>
-            <linearGradient
-                id="tealWaveGrad1"
-                x1="0%"
-                y1="0%"
-                x2="100%"
-                y2="100%"
-            >
-                <stop offset="0%" stop-color="#5EEAD4" stop-opacity="0.85"
-                ></stop>
-
-                <stop offset="50%" stop-color="#2DD4BF" stop-opacity="0.80"
-                ></stop>
-
-                <stop offset="100%" stop-color="#0D9488" stop-opacity="0.75"
-                ></stop>
-            </linearGradient>
-
-            <linearGradient
-                id="tealWaveGrad2"
-                x1="100%"
-                y1="0%"
-                x2="0%"
-                y2="100%"
-            >
-                <stop offset="0%" stop-color="#99F6E4" stop-opacity="0.7"
-                ></stop>
-
-                <stop offset="100%" stop-color="#2DD4BF" stop-opacity="0.5"
-                ></stop>
-            </linearGradient>
-        </defs>
-
-        <!-- Outer Wave -->
-
-        <path
-            d="
-            M900 0
-            H430
-            C570 90 530 190 610 280
-            C690 370 760 430 900 455
-            V720
-            H900
-            Z
-            "
-            fill="url(#tealWaveGrad1)"></path>
-
-        <!-- Inner Wave -->
-
-        <path
-            d="
-            M900 0
-            H600
-            C690 80 630 170 680 260
-            C730 350 820 400 900 415
-            V720
-            H900
-            Z
-            "
-            fill="url(#tealWaveGrad2)"></path>
-    </svg>
-</div>
-
-<!-- =========================
-   MAIN CONTENT
-========================== -->
-
-<div
-    class="relative z-10 mx-auto
-    flex w-full
-    min-h-[680px]
-    max-w-[1400px]
-    items-center
-    px-4
-    pt-20
-    pb-24
-    sm:min-h-[700px]
-    sm:px-8
-    sm:pt-20
-    sm:pb-24
-    lg:min-h-[calc(100vh-5rem)]
-    lg:px-16
-    lg:pt-16
-    lg:pb-28"
->
+<section class="relative overflow-hidden bg-[#F0FDFA]">
     <!-- =========================
-       LEFT : TEXT
+       BACKGROUND LAYERS
     ========================== -->
 
+    <!-- Hero Background Image with Soft Contrast Overlay -->
     <div
-        class="relative z-30
-        w-[60%]
-        max-w-[680px]
-        sm:w-[58%]
-        md:w-[55%]
-        lg:w-full"
+        class="absolute inset-0 z-0 h-full w-full overflow-hidden pointer-events-none"
     >
-        <!-- Badge -->
-
+        <img
+            src="/HeroBackground.jpg"
+            alt="Clinic Background"
+            class="h-full w-full object-cover object-center opacity-65 lg:opacity-75"
+        />
+        <!-- Gradient overlay to guarantee crisp text contrast -->
         <div
-            class="mb-4
-            inline-flex
-            items-center
-            gap-2
-            rounded-full
-            border border-[#E2E8F0]
-            bg-white
-            px-3
-            py-1.5
-            text-[9px]
-            font-bold
-            uppercase
-            tracking-wider
-            text-[#0F172A]
-            shadow-sm
-            sm:mb-5
-            sm:px-4
-            sm:py-2
-            sm:text-xs"
+            class="absolute inset-0 bg-gradient-to-r from-white/95 via-white/80 to-teal-900/10 lg:from-white/90 lg:via-white/50 lg:to-transparent"
         >
-            <span
-                class="h-2 w-2
-                rounded-full
-                bg-[#0D9488]
-                ring-4
-                ring-teal-50
-                sm:h-2.5
-                sm:w-2.5"
-            ></span>
-
-            Trusted Physiotherapy Care
         </div>
+    </div>
 
-        <!-- Heading -->
+    <!-- Soft background ambient glow -->
+    <div
+        class="absolute -right-20 -top-20 h-[320px] lg:h-[500px] w-[320px] lg:w-[500px] rounded-full bg-teal-200/40 blur-3xl pointer-events-none"
+    >
+    </div>
 
-        <h1
-            class="max-w-[700px]
-            text-[clamp(2.1rem,9vw,5.8rem)]
-            font-extrabold
-            leading-[0.98]
-            tracking-tight
-            text-[#0F172A]"
+    <!-- Right Side Fluid Organic Wave -->
+    <div
+        class="absolute right-0 top-0 z-[1] h-full w-[60%] sm:w-[65%] lg:w-[60%] overflow-hidden pointer-events-none"
+    >
+        <svg
+            class="absolute right-0 top-0 h-full w-[140%] lg:w-[115%]"
+            viewBox="0 0 900 720"
+            preserveAspectRatio="none"
+            xmlns="http://www.w3.org/2000/svg"
         >
-            Healing Care
-
-            <span class="block text-[#0D9488]"> Physio </span>
-        </h1>
-
-        <!-- Description -->
-
-        <p
-            class="mt-4
-            max-w-[540px]
-            text-[11px]
-            font-medium
-            leading-[1.55]
-            text-[#334155]
-            sm:mt-5
-            sm:text-sm
-            sm:leading-6
-            md:text-base
-            lg:mt-6
-            lg:text-lg
-            lg:leading-7"
-        >
-            Move better. Feel stronger. Live without limits. Personalized
-            physiotherapy care designed to help you recover, rebuild, and return
-            to the life you love.
-        </p>
-
-        <!-- CTA -->
-
-        <div
-            class="mt-5
-            flex
-            flex-col
-            items-start
-            gap-2
-            sm:mt-7
-            sm:flex-row
-            sm:items-center
-            sm:gap-3
-            lg:mt-9
-            lg:gap-4"
-        >
-            <!-- Primary -->
-
-            <a
-                href="#appointment"
-                class="group
-                inline-flex
-                items-center
-                gap-2
-                rounded-full
-                bg-[#0D9488]
-                px-4
-                py-2.5
-                text-[10px]
-                font-bold
-                text-white
-                shadow-lg
-                shadow-teal-700/20
-                transition-all
-                duration-200
-                hover:-translate-y-0.5
-                hover:bg-[#0F766E]
-                sm:px-5
-                sm:py-3
-                sm:text-xs
-                lg:px-7
-                lg:py-4
-                lg:text-base"
-            >
-                Book Appointment
-
-                <span
-                    class="flex
-                    h-5
-                    w-5
-                    items-center
-                    justify-center
-                    rounded-full
-                    bg-white/20
-                    text-xs
-                    transition-transform
-                    duration-200
-                    group-hover:translate-x-1
-                    sm:h-6
-                    sm:w-6
-                    lg:h-7
-                    lg:w-7"
+            <defs>
+                <linearGradient
+                    id="tealWaveGrad1"
+                    x1="0%"
+                    y1="0%"
+                    x2="100%"
+                    y2="100%"
                 >
-                    →
-                </span>
-            </a>
+                    <stop offset="0%" stop-color="#5EEAD4" stop-opacity="0.85"
+                    ></stop>
+                    <stop offset="50%" stop-color="#2DD4BF" stop-opacity="0.80"
+                    ></stop>
+                    <stop offset="100%" stop-color="#0D9488" stop-opacity="0.75"
+                    ></stop>
+                </linearGradient>
+                <linearGradient
+                    id="tealWaveGrad2"
+                    x1="100%"
+                    y1="0%"
+                    x2="0%"
+                    y2="100%"
+                >
+                    <stop offset="0%" stop-color="#99F6E4" stop-opacity="0.7"
+                    ></stop>
+                    <stop offset="100%" stop-color="#2DD4BF" stop-opacity="0.5"
+                    ></stop>
+                </linearGradient>
+            </defs>
 
-            <!-- Secondary -->
+            <!-- Outer Wave -->
+            <path
+                d="M900 0 H430 C570 90 530 190 610 280 C690 370 760 430 900 455 V720 H900 Z"
+                fill="url(#tealWaveGrad1)"></path>
 
-            <a
-                href="#services"
-                class="inline-flex
-                rounded-full
-                border-[1.5px]
-                border-[#0D9488]
-                bg-white/85
-                px-4
-                py-2.5
-                text-[10px]
-                font-semibold
-                text-[#0D9488]
-                backdrop-blur-sm
-                transition-all
-                duration-200
-                hover:-translate-y-0.5
-                hover:bg-teal-50
-                hover:border-[#0F766E]
-                hover:text-[#0F766E]
-                sm:px-5
-                sm:py-3
-                sm:text-xs
-                lg:px-7
-                lg:py-4
-                lg:text-base"
+            <!-- Inner Accent Wave -->
+            <path
+                d="M900 0 H600 C690 80 630 170 680 260 C730 350 820 400 900 415 V720 H900 Z"
+                fill="url(#tealWaveGrad2)"></path>
+        </svg>
+    </div>
+
+    <!-- Full-width Bottom Wave Layer -->
+    <div
+        class="absolute inset-x-0 bottom-0 z-[1] h-[160px] sm:h-[200px] lg:h-[260px] pointer-events-none"
+    >
+        <svg
+            class="h-full w-full"
+            viewBox="0 0 1440 320"
+            preserveAspectRatio="none"
+        >
+            <defs>
+                <linearGradient
+                    id="bottomWaveGrad"
+                    x1="0%"
+                    y1="0%"
+                    x2="100%"
+                    y2="0%"
+                >
+                    <stop offset="0%" stop-color="#CCFBF1" stop-opacity="0.75"
+                    ></stop>
+                    <stop offset="50%" stop-color="#99F6E4" stop-opacity="0.6"
+                    ></stop>
+                    <stop offset="100%" stop-color="#5EEAD4" stop-opacity="0.7"
+                    ></stop>
+                </linearGradient>
+            </defs>
+            <g transform="translate(1440 0) scale(-1 1)">
+                <path
+                    fill="url(#bottomWaveGrad)"
+                    d="M0,125 C120,105 240,85 360,78 C480,70 600,78 720,110 C840,142 960,175 1080,178 C1200,181 1320,150 1380,130 L1440,112 L1440,320 L1380,320 C1320,320 1200,320 1080,320 C960,320 840,320 720,320 C600,320 480,320 360,320 C240,320 120,320 60,320 L0,320 Z"
+                ></path>
+            </g>
+        </svg>
+    </div>
+
+    <!-- ==============================================================
+       MOBILE & TABLET LAYOUT (< lg screens)
+       Matches the exact 2-column split with stacked doctor cards
+    =============================================================== -->
+    <div class="lg:hidden relative z-10 pt-24 px-4 sm:px-6 pb-6">
+        <div class="grid grid-cols-[1.15fr_0.85fr] gap-2 items-start">
+            <!-- LEFT COLUMN: Badge, Heading, Paragraph, CTA Buttons -->
+            <div class="flex flex-col items-start pr-1">
+                <!-- Badge -->
+                <div
+                    class="mb-3 inline-flex items-center gap-1.5 rounded-full border border-slate-200/90 bg-white/95 px-2.5 py-1 text-[9px] sm:text-[10px] font-bold uppercase tracking-wide text-slate-900 shadow-xs"
+                >
+                    <span class="h-2 w-2 rounded-full bg-[#0D9488]"></span>
+                    <span>Trusted Physiotherapy Care</span>
+                </div>
+
+                <!-- Heading -->
+                <h1
+                    class="text-[34px] sm:text-[44px] font-extrabold leading-[1.05] tracking-tight text-slate-900"
+                >
+                    Healing <br />
+                    Care <br />
+                    <span class="text-[#0D9488]">Physio</span>
+                </h1>
+
+                <!-- Description Paragraph -->
+                <p
+                    class="mt-2.5 text-[11px] sm:text-[13px] font-medium leading-snug text-slate-700"
+                >
+                    Move better. Feel stronger. Live without limits.
+                    Personalized physiotherapy care designed to help you
+                    recover, rebuild, and return to the life you love.
+                </p>
+
+                <!-- CTA Buttons -->
+                <div
+                    class="mt-4 flex flex-col items-stretch gap-2 w-full max-w-[210px] sm:max-w-[240px]"
+                >
+                    <!-- Primary CTA -->
+                    <a
+                        href="#appointment"
+                        class="group inline-flex items-center justify-between rounded-full bg-[#0D9488] px-4 py-2.5 text-xs font-bold text-white shadow-md shadow-teal-700/20 active:scale-[0.98] transition-all"
+                    >
+                        <span>Book an Appointment</span>
+                        <span
+                            class="flex h-5 w-5 items-center justify-center rounded-full bg-white/20 text-xs"
+                        >
+                            →
+                        </span>
+                    </a>
+
+                    <!-- Secondary CTA -->
+                    <a
+                        href="#services"
+                        class="inline-flex items-center justify-center rounded-full border border-[#0D9488] bg-white/90 px-4 py-2.5 text-xs font-bold text-[#0D9488] shadow-xs active:scale-[0.98] transition-all"
+                    >
+                        Explore Treatments
+                    </a>
+                </div>
+            </div>
+
+            <!-- RIGHT COLUMN: Doctor Cutout + Layered Badges on Top -->
+            <div class="relative flex flex-col items-center">
+                <!-- Doctors Photo Cutout (Enlarged) -->
+                <div
+                    class="relative w-full min-w-[190px] max-w-[280px] sm:max-w-[320px] pointer-events-none scale-105 sm:scale-110 origin-top-center"
+                >
+                    <!-- Soft Glow behind cutout -->
+                    <div
+                        class="absolute inset-0 m-auto h-[190px] w-[190px] rounded-full bg-white/80 blur-xl"
+                    >
+                    </div>
+                    <img
+                        src="/bothCutout.png"
+                        alt="Healing Care Physiotherapy Doctors"
+                        class="w-full h-auto object-contain drop-shadow-[0_10px_25px_rgba(0,0,0,0.16)]"
+                    />
+                </div>
+
+                <!-- Layered Floating Glass Badges (Overlapping Doctor Image) -->
+                <div
+                    class="relative z-20 -mt-16 sm:-mt-20 flex flex-col gap-2 w-full max-w-[230px] sm:max-w-[270px]"
+                >
+                    <!-- Card 1: Dr. Vrishab -->
+                    <div
+                        class="flex items-center gap-2 rounded-2xl border border-white/85 bg-white/90 p-2 sm:p-2.5 shadow-[0_8px_25px_rgba(15,23,42,0.10)] backdrop-blur-xl transition-transform active:scale-[0.98]"
+                    >
+                        <div class="relative shrink-0">
+                            <img
+                                src="/Avatar Dr vrishabh.png"
+                                alt="Dr. Vrishab Mahavir Kasar"
+                                class="h-9 w-9 sm:h-10 sm:w-10 rounded-full object-cover ring-1.5 ring-teal-500/30"
+                            />
+                            <div
+                                class="absolute -bottom-0.5 -right-0.5 flex h-3.5 w-3.5 items-center justify-center rounded-full bg-teal-600 text-white ring-1 ring-white"
+                            >
+                                <svg
+                                    class="h-2 w-2"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="3"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="text-left min-w-0">
+                            <p
+                                class="text-[10.5px] sm:text-[12px] font-extrabold text-slate-900 leading-tight truncate"
+                            >
+                                Dr. Vrishab Mahavir Kasar
+                            </p>
+                            <p
+                                class="text-[9px] sm:text-[10.5px] font-bold text-teal-700 leading-tight"
+                            >
+                                MPT Sports Medicine
+                            </p>
+                            <div
+                                class="mt-0.5 flex items-center gap-1 text-[8.5px] sm:text-[9.5px] font-medium text-slate-500"
+                            >
+                                <span
+                                    class="h-1.5 w-1.5 rounded-full bg-emerald-500 shrink-0"
+                                ></span>
+                                <span class="truncate"
+                                    >Sports Rehab Specialist</span
+                                >
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: Dr. Tejaswini -->
+                    <div
+                        class="flex items-center gap-2 rounded-2xl border border-white/85 bg-white/90 p-2 sm:p-2.5 shadow-[0_8px_25px_rgba(15,23,42,0.10)] backdrop-blur-xl transition-transform active:scale-[0.98]"
+                    >
+                        <div class="relative shrink-0">
+                            <img
+                                src="/Avatar Dr Tejashwini.png"
+                                alt="Dr. Tejaswini Kasar"
+                                class="h-9 w-9 sm:h-10 sm:w-10 rounded-full object-cover ring-1.5 ring-teal-500/30"
+                            />
+                            <div
+                                class="absolute -bottom-0.5 -right-0.5 flex h-3.5 w-3.5 items-center justify-center rounded-full bg-teal-600 text-white ring-1 ring-white"
+                            >
+                                <svg
+                                    class="h-2 w-2"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="3"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="text-left min-w-0">
+                            <p
+                                class="text-[10.5px] sm:text-[12px] font-extrabold text-slate-900 leading-tight truncate"
+                            >
+                                Dr. Tejaswini Kasar
+                            </p>
+                            <p
+                                class="text-[9px] sm:text-[10.5px] font-bold text-teal-700 leading-tight"
+                            >
+                                BPT, Certified Dietician
+                            </p>
+                            <div
+                                class="mt-0.5 flex items-center gap-1 text-[8.5px] sm:text-[9.5px] font-medium text-slate-500"
+                            >
+                                <span
+                                    class="h-1.5 w-1.5 rounded-full bg-emerald-500 shrink-0"
+                                ></span>
+                                <span class="truncate"
+                                    >Chief Physiotherapist</span
+                                >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==============================================================
+       DESKTOP LAYOUT (lg screens and up)
+    =============================================================== -->
+    <div
+        class="hidden lg:flex relative z-10 mx-auto max-w-[1400px] min-h-[calc(100vh-5rem)] min-h-[680px] items-center px-16 pt-28 pb-24"
+    >
+        <!-- LEFT : TEXT & CTA -->
+        <div class="relative z-30 w-full max-w-[680px] pt-4">
+            <!-- Badge -->
+            <div
+                class="mb-6 inline-flex items-center gap-2.5 rounded-full border border-[#E2E8F0] bg-white px-4 py-2 text-xs font-bold uppercase tracking-wider text-[#0F172A] shadow-xs"
             >
-                Treatments
-            </a>
+                <span
+                    class="h-2.5 w-2.5 rounded-full bg-[#0D9488] ring-4 ring-teal-50"
+                ></span>
+                <span>Trusted Physiotherapy Care</span>
+            </div>
+
+            <!-- Cohesive Bold Heading -->
+            <h1
+                class="max-w-[700px] text-[clamp(3.5rem,6.2vw,5.8rem)] font-extrabold leading-[1.02] tracking-tight text-[#0F172A]"
+            >
+                Healing Care
+                <span class="block text-[#0D9488]">Physio</span>
+            </h1>
+
+            <!-- Description -->
+            <p
+                class="mt-6 max-w-[540px] text-lg font-medium leading-7 text-[#334155]"
+            >
+                Move better. Feel stronger. Live without limits. Personalized
+                physiotherapy care designed to help you recover, rebuild, and
+                return to the life you love.
+            </p>
+
+            <!-- CTA Buttons -->
+            <div class="mt-9 flex flex-wrap items-center gap-4">
+                <a
+                    href="#appointment"
+                    class="group inline-flex items-center gap-3 rounded-full bg-[#0D9488] px-7 py-4 font-bold text-white shadow-lg shadow-teal-700/20 transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#0F766E]"
+                >
+                    <span>Book an Appointment</span>
+                    <span
+                        class="flex h-7 w-7 items-center justify-center rounded-full bg-white/20 transition-transform duration-200 group-hover:translate-x-1"
+                    >
+                        →
+                    </span>
+                </a>
+
+                <a
+                    href="#services"
+                    class="rounded-full border-[1.5px] border-[#0D9488] bg-white/85 px-7 py-4 font-semibold text-[#0D9488] backdrop-blur-xs transition-all duration-200 hover:-translate-y-0.5 hover:bg-teal-50 hover:border-[#0F766E] hover:text-[#0F766E]"
+                >
+                    Explore Treatments
+                </a>
+            </div>
+
+            <!-- Desktop Horizontal Stats -->
+            <div class="mt-12 flex flex-wrap items-center gap-x-8 gap-y-5">
+                <div>
+                    <p class="text-3xl font-extrabold text-[#0F172A]">10+</p>
+                    <p class="text-sm font-semibold text-[#1E293B]">
+                        Years Experience
+                    </p>
+                </div>
+                <div class="h-10 w-px bg-slate-300"></div>
+                <div>
+                    <p class="text-3xl font-extrabold text-[#0F172A]">1K+</p>
+                    <p class="text-sm font-semibold text-[#1E293B]">
+                        Patients Helped
+                    </p>
+                </div>
+                <div class="h-10 w-px bg-slate-300"></div>
+                <div>
+                    <p class="text-3xl font-extrabold text-[#0F172A]">4.9/5</p>
+                    <p class="text-sm font-semibold text-[#1E293B]">
+                        Patient Rating
+                    </p>
+                </div>
+            </div>
         </div>
 
-        <!-- =========================
-           TRUST / STATS
-        ========================== -->
-
+        <!-- RIGHT : DOCTORS & FLOATING GLASS BADGES (Desktop) -->
         <div
-            class="mt-7
-            flex
-            flex-wrap
-            items-center
-            gap-x-3
-            gap-y-3
-            sm:mt-9
-            sm:gap-x-5
-            lg:mt-12
-            lg:gap-x-8
-            lg:gap-y-5"
+            class="pointer-events-none absolute bottom-0 right-[20px] z-20 h-[650px] w-[620px]"
         >
-            <div>
+            <!-- Glow behind cutout -->
+            <div
+                class="absolute bottom-[10%] left-[15%] h-[400px] w-[400px] rounded-full bg-white/70 blur-2xl"
+            >
+            </div>
+
+            <!-- Doctor Cutout -->
+            <img
+                src="/bothCutout.png"
+                alt="Healing Care Physiotherapy doctors"
+                class="absolute bottom-0 right-0 h-auto w-[620px] max-w-none object-contain drop-shadow-[0_12px_30px_rgba(0,0,0,0.12)]"
+            />
+
+            <!-- Glass Badge 1: Dr. Vrishab -->
+            <div
+                class="pointer-events-auto absolute bottom-32 -left-14 z-30 flex items-center gap-3.5 rounded-2xl border border-white/80 bg-white/75 px-4 py-3 backdrop-blur-xl shadow-[0_10px_35px_rgba(15,23,42,0.10),0_2px_8px_rgba(13,148,136,0.08)] transition-all duration-300 hover:-translate-y-1 hover:bg-white/90 hover:shadow-[0_18px_40px_rgba(13,148,136,0.18)]"
+            >
+                <div class="relative shrink-0">
+                    <img
+                        src="/Avatar Dr vrishabh.png"
+                        alt="Dr. Vrishab Mahavir Kasar"
+                        class="h-12 w-12 rounded-full object-cover ring-2 ring-teal-500/30 shadow-xs"
+                    />
+                    <div
+                        class="absolute -bottom-0.5 -right-0.5 flex h-4 w-4 items-center justify-center rounded-full bg-teal-600 text-white ring-2 ring-white"
+                    >
+                        <svg
+                            class="h-2.5 w-2.5"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="3"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                d="M5 13l4 4L19 7"></path>
+                        </svg>
+                    </div>
+                </div>
+                <div class="text-left">
+                    <span
+                        class="text-base font-extrabold text-slate-900 tracking-tight"
+                    >
+                        Dr. Vrishab Mahavir Kasar
+                    </span>
+                    <p class="text-xs font-bold text-teal-700">
+                        MPT Sports Medicine
+                    </p>
+                    <div
+                        class="mt-0.5 flex items-center gap-1.5 text-[11px] font-medium text-slate-500"
+                    >
+                        <span
+                            class="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse"
+                        ></span>
+                        <span>Sports Rehab Specialist</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Glass Badge 2: Dr. Tejaswini -->
+            <div
+                class="pointer-events-auto absolute bottom-8 right-2 z-30 flex items-center gap-3.5 rounded-2xl border border-white/80 bg-white/75 px-4 py-3 backdrop-blur-xl shadow-[0_10px_35px_rgba(15,23,42,0.10),0_2px_8px_rgba(13,148,136,0.08)] transition-all duration-300 hover:-translate-y-1 hover:bg-white/90 hover:shadow-[0_18px_40px_rgba(13,148,136,0.18)]"
+            >
+                <div class="relative shrink-0">
+                    <img
+                        src="/Avatar Dr Tejashwini.png"
+                        alt="Dr. Tejaswini Kasar"
+                        class="h-12 w-12 rounded-full object-cover ring-2 ring-teal-500/30 shadow-xs"
+                    />
+                    <div
+                        class="absolute -bottom-0.5 -right-0.5 flex h-4 w-4 items-center justify-center rounded-full bg-teal-600 text-white ring-2 ring-white"
+                    >
+                        <svg
+                            class="h-2.5 w-2.5"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="3"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                d="M5 13l4 4L19 7"></path>
+                        </svg>
+                    </div>
+                </div>
+                <div class="text-left">
+                    <span
+                        class="text-base font-extrabold text-slate-900 tracking-tight"
+                    >
+                        Dr. Tejaswini Kasar
+                    </span>
+                    <p class="text-xs font-bold text-teal-700">
+                        BPT, Certified Dietician
+                    </p>
+                    <div
+                        class="mt-0.5 flex items-center gap-1.5 text-[11px] font-medium text-slate-500"
+                    >
+                        <span
+                            class="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse"
+                        ></span>
+                        <span>Chief Physiotherapist</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- =========================
+       BOTTOM CURVE TRANSITION
+    ========================== -->
+    <div
+        class="relative z-20 w-full pointer-events-none -mt-4 sm:-mt-6 lg:-mt-20"
+    >
+        <svg
+            class="h-12 sm:h-16 lg:h-20 w-full block"
+            viewBox="0 0 1440 100"
+            preserveAspectRatio="none"
+            xmlns="http://www.w3.org/2000/svg"
+        >
+            <path
+                d="M0 75C280 140 500 -25 820 20C1080 70 1260 120 1440 10V100H0Z"
+                fill="white"
+            >
+            </path>
+        </svg>
+    </div>
+
+    <!-- ==============================================================
+       MOBILE STATS SECTION (Single horizontal line below the wave)
+    =============================================================== -->
+    <div class="relative z-30 bg-white px-3 sm:px-6 pt-3 pb-8 lg:hidden">
+        <div
+            class="max-w-md mx-auto grid grid-cols-3 gap-1 sm:gap-2 text-center divide-x divide-slate-200"
+        >
+            <!-- Stat 1 -->
+            <div class="px-1">
                 <p
-                    class="text-xl
-                    font-extrabold
-                    text-[#0F172A]
-                    sm:text-2xl
-                    lg:text-3xl"
+                    class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight leading-none"
                 >
                     10+
                 </p>
-
                 <p
-                    class="text-[9px]
-                    font-semibold
-                    text-[#1E293B]
-                    sm:text-xs
-                    lg:text-sm"
+                    class="text-[10px] sm:text-xs font-bold text-slate-700 mt-1.5 leading-tight"
                 >
                     Years Experience
                 </p>
             </div>
 
-            <div
-                class="h-8
-                w-px
-                bg-slate-300
-                sm:h-10"
-            >
-            </div>
-
-            <div>
+            <!-- Stat 2 -->
+            <div class="px-1">
                 <p
-                    class="text-xl
-                    font-extrabold
-                    text-[#0F172A]
-                    sm:text-2xl
-                    lg:text-3xl"
+                    class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight leading-none"
                 >
-                    1K+
+                    10K+
                 </p>
-
                 <p
-                    class="text-[9px]
-                    font-semibold
-                    text-[#1E293B]
-                    sm:text-xs
-                    lg:text-sm"
+                    class="text-[10px] sm:text-xs font-bold text-slate-700 mt-1.5 leading-tight"
                 >
                     Patients Helped
                 </p>
             </div>
 
-            <div
-                class="h-8
-                w-px
-                bg-slate-300
-                sm:h-10"
-            >
-            </div>
-
-            <div>
+            <!-- Stat 3 -->
+            <div class="px-1">
                 <p
-                    class="text-xl
-                    font-extrabold
-                    text-[#0F172A]
-                    sm:text-2xl
-                    lg:text-3xl"
+                    class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight leading-none"
                 >
                     4.9/5
                 </p>
-
                 <p
-                    class="text-[9px]
-                    font-semibold
-                    text-[#1E293B]
-                    sm:text-xs
-                    lg:text-sm"
+                    class="text-[10px] sm:text-xs font-bold text-slate-700 mt-1.5 leading-tight"
                 >
                     Patient Rating
                 </p>
             </div>
         </div>
     </div>
-
-    <!-- =========================
-       RIGHT : DOCTORS
-    ========================== -->
-
-    <div
-        class="pointer-events-none
-        absolute
-        bottom-0
-        right-[-25px]
-        z-20
-        h-[470px]
-        w-[52%]
-        sm:right-[-15px]
-        sm:h-[540px]
-        sm:w-[50%]
-        md:right-[-10px]
-        md:h-[610px]
-        md:w-[48%]
-        lg:right-[20px]
-        lg:h-[650px]
-        lg:w-[620px]"
-    >
-        <!-- Glow -->
-
-        <div
-            class="absolute
-            bottom-[8%]
-            left-[10%]
-            h-[260px]
-            w-[260px]
-            rounded-full
-            bg-white/70
-            blur-2xl
-            sm:h-[320px]
-            sm:w-[320px]
-            lg:h-[400px]
-            lg:w-[400px]"
-        >
-        </div>
-
-        <!-- Doctor Cutout -->
-
-        <img
-            src="/bothCutout.png"
-            alt="Healing Care Physiotherapy doctors"
-            class="absolute
-            bottom-0
-            right-0
-            h-auto
-            w-[145%]
-            max-w-none
-            object-contain
-            drop-shadow-[0_12px_30px_rgba(0,0,0,0.12)]
-            sm:w-[135%]
-            md:w-[130%]
-            lg:w-[620px]"
-        />
-    </div>
-</div>
-
-<!-- =========================
-   FULL WIDTH BOTTOM WAVE
-========================== -->
-
-<div
-    class="absolute
-    inset-x-0
-    bottom-0
-    z-[1]
-    h-[180px]
-    pointer-events-none
-    sm:h-[220px]
-    lg:h-[260px]"
->
-    <svg
-        class="h-full w-full"
-        viewBox="0 0 1440 320"
-        preserveAspectRatio="none"
-    >
-        <defs>
-            <linearGradient
-                id="bottomWaveGrad"
-                x1="0%"
-                y1="0%"
-                x2="100%"
-                y2="0%"
-            >
-                <stop offset="0%" stop-color="#CCFBF1" stop-opacity="0.7"
-                ></stop>
-
-                <stop offset="50%" stop-color="#99F6E4" stop-opacity="0.55"
-                ></stop>
-
-                <stop offset="100%" stop-color="#5EEAD4" stop-opacity="0.65"
-                ></stop>
-            </linearGradient>
-        </defs>
-
-        <g transform="translate(1440 0) scale(-1 1)">
-            <path
-                fill="url(#bottomWaveGrad)"
-                d="
-                M0,125
-                C120,105 240,85 360,78
-                C480,70 600,78 720,110
-                C840,142 960,175 1080,178
-                C1200,181 1320,150 1380,130
-                L1440,112
-                L1440,320
-                L1380,320
-                C1320,320 1200,320 1080,320
-                C960,320 840,320 720,320
-                C600,320 480,320 360,320
-                C240,320 120,320 60,320
-                L0,320
-                Z"
-            ></path>
-        </g>
-    </svg>
-</div>
-
-<!-- =========================
-   WHITE BOTTOM TRANSITION
-========================== -->
-
-<div
-    class="absolute
-    bottom-[-1px]
-    left-0
-    z-30
-    w-full
-    pointer-events-none"
->
-    <svg
-        class="h-14 w-full sm:h-16 lg:h-20"
-        viewBox="0 0 1440 100"
-        preserveAspectRatio="none"
-        xmlns="http://www.w3.org/2000/svg"
-    >
-        <path
-            d="
-            M0 55
-            C300 110 520 5 820 35
-            C1100 65 1250 90 1440 30
-            V100
-            H0
-            Z
-            "
-            fill="white"></path>
-    </svg>
-</div>
+</section>
