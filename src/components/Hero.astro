@@ -1,0 +1,583 @@
+<!-- =========================
+   BACKGROUND IMAGE
+========================== -->
+<div
+    class="absolute inset-0 z-0 h-full w-full overflow-hidden pointer-events-none"
+>
+    <img
+        src="/HeroBackground.jpg"
+        alt="Clinic Background"
+        class="h-full w-full object-cover object-center opacity-70"
+    />
+
+    <div
+        class="absolute inset-0
+        bg-gradient-to-r
+        from-white/95
+        via-white/70
+        to-teal-900/10
+        lg:from-white/90
+        lg:via-white/50
+        lg:to-transparent"
+    >
+    </div>
+</div>
+
+<!-- =========================
+   BACKGROUND GLOW
+========================== -->
+
+<div
+    class="absolute -right-20 -top-20
+    h-[500px] w-[500px]
+    rounded-full
+    bg-teal-200/40
+    blur-3xl
+    pointer-events-none"
+>
+</div>
+
+<!-- =========================
+   RIGHT TEAL WAVE
+========================== -->
+
+<div
+    class="absolute right-0 top-0
+    z-[1]
+    h-full
+    w-[58%]
+    overflow-hidden
+    pointer-events-none
+    sm:w-[60%]
+    md:w-[68%]
+    lg:w-[60%]"
+>
+    <svg
+        class="absolute right-0 top-0
+        h-full
+        w-[125%]
+        sm:w-[115%]"
+        viewBox="0 0 900 720"
+        preserveAspectRatio="none"
+        xmlns="http://www.w3.org/2000/svg"
+    >
+        <defs>
+            <linearGradient
+                id="tealWaveGrad1"
+                x1="0%"
+                y1="0%"
+                x2="100%"
+                y2="100%"
+            >
+                <stop offset="0%" stop-color="#5EEAD4" stop-opacity="0.85"
+                ></stop>
+
+                <stop offset="50%" stop-color="#2DD4BF" stop-opacity="0.80"
+                ></stop>
+
+                <stop offset="100%" stop-color="#0D9488" stop-opacity="0.75"
+                ></stop>
+            </linearGradient>
+
+            <linearGradient
+                id="tealWaveGrad2"
+                x1="100%"
+                y1="0%"
+                x2="0%"
+                y2="100%"
+            >
+                <stop offset="0%" stop-color="#99F6E4" stop-opacity="0.7"
+                ></stop>
+
+                <stop offset="100%" stop-color="#2DD4BF" stop-opacity="0.5"
+                ></stop>
+            </linearGradient>
+        </defs>
+
+        <!-- Outer Wave -->
+
+        <path
+            d="
+            M900 0
+            H430
+            C570 90 530 190 610 280
+            C690 370 760 430 900 455
+            V720
+            H900
+            Z
+            "
+            fill="url(#tealWaveGrad1)"></path>
+
+        <!-- Inner Wave -->
+
+        <path
+            d="
+            M900 0
+            H600
+            C690 80 630 170 680 260
+            C730 350 820 400 900 415
+            V720
+            H900
+            Z
+            "
+            fill="url(#tealWaveGrad2)"></path>
+    </svg>
+</div>
+
+<!-- =========================
+   MAIN CONTENT
+========================== -->
+
+<div
+    class="relative z-10 mx-auto
+    flex w-full
+    min-h-[680px]
+    max-w-[1400px]
+    items-center
+    px-4
+    pt-20
+    pb-24
+    sm:min-h-[700px]
+    sm:px-8
+    sm:pt-20
+    sm:pb-24
+    lg:min-h-[calc(100vh-5rem)]
+    lg:px-16
+    lg:pt-16
+    lg:pb-28"
+>
+    <!-- =========================
+       LEFT : TEXT
+    ========================== -->
+
+    <div
+        class="relative z-30
+        w-[60%]
+        max-w-[680px]
+        sm:w-[58%]
+        md:w-[55%]
+        lg:w-full"
+    >
+        <!-- Badge -->
+
+        <div
+            class="mb-4
+            inline-flex
+            items-center
+            gap-2
+            rounded-full
+            border border-[#E2E8F0]
+            bg-white
+            px-3
+            py-1.5
+            text-[9px]
+            font-bold
+            uppercase
+            tracking-wider
+            text-[#0F172A]
+            shadow-sm
+            sm:mb-5
+            sm:px-4
+            sm:py-2
+            sm:text-xs"
+        >
+            <span
+                class="h-2 w-2
+                rounded-full
+                bg-[#0D9488]
+                ring-4
+                ring-teal-50
+                sm:h-2.5
+                sm:w-2.5"
+            ></span>
+
+            Trusted Physiotherapy Care
+        </div>
+
+        <!-- Heading -->
+
+        <h1
+            class="max-w-[700px]
+            text-[clamp(2.1rem,9vw,5.8rem)]
+            font-extrabold
+            leading-[0.98]
+            tracking-tight
+            text-[#0F172A]"
+        >
+            Healing Care
+
+            <span class="block text-[#0D9488]"> Physio </span>
+        </h1>
+
+        <!-- Description -->
+
+        <p
+            class="mt-4
+            max-w-[540px]
+            text-[11px]
+            font-medium
+            leading-[1.55]
+            text-[#334155]
+            sm:mt-5
+            sm:text-sm
+            sm:leading-6
+            md:text-base
+            lg:mt-6
+            lg:text-lg
+            lg:leading-7"
+        >
+            Move better. Feel stronger. Live without limits. Personalized
+            physiotherapy care designed to help you recover, rebuild, and return
+            to the life you love.
+        </p>
+
+        <!-- CTA -->
+
+        <div
+            class="mt-5
+            flex
+            flex-col
+            items-start
+            gap-2
+            sm:mt-7
+            sm:flex-row
+            sm:items-center
+            sm:gap-3
+            lg:mt-9
+            lg:gap-4"
+        >
+            <!-- Primary -->
+
+            <a
+                href="#appointment"
+                class="group
+                inline-flex
+                items-center
+                gap-2
+                rounded-full
+                bg-[#0D9488]
+                px-4
+                py-2.5
+                text-[10px]
+                font-bold
+                text-white
+                shadow-lg
+                shadow-teal-700/20
+                transition-all
+                duration-200
+                hover:-translate-y-0.5
+                hover:bg-[#0F766E]
+                sm:px-5
+                sm:py-3
+                sm:text-xs
+                lg:px-7
+                lg:py-4
+                lg:text-base"
+            >
+                Book Appointment
+
+                <span
+                    class="flex
+                    h-5
+                    w-5
+                    items-center
+                    justify-center
+                    rounded-full
+                    bg-white/20
+                    text-xs
+                    transition-transform
+                    duration-200
+                    group-hover:translate-x-1
+                    sm:h-6
+                    sm:w-6
+                    lg:h-7
+                    lg:w-7"
+                >
+                    →
+                </span>
+            </a>
+
+            <!-- Secondary -->
+
+            <a
+                href="#services"
+                class="inline-flex
+                rounded-full
+                border-[1.5px]
+                border-[#0D9488]
+                bg-white/85
+                px-4
+                py-2.5
+                text-[10px]
+                font-semibold
+                text-[#0D9488]
+                backdrop-blur-sm
+                transition-all
+                duration-200
+                hover:-translate-y-0.5
+                hover:bg-teal-50
+                hover:border-[#0F766E]
+                hover:text-[#0F766E]
+                sm:px-5
+                sm:py-3
+                sm:text-xs
+                lg:px-7
+                lg:py-4
+                lg:text-base"
+            >
+                Treatments
+            </a>
+        </div>
+
+        <!-- =========================
+           TRUST / STATS
+        ========================== -->
+
+        <div
+            class="mt-7
+            flex
+            flex-wrap
+            items-center
+            gap-x-3
+            gap-y-3
+            sm:mt-9
+            sm:gap-x-5
+            lg:mt-12
+            lg:gap-x-8
+            lg:gap-y-5"
+        >
+            <div>
+                <p
+                    class="text-xl
+                    font-extrabold
+                    text-[#0F172A]
+                    sm:text-2xl
+                    lg:text-3xl"
+                >
+                    10+
+                </p>
+
+                <p
+                    class="text-[9px]
+                    font-semibold
+                    text-[#1E293B]
+                    sm:text-xs
+                    lg:text-sm"
+                >
+                    Years Experience
+                </p>
+            </div>
+
+            <div
+                class="h-8
+                w-px
+                bg-slate-300
+                sm:h-10"
+            >
+            </div>
+
+            <div>
+                <p
+                    class="text-xl
+                    font-extrabold
+                    text-[#0F172A]
+                    sm:text-2xl
+                    lg:text-3xl"
+                >
+                    1K+
+                </p>
+
+                <p
+                    class="text-[9px]
+                    font-semibold
+                    text-[#1E293B]
+                    sm:text-xs
+                    lg:text-sm"
+                >
+                    Patients Helped
+                </p>
+            </div>
+
+            <div
+                class="h-8
+                w-px
+                bg-slate-300
+                sm:h-10"
+            >
+            </div>
+
+            <div>
+                <p
+                    class="text-xl
+                    font-extrabold
+                    text-[#0F172A]
+                    sm:text-2xl
+                    lg:text-3xl"
+                >
+                    4.9/5
+                </p>
+
+                <p
+                    class="text-[9px]
+                    font-semibold
+                    text-[#1E293B]
+                    sm:text-xs
+                    lg:text-sm"
+                >
+                    Patient Rating
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- =========================
+       RIGHT : DOCTORS
+    ========================== -->
+
+    <div
+        class="pointer-events-none
+        absolute
+        bottom-0
+        right-[-25px]
+        z-20
+        h-[470px]
+        w-[52%]
+        sm:right-[-15px]
+        sm:h-[540px]
+        sm:w-[50%]
+        md:right-[-10px]
+        md:h-[610px]
+        md:w-[48%]
+        lg:right-[20px]
+        lg:h-[650px]
+        lg:w-[620px]"
+    >
+        <!-- Glow -->
+
+        <div
+            class="absolute
+            bottom-[8%]
+            left-[10%]
+            h-[260px]
+            w-[260px]
+            rounded-full
+            bg-white/70
+            blur-2xl
+            sm:h-[320px]
+            sm:w-[320px]
+            lg:h-[400px]
+            lg:w-[400px]"
+        >
+        </div>
+
+        <!-- Doctor Cutout -->
+
+        <img
+            src="/bothCutout.png"
+            alt="Healing Care Physiotherapy doctors"
+            class="absolute
+            bottom-0
+            right-0
+            h-auto
+            w-[145%]
+            max-w-none
+            object-contain
+            drop-shadow-[0_12px_30px_rgba(0,0,0,0.12)]
+            sm:w-[135%]
+            md:w-[130%]
+            lg:w-[620px]"
+        />
+    </div>
+</div>
+
+<!-- =========================
+   FULL WIDTH BOTTOM WAVE
+========================== -->
+
+<div
+    class="absolute
+    inset-x-0
+    bottom-0
+    z-[1]
+    h-[180px]
+    pointer-events-none
+    sm:h-[220px]
+    lg:h-[260px]"
+>
+    <svg
+        class="h-full w-full"
+        viewBox="0 0 1440 320"
+        preserveAspectRatio="none"
+    >
+        <defs>
+            <linearGradient
+                id="bottomWaveGrad"
+                x1="0%"
+                y1="0%"
+                x2="100%"
+                y2="0%"
+            >
+                <stop offset="0%" stop-color="#CCFBF1" stop-opacity="0.7"
+                ></stop>
+
+                <stop offset="50%" stop-color="#99F6E4" stop-opacity="0.55"
+                ></stop>
+
+                <stop offset="100%" stop-color="#5EEAD4" stop-opacity="0.65"
+                ></stop>
+            </linearGradient>
+        </defs>
+
+        <g transform="translate(1440 0) scale(-1 1)">
+            <path
+                fill="url(#bottomWaveGrad)"
+                d="
+                M0,125
+                C120,105 240,85 360,78
+                C480,70 600,78 720,110
+                C840,142 960,175 1080,178
+                C1200,181 1320,150 1380,130
+                L1440,112
+                L1440,320
+                L1380,320
+                C1320,320 1200,320 1080,320
+                C960,320 840,320 720,320
+                C600,320 480,320 360,320
+                C240,320 120,320 60,320
+                L0,320
+                Z"
+            ></path>
+        </g>
+    </svg>
+</div>
+
+<!-- =========================
+   WHITE BOTTOM TRANSITION
+========================== -->
+
+<div
+    class="absolute
+    bottom-[-1px]
+    left-0
+    z-30
+    w-full
+    pointer-events-none"
+>
+    <svg
+        class="h-14 w-full sm:h-16 lg:h-20"
+        viewBox="0 0 1440 100"
+        preserveAspectRatio="none"
+        xmlns="http://www.w3.org/2000/svg"
+    >
+        <path
+            d="
+            M0 55
+            C300 110 520 5 820 35
+            C1100 65 1250 90 1440 30
+            V100
+            H0
+            Z
+            "
+            fill="white"></path>
+    </svg>
+</div>
