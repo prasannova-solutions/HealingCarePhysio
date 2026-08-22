@@ -210,20 +210,19 @@
 
                     <!-- Eyebrow -->
                     <div
-                        class="relative mb-5 inline-flex items-center gap-2 rounded-full border border-cyan-100 bg-white/80 px-3.5 py-2 shadow-[0_6px_25px_rgba(15,23,42,0.05)] backdrop-blur"
+                        class="relative mb-5 inline-flex items-center gap-2 rounded-full border border-slate-200/90 bg-white/95 px-3.5 py-1.5 shadow-xs backdrop-blur"
                     >
                         <span class="relative flex h-2 w-2">
                             <span
-                                class="absolute inline-flex h-full w-full animate-ping rounded-full bg-cyan-400 opacity-60"
+                                class="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-60"
                             ></span>
-
                             <span
-                                class="relative h-2 w-2 rounded-full bg-cyan-500"
+                                class="relative h-2 w-2 rounded-full bg-emerald-500"
                             ></span>
                         </span>
 
                         <span
-                            class="text-[9px] font-bold uppercase tracking-[0.19em] text-cyan-700"
+                            class="text-xs font-bold uppercase tracking-wider text-slate-900"
                         >
                             Specialized Physiotherapy Care
                         </span>
@@ -231,34 +230,19 @@
 
                     <!-- Heading -->
                     <h2
-                        class="relative max-w-[340px] text-[36px] font-bold leading-[1.02] tracking-[-0.045em] text-slate-900"
+                        class="relative max-w-[340px] text-3xl sm:text-4xl font-extrabold leading-[1.08] tracking-tight text-slate-900"
                     >
                         Advanced
                         <span class="block"> Treatments, </span>
 
-                        <span class="relative inline-block text-cyan-600">
+                        <span class="relative inline-block text-[#0D9488]">
                             Personalized Care.
-
-                            <!-- underline -->
-                            <svg
-                                class="absolute -bottom-2 left-0 h-2.5 w-full"
-                                viewBox="0 0 250 10"
-                                preserveAspectRatio="none"
-                                fill="none"
-                            >
-                                <path
-                                    d="M2 7C62 1 180 1 248 6"
-                                    stroke="currentColor"
-                                    stroke-width="2"
-                                    stroke-linecap="round"
-                                    opacity=".35"></path>
-                            </svg>
                         </span>
                     </h2>
 
                     <!-- Description -->
                     <p
-                        class="relative mt-7 max-w-[340px] text-[13px] leading-6 text-slate-600"
+                        class="relative mt-5 max-w-[340px] text-sm leading-relaxed text-slate-600"
                     >
                         Expert physiotherapy combined with advanced techniques,
                         personalized around your condition, movement and
@@ -1201,24 +1185,29 @@
 
                 <div>
                     <div
-                        class="mb-5 inline-flex items-center gap-2 rounded-full border border-cyan-100 bg-white/80 px-4 py-2 shadow-sm backdrop-blur"
+                        class="mb-5 inline-flex items-center gap-2 rounded-full border border-slate-200/90 bg-white/95 px-4 py-2 shadow-xs backdrop-blur"
                     >
-                        <span
-                            class="h-2 w-2 rounded-full bg-cyan-500 shadow-[0_0_0_5px_rgba(6,182,212,0.10)]"
-                        ></span>
+                        <span class="relative flex h-2 w-2">
+                            <span
+                                class="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-60"
+                            ></span>
+                            <span
+                                class="relative h-2 w-2 rounded-full bg-emerald-500"
+                            ></span>
+                        </span>
 
                         <span
-                            class="text-[11px] font-bold uppercase tracking-[0.2em] text-cyan-700"
+                            class="text-xs font-bold uppercase tracking-wider text-slate-900"
                         >
                             Specialized Physiotherapy Care
                         </span>
                     </div>
 
                     <h2
-                        class="max-w-2xl text-5xl font-bold leading-[1.05] tracking-[-0.035em] text-slate-900 xl:text-6xl"
+                        class="max-w-2xl text-4xl font-extrabold leading-[1.08] tracking-tight text-slate-900 lg:text-5xl xl:text-6xl"
                     >
                         Advanced Treatments,
-                        <span class="block text-cyan-600">
+                        <span class="block text-[#0D9488]">
                             Personalized Care.
                         </span>
                     </h2>
@@ -2015,7 +2004,7 @@
                 {
                     threshold: 0.15,
                     rootMargin: "50px 0px 50px 0px",
-                }
+                },
             );
 
             videos.forEach((vid) => {
@@ -2035,7 +2024,7 @@
                 }
             });
         },
-        { passive: true }
+        { passive: true },
     );
 
     // Pause all when tab is not active to save battery & CPU
