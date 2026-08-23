@@ -4,176 +4,737 @@
 
 const gymFeatures = [
   {
-    icon: "📊",
-    title: "Free Body Mass (BMI & Body Fat) Analysis",
+    image:
+      "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=700&q=80",
+    title: "Free Body Mass Analysis",
+    shortTitle: "Body Analysis",
     badge: "Complimentary",
-    desc: "Complete body composition profiling measuring visceral fat, muscle mass symmetry, and basal metabolic rate to calibrate your fitness baseline.",
+    desc: "Complete body composition profiling measuring visceral fat, muscle mass symmetry, and metabolic health to establish your fitness baseline.",
   },
   {
-    icon: "🧖",
+    image:
+      "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=700&q=80",
     title: "Steam Bath & Recovery Hydrotherapy",
+    shortTitle: "Steam Recovery",
     badge: "Recovery Spa",
-    desc: "Therapeutic high-temperature steam bath to flush lactic acid, improve joint circulation, release deep muscle stiffness, and accelerate post-workout recovery.",
+    desc: "Therapeutic steam recovery designed to support circulation, reduce muscle stiffness, and help your body recover after training.",
   },
   {
-    icon: "👩",
+    image:
+      "https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=700&q=80",
     title: "Exclusive Dedicated Batches for Women",
+    shortTitle: "Women-Only",
     badge: "100% Privacy",
-    desc: "Safe, empowering, and completely private workout hours tailored specifically for women, guided by female trainers and certified health specialists.",
+    desc: "Private and empowering workout sessions designed specifically for women with dedicated guidance and a comfortable environment.",
   },
   {
-    icon: "🧘",
+    image:
+      "https://images.unsplash.com/photo-1545205597-3d9d02c29597?auto=format&fit=crop&w=700&q=80",
     title: "Yoga & Mat Pilates Sessions",
+    shortTitle: "Yoga & Pilates",
     badge: "Mind & Core",
-    desc: "Flexibility, core stabilization, and breathwork classes focused on improving spinal alignment, reducing stress, and building deep postural strength.",
+    desc: "Flexibility, core stability, posture improvement, and breathwork sessions focused on long-term movement health.",
   },
   {
-    icon: "💃",
+    image:
+      "https://images.unsplash.com/photo-1524594152303-9fd13543fe6e?auto=format&fit=crop&w=700&q=80",
     title: "High-Energy Zumba Dance Fitness",
+    shortTitle: "Zumba Fitness",
     badge: "Cardio Fun",
-    desc: "Dynamic, music-driven aerobic conditioning sessions designed to torch calories, improve cardiovascular endurance, and elevate daily stamina.",
+    desc: "Music-driven aerobic fitness sessions that improve cardiovascular endurance, energy levels, and overall stamina.",
   },
   {
-    icon: "🥗",
+    image:
+      "https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=700&q=80",
     title: "Clinical Diet & Weight Management",
+    shortTitle: "Clinical Diet",
     badge: "Certified Dietitian",
-    desc: "Personalized medical nutrition and sustainable weight loss blueprints crafted directly by Dr. Tejaswini Kasar (Certified Clinical Dietitian).",
+    desc: "Personalized nutrition and sustainable weight management guidance created around your health goals and lifestyle.",
   },
   {
-    icon: "🏋️",
+    image:
+      "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=700&q=80",
     title: "Advanced Medical-Grade Gym Equipment",
+    shortTitle: "Medical Equipment",
     badge: "Joint-Friendly",
-    desc: "State-of-the-art strength and cardio machines engineered to build athletic power without placing dangerous stress on recovering joints.",
+    desc: "Modern strength and cardio equipment selected to help build fitness while supporting safer movement and recovery.",
   },
   {
-    icon: "🏅",
+    image:
+      "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=700&q=80",
     title: "Experienced Health Coaches & Rehab Trainers",
+    shortTitle: "Expert Guidance",
     badge: "Expert Guided",
-    desc: "Certified trainers collaborating directly with physiotherapists to ensure safe form, zero re-injury risk, and measurable progress.",
+    desc: "Experienced trainers working alongside physiotherapy professionals to support safer form and measurable progress.",
   },
 ];
 ---
 
 <section
   id="matrix-gym"
-  class="relative overflow-hidden bg-[#f4faf9] py-20 sm:py-28 lg:py-32"
+  class="relative overflow-hidden bg-[#f4faf9] py-12 sm:py-20 lg:py-28"
 >
-  <!-- Decorative Glow Layer -->
+  <!-- Background decoration -->
   <div class="pointer-events-none absolute inset-0 overflow-hidden">
     <div
-      class="absolute -right-40 top-1/4 h-[500px] w-[500px] rounded-full bg-emerald-100/60 blur-[130px]"
-    >
-    </div>
+      class="absolute -right-32 top-20 h-72 w-72 rounded-full bg-emerald-100/60 blur-[100px]"
+    ></div>
+
     <div
-      class="absolute -left-40 bottom-1/4 h-[500px] w-[500px] rounded-full bg-teal-100/50 blur-[130px]"
-    >
-    </div>
+      class="absolute -left-32 bottom-20 h-72 w-72 rounded-full bg-teal-100/50 blur-[100px]"
+    ></div>
   </div>
 
   <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-    <!-- Header -->
-    <div class="max-w-3xl">
-      <div
-        class="inline-flex items-center gap-2 rounded-full border border-teal-200 bg-white/90 px-4 py-1.5 shadow-xs backdrop-blur"
-      >
-        <span class="h-2 w-2 rounded-full bg-emerald-500"></span>
-        <span
-          class="text-xs font-bold uppercase tracking-wider text-teal-900"
+
+    <!-- ================================================= -->
+    <!-- MOBILE HERO -->
+    <!-- ================================================= -->
+
+    <div class="sm:hidden">
+
+      <!-- Small Brand Row -->
+      <div class="flex items-center justify-between">
+
+        <div class="flex items-center gap-2.5">
+
+          <div
+            class="flex h-11 w-[78px] items-center justify-center overflow-hidden rounded-xl border border-teal-100 bg-white shadow-sm"
+          >
+            <img
+              src="/MatrixPhysioGymLogo.jpg"
+              alt="Matrix Physio Gym"
+              class="h-full w-full object-contain p-1"
+              loading="eager"
+              decoding="async"
+            />
+          </div>
+
+          <div>
+            <p class="text-[9px] font-bold uppercase tracking-[0.18em] text-teal-600">
+              Matrix Physio Gym
+            </p>
+
+            <p class="mt-0.5 text-[11px] font-medium text-slate-500">
+              Medical Fitness Center
+            </p>
+          </div>
+
+        </div>
+
+        <div
+          class="flex items-center gap-1.5 rounded-full border border-emerald-100 bg-white px-2.5 py-1.5 shadow-sm"
         >
-          Integrated Medical Fitness & Wellness
-        </span>
+          <span class="relative flex h-1.5 w-1.5">
+            <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-70"></span>
+            <span class="relative inline-flex h-1.5 w-1.5 rounded-full bg-emerald-500"></span>
+          </span>
+
+          <span class="text-[9px] font-bold text-emerald-700">
+            OPEN FOR MEMBERS
+          </span>
+        </div>
+
       </div>
 
-      <h2
-        class="mt-6 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl lg:text-5xl leading-[1.12]"
+
+      <!-- Mobile Hero Card -->
+      <div
+        class="relative mt-5 overflow-hidden rounded-[1.75rem] bg-slate-950 shadow-[0_20px_60px_rgba(15,23,42,0.18)]"
       >
-        Matrix Physio Gym & <br />
-        <span class="text-teal-700">Health Transformation Center</span>
-      </h2>
 
-      <p class="mt-5 text-base sm:text-lg leading-relaxed text-slate-600">
-        Where clinical rehabilitation meets athletic performance. Matrix Physio
-        Gym provides a doctor-supervised fitness ecosystem featuring steam bath
-        recovery, women's private batches, Zumba, Yoga, and personalized clinical
-        nutrition.
-      </p>
-    </div>
+        <!-- Background -->
+        <img
+          src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1000&q=80"
+          alt="Matrix Physio Gym"
+          class="absolute inset-0 h-full w-full object-cover object-center opacity-70"
+          loading="eager"
+          decoding="async"
+        />
 
-    <!-- Features 8-Grid -->
-    <div class="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-      {
-        gymFeatures.map((feat) => (
-          <div class="group flex flex-col justify-between rounded-3xl border border-slate-200/90 bg-white p-6 shadow-[0_8px_30px_rgba(15,118,110,0.04)] transition duration-300 hover:-translate-y-1.5 hover:border-teal-400 hover:shadow-[0_20px_40px_rgba(15,118,110,0.1)]">
-            <div>
-              <div class="flex items-center justify-between">
-                <span class="text-3xl">{feat.icon}</span>
-                <span class="rounded-full bg-teal-50 border border-teal-200/60 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-teal-800">
+        <div
+          class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-slate-950/20"
+        ></div>
+
+        <!-- Content -->
+        <div class="relative min-h-[310px] p-5">
+
+          <div
+            class="inline-flex items-center gap-2 rounded-full border border-teal-300/20 bg-slate-950/60 px-2.5 py-1 text-[9px] font-bold uppercase tracking-[0.14em] text-teal-200 backdrop-blur-sm"
+          >
+            <span class="h-1.5 w-1.5 rounded-full bg-teal-400"></span>
+            Integrated Medical Fitness
+          </div>
+
+
+          <!-- Bottom content -->
+          <div class="absolute bottom-5 left-5 right-5">
+
+            <p class="text-[10px] font-bold uppercase tracking-[0.16em] text-teal-300">
+              Rehabilitation × Performance
+            </p>
+
+            <h2
+              class="mt-2 text-[28px] font-extrabold leading-[1.05] tracking-tight text-white"
+            >
+              Train Better.
+              <span class="block text-teal-300">
+                Recover Smarter.
+              </span>
+            </h2>
+
+            <p class="mt-3 max-w-sm text-[12px] leading-relaxed text-slate-300">
+              A doctor-supervised fitness ecosystem designed for recovery,
+              strength, movement, and long-term health.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- Bottom Stats -->
+        <div
+          class="relative grid grid-cols-3 border-t border-white/10 bg-slate-950/75 backdrop-blur-md"
+        >
+
+          <div class="px-3 py-3 text-center">
+            <p class="text-[10px] font-bold text-white">
+              Doctor
+            </p>
+
+            <p class="mt-0.5 text-[8px] uppercase tracking-wide text-slate-400">
+              Supervised
+            </p>
+          </div>
+
+          <div class="border-x border-white/10 px-3 py-3 text-center">
+            <p class="text-[10px] font-bold text-white">
+              Rehab
+            </p>
+
+            <p class="mt-0.5 text-[8px] uppercase tracking-wide text-slate-400">
+              Focused
+            </p>
+          </div>
+
+          <div class="px-3 py-3 text-center">
+            <p class="text-[10px] font-bold text-white">
+              Complete
+            </p>
+
+            <p class="mt-0.5 text-[8px] uppercase tracking-wide text-slate-400">
+              Wellness
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- Mobile Section Intro -->
+      <div class="mt-9">
+
+        <div class="flex items-end justify-between gap-4">
+
+          <div>
+            <p class="text-[10px] font-bold uppercase tracking-[0.18em] text-teal-700">
+              Everything You Need
+            </p>
+
+            <h3 class="mt-1 text-2xl font-extrabold tracking-tight text-slate-900">
+              More than a gym.
+            </h3>
+          </div>
+
+          <div
+            class="mb-1 flex items-center gap-1.5 rounded-full bg-teal-50 px-2.5 py-1.5"
+          >
+            <svg
+              class="h-3 w-3 text-teal-600"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M7 17L17 7M17 7H9M17 7v8"
+              />
+            </svg>
+
+            <span class="text-[9px] font-bold text-teal-700">
+              SWIPE
+            </span>
+          </div>
+
+        </div>
+
+        <p class="mt-2 text-[12px] leading-relaxed text-slate-600">
+          Explore our complete medical fitness and recovery experience.
+        </p>
+
+      </div>
+
+
+      <!-- MOBILE HORIZONTAL EXPERIENCE -->
+      <div
+        class="matrix-mobile-scroll mt-4 flex gap-3 overflow-x-auto pb-3"
+      >
+
+        {
+          gymFeatures.map((feat, index) => (
+            <article
+              class="matrix-mobile-card relative shrink-0 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-[0_8px_25px_rgba(15,118,110,0.06)]"
+            >
+
+              <!-- Image -->
+              <div class="relative h-[115px] overflow-hidden">
+
+                <img
+                  src={feat.image}
+                  alt={feat.title}
+                  loading={index < 2 ? "eager" : "lazy"}
+                  decoding="async"
+                  class="h-full w-full object-cover"
+                />
+
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-950/10 to-transparent"
+                ></div>
+
+                <!-- Number -->
+                <span
+                  class="absolute left-2.5 top-2.5 flex h-6 w-6 items-center justify-center rounded-full border border-white/20 bg-slate-950/60 text-[9px] font-bold text-white backdrop-blur-md"
+                >
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+
+
+                <!-- Badge -->
+                <span
+                  class="absolute bottom-2 left-2.5 rounded-full bg-white/95 px-2 py-0.5 text-[7.5px] font-bold uppercase tracking-wide text-teal-800 shadow-sm"
+                >
                   {feat.badge}
                 </span>
+
               </div>
 
-              <h3 class="mt-5 text-base font-bold text-slate-900 group-hover:text-teal-800 transition-colors">
-                {feat.title}
-              </h3>
 
-              <p class="mt-2.5 text-xs leading-relaxed text-slate-600">
-                {feat.desc}
-              </p>
-            </div>
+              <!-- Content -->
+              <div class="p-3">
 
-            <div class="mt-5 pt-3 border-t border-slate-100 flex items-center text-[11px] font-semibold text-teal-700">
-              <span>Doctor Supervised</span>
-            </div>
-          </div>
-        ))
-      }
+                <h3 class="text-[13px] font-extrabold leading-snug text-slate-900 line-clamp-1">
+                  {feat.shortTitle}
+                </h3>
+
+                <p class="mt-1 text-[10.5px] leading-relaxed text-slate-600 line-clamp-2">
+                  {feat.desc}
+                </p>
+
+
+                <div
+                  class="mt-2.5 flex items-center gap-1.5 border-t border-slate-100 pt-2"
+                >
+
+                  <span class="flex h-4 w-4 items-center justify-center rounded-full bg-emerald-50">
+                    <svg
+                      class="h-2.5 w-2.5 text-emerald-600"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2.5"
+                        d="M5 13l4 4L19 7"
+                      />
+                    </svg>
+                  </span>
+
+                  <span class="text-[8.5px] font-bold uppercase tracking-wide text-teal-700">
+                    Professional Guidance
+                  </span>
+
+                </div>
+
+              </div>
+
+            </article>
+          ))
+        }
+
+      </div>
+
+
+      <!-- Mobile scroll progress -->
+      <div class="mt-1 flex items-center justify-between">
+
+        <div class="matrix-progress flex gap-1.5">
+          {
+            gymFeatures.map((_, index) => (
+              <span
+                class={`matrix-dot ${index === 0 ? "active" : ""}`}
+              ></span>
+            ))
+          }
+        </div>
+
+        <span class="text-[9px] font-semibold text-slate-400">
+          8 specialized experiences
+        </span>
+
+      </div>
+
     </div>
 
-    <!-- Free Body Composition Banner & Membership CTA -->
+
+    <!-- ================================================= -->
+    <!-- DESKTOP HERO -->
+    <!-- ================================================= -->
+
     <div
-      class="mt-14 rounded-3xl border border-teal-200 bg-gradient-to-r from-slate-900 via-teal-950 to-slate-900 p-8 sm:p-10 text-white shadow-xl"
+      class="relative hidden overflow-hidden rounded-[2rem] border border-teal-900/30 bg-slate-950 p-8 text-white shadow-xl sm:block lg:p-11"
     >
+
+      <img
+        src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1600&q=80"
+        alt="Matrix Physio Gym Background"
+        loading="eager"
+        decoding="async"
+        class="absolute inset-0 h-full w-full object-cover"
+      />
+
+      <div
+        class="absolute inset-0 bg-gradient-to-r from-slate-950/95 via-slate-950/70 to-slate-950/15"
+      ></div>
+
+      <div class="relative z-10 max-w-2xl">
+
+        <div class="flex items-center gap-3">
+
+          <img
+            src="/MatrixPhysioGymLogo.jpg"
+            alt="Matrix Physio Gym Logo"
+            class="aspect-[16/9] h-12 w-auto rounded-2xl border border-teal-400/40 bg-white/95 p-1 object-contain shadow-lg"
+            loading="eager"
+            decoding="async"
+          />
+
+          <div
+            class="inline-flex items-center gap-2 rounded-full border border-teal-400/30 bg-slate-950/60 px-3 py-1.5 text-xs font-bold uppercase tracking-[0.14em] text-teal-300 backdrop-blur-md"
+          >
+            <span class="h-2 w-2 rounded-full bg-emerald-400"></span>
+            Integrated Medical Fitness
+          </div>
+
+        </div>
+
+
+        <h2 class="mt-6 text-4xl font-extrabold leading-tight tracking-tight">
+          Matrix Physio Gym &
+          <span
+            class="block bg-gradient-to-r from-teal-300 via-emerald-300 to-teal-200 bg-clip-text text-transparent"
+          >
+            Health Transformation Center
+          </span>
+        </h2>
+
+
+        <p class="mt-4 text-base leading-relaxed text-slate-300">
+          Where clinical rehabilitation meets athletic performance. A
+          doctor-supervised fitness ecosystem for safe recovery, strength,
+          and long-term health.
+        </p>
+
+
+        <div class="mt-6 flex flex-wrap gap-2.5">
+
+          <span class="rounded-lg border border-white/10 bg-black/30 px-3 py-1.5 text-xs font-semibold text-teal-200">
+            Doctor Supervised
+          </span>
+
+          <span class="rounded-lg border border-white/10 bg-black/30 px-3 py-1.5 text-xs font-semibold text-teal-200">
+            Steam Recovery
+          </span>
+
+          <span class="rounded-lg border border-white/10 bg-black/30 px-3 py-1.5 text-xs font-semibold text-teal-200">
+            Women-Only Batches
+          </span>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- ================================================= -->
+    <!-- DESKTOP GRID -->
+    <!-- ================================================= -->
+
+    <div class="mt-14 hidden gap-6 sm:grid sm:grid-cols-2 lg:grid-cols-4">
+
+      {
+        gymFeatures.map((feat) => (
+          <article
+            class="group flex flex-col justify-between overflow-hidden rounded-3xl border border-slate-200/90 bg-white shadow-[0_8px_30px_rgba(15,118,110,0.04)] transition duration-300 hover:-translate-y-1.5 hover:border-teal-400 hover:shadow-[0_20px_40px_rgba(15,118,110,0.12)]"
+          >
+
+            <div>
+
+              <div class="relative h-44 overflow-hidden bg-slate-100">
+
+                <img
+                  src={feat.image}
+                  alt={feat.title}
+                  loading="lazy"
+                  decoding="async"
+                  class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                />
+
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent"></div>
+
+                <span
+                  class="absolute left-3.5 top-3.5 rounded-full bg-white/95 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-teal-800 shadow-sm"
+                >
+                  {feat.badge}
+                </span>
+
+              </div>
+
+
+              <div class="p-5">
+
+                <h3
+                  class="text-base font-bold leading-snug text-slate-900 transition-colors group-hover:text-teal-800"
+                >
+                  {feat.title}
+                </h3>
+
+                <p class="mt-2.5 text-xs leading-relaxed text-slate-600">
+                  {feat.desc}
+                </p>
+
+              </div>
+
+            </div>
+
+
+            <div class="px-5 pb-4">
+
+              <div
+                class="flex items-center justify-between border-t border-slate-100 pt-3 text-[11px] font-semibold text-teal-700"
+              >
+                <span class="flex items-center gap-1.5">
+                  <span class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span>
+                  Professional Guidance
+                </span>
+
+                <svg
+                  class="h-4 w-4 text-teal-500 opacity-0 transition-all duration-300 group-hover:translate-x-1 group-hover:opacity-100"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+
+              </div>
+
+            </div>
+
+          </article>
+        ))
+      }
+
+    </div>
+
+
+    <!-- ================================================= -->
+    <!-- CTA -->
+    <!-- ================================================= -->
+
+    <div
+      class="mt-10 rounded-[1.75rem] border border-teal-200 bg-gradient-to-br from-slate-900 via-teal-950 to-slate-900 p-5 shadow-xl sm:mt-14 sm:rounded-3xl sm:p-10"
+    >
+
       <div
         class="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between"
       >
-        <div class="space-y-2">
-          <div class="inline-flex items-center gap-2 rounded-full bg-emerald-500/20 border border-emerald-400/30 px-3 py-1 text-xs font-bold text-emerald-300">
-            <span>🎁 Limited Time Clinic Offer</span>
+
+        <div>
+
+          <div
+            class="inline-flex items-center gap-2 rounded-full border border-emerald-400/30 bg-emerald-500/15 px-3 py-1 text-[10px] font-bold text-emerald-300 sm:text-xs"
+          >
+            <span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
+            Complimentary Assessment
           </div>
-          <h4 class="text-2xl sm:text-3xl font-extrabold text-white">
-            Claim Your 100% Free Body Mass & BMI Analysis
+
+
+          <h4
+            class="mt-3 text-xl font-extrabold leading-tight text-white sm:text-3xl"
+          >
+            Claim Your Free
+            <span class="block text-teal-300">
+              Body Mass & BMI Analysis
+            </span>
           </h4>
-          <p class="text-xs sm:text-sm text-slate-300 max-w-2xl">
-            Visit Matrix Physio Gym on Bhadgaon Road, Gadhinglaj. Our health
-            coaches will analyze your body composition, muscle balance, and fat
-            percentage with zero obligation.
+
+
+          <p
+            class="mt-3 max-w-2xl text-xs leading-relaxed text-slate-300 sm:text-sm"
+          >
+            Visit Matrix Physio Gym on Bhadgaon Road, Gadhinglaj and begin
+            your journey with a professional body composition and fitness
+            assessment.
           </p>
+
         </div>
 
-        <div class="flex flex-wrap items-center gap-3 shrink-0">
+
+        <div class="flex flex-col gap-2 sm:flex-row lg:flex-col">
+
           <a
             href="tel:7798202182"
-            class="inline-flex items-center gap-2 rounded-xl bg-teal-400 px-6 py-3.5 text-xs sm:text-sm font-bold text-slate-950 shadow-lg shadow-teal-400/20 transition hover:bg-teal-300 hover:scale-105"
+            class="inline-flex items-center justify-center gap-2 rounded-xl bg-teal-400 px-5 py-3.5 text-xs font-bold text-slate-950 shadow-lg shadow-teal-400/20 transition hover:scale-[1.02] hover:bg-teal-300"
           >
-            <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 4V3z"/>
+            <svg
+              class="h-4 w-4"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 4V3z"
+              />
             </svg>
-            <span>Book Free Analysis</span>
+
+            Book Free Analysis
           </a>
+
 
           <a
             href="https://www.instagram.com/matrix_physio_gym/"
             target="_blank"
             rel="noopener noreferrer"
-            class="inline-flex items-center gap-2 rounded-xl border border-slate-700 bg-slate-800/80 px-5 py-3.5 text-xs sm:text-sm font-bold text-slate-200 transition hover:bg-slate-700 hover:text-white"
+            class="inline-flex items-center justify-center gap-2.5 rounded-xl border border-slate-700 bg-white/5 px-5 py-3.5 text-xs font-bold text-slate-200 transition hover:bg-white/10"
           >
-            <svg class="h-4 w-4 fill-current" viewBox="0 0 24 24">
-              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-            </svg>
+            <img
+              src="/MatrixPhysioGymLogo.jpg"
+              alt="Matrix Physio Gym"
+              class="aspect-[16/9] h-5 w-auto rounded border border-teal-400/40 bg-white/90 p-0.5 object-contain"
+              loading="lazy"
+              decoding="async"
+            />
+
             <span>@matrix_physio_gym</span>
           </a>
+
         </div>
+
       </div>
+
     </div>
+
   </div>
 </section>
+
+
+<style>
+  /* =====================================================
+     MOBILE HORIZONTAL EXPERIENCE
+  ===================================================== */
+
+  .matrix-mobile-scroll {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+
+    scroll-snap-type: x mandatory;
+    overscroll-behavior-x: contain;
+
+    padding-left: 1px;
+    padding-right: 28px;
+
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .matrix-mobile-scroll::-webkit-scrollbar {
+    display: none;
+  }
+
+  .matrix-mobile-card {
+    width: min(62vw, 235px);
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+  }
+
+  .matrix-dot {
+    display: block;
+    width: 6px;
+    height: 6px;
+    border-radius: 999px;
+    background: rgb(203 213 225);
+    transition:
+      width 0.25s ease,
+      background 0.25s ease;
+  }
+
+  .matrix-dot.active {
+    width: 20px;
+    background: rgb(13 148 136);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .matrix-dot {
+      transition: none;
+    }
+  }
+</style>
+
+
+<script>
+  const matrixScroll = document.querySelector(".matrix-mobile-scroll");
+  const matrixCards = document.querySelectorAll(".matrix-mobile-card");
+  const matrixDots = document.querySelectorAll(".matrix-dot");
+
+  if (matrixScroll && matrixCards.length && matrixDots.length) {
+    let ticking = false;
+
+    const updateActiveCard = () => {
+      const scrollLeft = matrixScroll.scrollLeft;
+      const cardWidth =
+        matrixCards[0].getBoundingClientRect().width + 12;
+
+      const activeIndex = Math.min(
+        matrixCards.length - 1,
+        Math.max(0, Math.round(scrollLeft / cardWidth))
+      );
+
+      matrixDots.forEach((dot, index) => {
+        dot.classList.toggle("active", index === activeIndex);
+      });
+
+      ticking = false;
+    };
+
+    matrixScroll.addEventListener(
+      "scroll",
+      () => {
+        if (!ticking) {
+          window.requestAnimationFrame(updateActiveCard);
+          ticking = true;
+        }
+      },
+      { passive: true }
+    );
+  }
+</script>

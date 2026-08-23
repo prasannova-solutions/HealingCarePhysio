@@ -1,180 +1,615 @@
 ---
 // RecoveryJourney.astro
-// 5-Step Evidence-Based Clinical Pathway from Assessment to Full Functional Independence
 
 const steps = [
   {
     step: "01",
-    title: "Comprehensive Clinical Assessment",
-    badge: "Day 1 Triage",
-    desc: "Every patient has unique physical needs. We conduct orthopedic biomechanics testing, posture analysis, neuro-tension evaluations, and range-of-motion mapping.",
-    points: [
-      "Root-cause diagnosis beyond surface symptoms",
-      "Muscle imbalance & joint mobility indexing",
-      "Clear, honest prognosis & recovery timeline",
-    ],
+    short: "Assess",
+    title: "Comprehensive Assessment",
+    badge: "Day 1",
+    image: "/StepByStepRecovery/1.png",
+    desc: "We identify the root cause through movement, posture, mobility and physical assessments.",
+    highlight: "Understand the real cause",
   },
   {
     step: "02",
-    title: "Personalized Treatment Design",
-    badge: "Custom Blueprint",
-    desc: "A tailored medical care plan combining world-class physical therapy, pain modulation modalities, and customized nutritional support.",
-    points: [
-      "Targeted pain relief protocols (zero reliance on painkillers)",
-      "Bespoke frequency & session scheduling",
-      "Integration of clinical dietary guidance",
-    ],
+    short: "Plan",
+    title: "Personalized Treatment",
+    badge: "Your Plan",
+    image: "/StepByStepRecovery/2.png",
+    desc: "Your recovery plan is tailored around your condition, goals and physical needs.",
+    highlight: "A plan built around you",
   },
   {
     step: "03",
-    title: "Advanced Clinical Rehabilitation",
-    badge: "Therapeutic Phase",
-    desc: "Utilizing advanced modalities including Robotic Traction, Dry Needling, Chiropractic adjustments, and Matrix Rhythm Therapy to restore tissue health.",
-    points: [
-      "Rapid reduction of acute & chronic inflammation",
-      "Spinal & joint decompression techniques",
-      "Deep trigger point & myofascial release",
-    ],
+    short: "Treat",
+    title: "Advanced Rehabilitation",
+    badge: "Recovery",
+    image: "/StepByStepRecovery/3.png",
+    desc: "Advanced physiotherapy techniques help reduce pain and improve movement.",
+    highlight: "Focused clinical care",
   },
   {
     step: "04",
-    title: "Strength, Mobility & Stability",
-    badge: "Active Rebuilding",
-    desc: "Rebuilding muscular endurance, joint stabilizers, balance, and proprioception to prevent relapse and support long-term movement confidence.",
-    points: [
-      "Corrective functional movement retraining",
-      "Core & postural stability conditioning",
-      "Balance and fall-prevention protocols",
-    ],
+    short: "Rebuild",
+    title: "Strength & Mobility",
+    badge: "Progress",
+    image: "/StepByStepRecovery/4.png",
+    desc: "We rebuild strength, stability and confidence for safer everyday movement.",
+    highlight: "Move stronger and safer",
   },
   {
     step: "05",
-    title: "Functional Recovery & Independence",
-    badge: "Lifelong Health",
-    desc: "Achieving total physical independence, seamless return to daily activities, workplace ergonomics, and return-to-sport clearance.",
-    points: [
-      "Confidence in walking, lifting, and bending",
-      "Return-to-play athletic testing",
-      "Personalized home exercise & injury prevention plan",
-    ],
+    short: "Recover",
+    title: "Functional Independence",
+    badge: "Long-Term",
+    image: "/StepByStepRecovery/5.png",
+    desc: "Return confidently to daily life and the activities that matter to you.",
+    highlight: "Confidence beyond treatment",
   },
 ];
 
 const patientGoals = [
-  { icon: "✨", text: "Move with zero or reduced pain" },
-  { icon: "💪", text: "Regain lost muscular strength" },
-  { icon: "🔄", text: "Restore full joint mobility & flexibility" },
-  { icon: "🚶", text: "Walk and climb stairs with total confidence" },
-  { icon: "🩹", text: "Rapid recovery from sports & post-op injuries" },
-  { icon: "🏃", text: "Safe return to exercise, gym & athletic sports" },
-  { icon: "🏡", text: "Perform household & daily work comfortably" },
-  { icon: "🌟", text: "Attain complete physical self-reliance" },
+  { icon: "01", title: "Less Pain", text: "Move with greater comfort" },
+  { icon: "02", title: "More Strength", text: "Regain physical confidence" },
+  { icon: "03", title: "Better Mobility", text: "Move more freely" },
+  { icon: "04", title: "Daily Independence", text: "Return to everyday life" },
+  { icon: "05", title: "Safe Recovery", text: "Progress with professional guidance" },
 ];
 ---
 
 <section
   id="approach"
-  class="relative overflow-hidden bg-white py-20 sm:py-28 lg:py-32"
+  class="recovery-section relative overflow-hidden bg-[#fcfdfd] py-16 sm:py-20 lg:py-24"
 >
-  <!-- Subtle Background Gradients -->
+  <!-- Background -->
   <div class="pointer-events-none absolute inset-0 overflow-hidden">
     <div
-      class="absolute left-1/2 top-0 h-[600px] w-[800px] -translate-x-1/2 rounded-full bg-gradient-to-b from-teal-50/80 via-cyan-50/40 to-transparent blur-3xl"
-    >
-    </div>
+      class="absolute left-1/2 top-[-180px] h-[500px] w-[850px] -translate-x-1/2 rounded-full bg-teal-100/30 blur-3xl"
+    ></div>
+
+    <div
+      class="absolute -right-32 top-1/2 h-72 w-72 rounded-full bg-cyan-100/30 blur-3xl"
+    ></div>
+
+    <div
+      class="absolute -left-32 bottom-0 h-72 w-72 rounded-full bg-teal-50 blur-3xl"
+    ></div>
   </div>
 
   <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-    <!-- Section Header -->
+
+    <!-- HEADER -->
+
     <div class="mx-auto max-w-3xl text-center">
+
       <div
-        class="inline-flex items-center gap-2 rounded-full border border-teal-200 bg-teal-50/80 px-4 py-1.5 backdrop-blur"
+        class="inline-flex items-center gap-2 rounded-full border border-teal-100 bg-white px-4 py-2 shadow-sm"
       >
-        <span class="h-2 w-2 rounded-full bg-teal-600"></span>
-        <span class="text-xs font-bold uppercase tracking-wider text-teal-900">
-          Our 5-Stage Clinical Framework
+        <span class="relative flex h-2 w-2">
+          <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-teal-400 opacity-50"></span>
+          <span class="relative inline-flex h-2 w-2 rounded-full bg-teal-600"></span>
+        </span>
+
+        <span class="text-[10px] font-bold uppercase tracking-[0.16em] text-teal-800 sm:text-xs">
+          Our Recovery Approach
         </span>
       </div>
 
       <h2
         class="mt-5 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl lg:text-5xl"
       >
-        From Diagnosis to <br />
-        <span class="text-teal-700">Full Physical Independence</span>
+        Your Recovery,
+        <span class="block text-teal-700">
+          Step by Step
+        </span>
       </h2>
 
-      <p class="mt-4 text-base sm:text-lg text-slate-600">
-        We don't offer generic exercises. Every treatment follows a strict,
-        measurable 5-stage medical trajectory to guarantee lasting results.
+      <p class="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-slate-600 sm:text-base lg:text-lg">
+        A structured clinical journey designed to take you from understanding
+        your problem to moving with greater confidence.
       </p>
+
     </div>
 
-    <!-- 5-Step Process Timeline Cards -->
-    <div class="mt-16 grid gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
-      {
-        steps.map((item, idx) => (
-          <div class="group relative flex flex-col justify-between rounded-3xl border border-slate-200/90 bg-slate-50/50 p-6 transition duration-300 hover:-translate-y-1.5 hover:border-teal-500/80 hover:bg-white hover:shadow-[0_20px_40px_rgba(15,118,110,0.08)]">
-            <div>
-              <!-- Step Header -->
-              <div class="flex items-center justify-between">
-                <span class="flex h-10 w-10 items-center justify-center rounded-2xl bg-teal-700 text-sm font-black text-white shadow-md shadow-teal-700/20 group-hover:scale-110 transition-transform">
+
+    <!-- DESKTOP JOURNEY -->
+
+    <div class="mt-12 hidden lg:block">
+
+      <div class="relative">
+
+        <!-- Journey line -->
+
+        <div
+          class="absolute left-[9%] right-[9%] top-[31px] h-px bg-gradient-to-r from-transparent via-teal-400 to-transparent"
+        ></div>
+
+        <div class="relative grid grid-cols-5 gap-3 xl:gap-4">
+
+          {
+            steps.map((item, idx) => (
+
+              <article class="group relative flex flex-col">
+
+                <!-- Step Number -->
+
+                <div class="relative z-10 mx-auto flex h-[62px] w-[62px] items-center justify-center rounded-[20px] border-4 border-[#fcfdfd] bg-white shadow-md">
+
+                  <div
+                    class={`flex h-10 w-10 items-center justify-center rounded-xl text-[11px] font-black ${
+                      idx === 4
+                        ? "bg-teal-700 text-white"
+                        : "bg-teal-50 text-teal-700"
+                    }`}
+                  >
+                    {item.step}
+                  </div>
+
+                </div>
+
+
+                <!-- CARD -->
+
+                <div
+                  class="mt-4 flex flex-1 flex-col overflow-hidden rounded-[22px] border border-slate-200/80 bg-white shadow-[0_10px_30px_rgba(15,23,42,0.045)] transition duration-300 group-hover:-translate-y-1.5 group-hover:border-teal-200 group-hover:shadow-[0_20px_40px_rgba(13,148,136,0.12)]"
+                >
+
+                  <!-- IMAGE (Vertical Portrait) -->
+                  <div class="relative aspect-[3/4] w-full overflow-hidden bg-slate-100">
+
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      loading="lazy"
+                      decoding="async"
+                      class="h-full w-full object-cover object-top transition duration-500 group-hover:scale-105"
+                    />
+
+                    <!-- Gradient Overlay -->
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-slate-950/15 to-transparent"></div>
+
+                    <!-- Badge -->
+                    <div class="absolute left-3 top-3">
+                      <span
+                        class="rounded-full bg-white/95 px-2.5 py-1 text-[9px] font-bold uppercase tracking-wide text-teal-700 shadow-sm backdrop-blur-sm"
+                      >
+                        {item.badge}
+                      </span>
+                    </div>
+
+                    <!-- Stage -->
+                    <div class="absolute bottom-3 left-3 right-3">
+                      <span class="text-[9px] font-black uppercase tracking-[0.14em] text-teal-200 drop-shadow-sm">
+                        Stage {item.step}
+                      </span>
+                    </div>
+
+                  </div>
+
+
+                  <!-- CONTENT -->
+
+                  <div class="flex flex-1 flex-col justify-between p-4">
+
+                    <div>
+                      <span
+                        class="text-[9px] font-black uppercase tracking-[0.14em] text-teal-600"
+                      >
+                        {item.short}
+                      </span>
+
+                      <h3
+                        class="mt-1 text-[13px] font-bold leading-snug text-slate-900 xl:text-[14px]"
+                      >
+                        {item.title}
+                      </h3>
+
+                      <p
+                        class="mt-2 line-clamp-3 text-[11px] leading-relaxed text-slate-500"
+                      >
+                        {item.desc}
+                      </p>
+                    </div>
+
+                    <div class="mt-3 flex items-center gap-1.5 border-t border-slate-100 pt-3">
+
+                      <span class="flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-teal-50 text-[8px] font-bold text-teal-700">
+                        ✓
+                      </span>
+
+                      <span class="text-[9px] font-bold leading-tight text-teal-700">
+                        {item.highlight}
+                      </span>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </article>
+            ))
+          }
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- MOBILE / TABLET SWIPE -->
+
+    <div class="recovery-scroll mt-8 lg:hidden">
+
+      <div class="flex gap-3 px-1 pb-4">
+
+        {
+          steps.map((item, idx) => (
+
+            <article
+              class="recovery-mobile-card group shrink-0 flex flex-col overflow-hidden rounded-[18px] border border-slate-200/90 bg-white shadow-[0_8px_25px_rgba(15,23,42,0.05)]"
+            >
+
+              <!-- IMAGE (Vertical Portrait) -->
+
+              <div class="relative aspect-[3/4] w-full overflow-hidden bg-slate-100">
+
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  loading="lazy"
+                  decoding="async"
+                  class="h-full w-full object-cover object-top"
+                />
+
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/75 via-slate-950/20 to-transparent"></div>
+
+
+                <!-- Number -->
+
+                <div
+                  class={`absolute left-2.5 top-2.5 flex h-7 w-7 items-center justify-center rounded-lg border border-white/40 text-[10px] font-black shadow-md backdrop-blur-md ${
+                    idx === 4
+                      ? "bg-teal-700 text-white"
+                      : "bg-white/95 text-teal-700"
+                  }`}
+                >
                   {item.step}
-                </span>
-                <span class="text-[10px] font-bold uppercase tracking-wider text-teal-800 bg-teal-50 border border-teal-200/60 rounded-full px-2.5 py-0.5">
+                </div>
+
+
+                <!-- Badge -->
+
+                <span
+                  class="absolute right-2.5 top-2.5 rounded-full bg-white/95 px-2 py-0.5 text-[8px] font-bold uppercase tracking-wide text-teal-700 shadow-sm backdrop-blur"
+                >
                   {item.badge}
                 </span>
+
+
+                <!-- Bottom image text -->
+
+                <div class="absolute bottom-2.5 left-2.5 right-2.5">
+
+                  <span
+                    class="text-[8px] font-black uppercase tracking-[0.14em] text-teal-200"
+                  >
+                    Stage {item.step} · {item.short}
+                  </span>
+
+                  <h3
+                    class="mt-0.5 text-[13px] font-bold leading-snug text-white line-clamp-2"
+                  >
+                    {item.title}
+                  </h3>
+
+                </div>
+
               </div>
 
-              <!-- Title -->
-              <h3 class="mt-5 text-lg font-bold text-slate-900 group-hover:text-teal-800 transition-colors">
-                {item.title}
-              </h3>
 
-              <!-- Description -->
-              <p class="mt-3 text-xs leading-relaxed text-slate-600">
-                {item.desc}
-              </p>
-            </div>
+              <!-- CONTENT -->
 
-            <!-- Bullet Points -->
-            <ul class="mt-5 space-y-2 border-t border-slate-200/60 pt-4 text-[11px] text-slate-600">
-              {item.points.map((p) => (
-                <li class="flex items-start gap-1.5">
-                  <span class="text-teal-600 font-bold">✓</span>
-                  <span>{p}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))
-      }
-    </div>
+              <div class="flex flex-1 flex-col justify-between p-3">
 
-    <!-- Patient Goals Bar (Page 2 from PDF) -->
-    <div
-      class="mt-16 rounded-3xl border border-teal-100 bg-[#f7fcfb] p-8 sm:p-10"
-    >
-      <div class="max-w-3xl">
-        <h3 class="text-xl sm:text-2xl font-extrabold text-slate-900">
-          Our Patient Recovery Commitments
-        </h3>
-        <p class="mt-2 text-sm text-slate-600">
-          Every session is designed to move you measurably closer to these 8 core physical milestones:
-        </p>
-      </div>
+                <p
+                  class="text-[11px] leading-relaxed text-slate-600 line-clamp-3"
+                >
+                  {item.desc}
+                </p>
 
-      <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        {
-          patientGoals.map((goal) => (
-            <div class="flex items-center gap-3 rounded-2xl border border-slate-200/70 bg-white p-3.5 shadow-2xs transition hover:border-teal-400">
-              <span class="text-lg">{goal.icon}</span>
-              <span class="text-xs font-semibold text-slate-800">
-                {goal.text}
-              </span>
-            </div>
+
+                <!-- Highlight -->
+
+                <div
+                  class="mt-2.5 flex items-center gap-1.5 rounded-lg border border-teal-100 bg-teal-50/70 px-2 py-1.5"
+                >
+
+                  <span class="flex h-3.5 w-3.5 shrink-0 items-center justify-center rounded-full bg-teal-600 text-[7px] font-bold text-white">
+                    ✓
+                  </span>
+
+                  <span class="text-[9.5px] font-bold text-teal-900 truncate">
+                    {item.highlight}
+                  </span>
+
+                </div>
+
+              </div>
+
+            </article>
           ))
         }
+
       </div>
+
     </div>
+
+
+    <!-- MOBILE SWIPE HINT -->
+
+    <div class="mt-1 flex items-center justify-center gap-2 lg:hidden">
+
+      <div class="h-1.5 w-12 rounded-full bg-teal-600"></div>
+      <div class="h-1.5 w-4 rounded-full bg-slate-200"></div>
+      <div class="h-1.5 w-4 rounded-full bg-slate-200"></div>
+
+      <span class="ml-2 text-[10px] font-semibold uppercase tracking-wider text-slate-400">
+        Swipe journey
+      </span>
+
+    </div>
+
+
+    <!-- RECOVERY OUTCOME -->
+
+    <div class="mt-16 sm:mt-20">
+
+      <div
+        class="relative overflow-hidden rounded-[30px] border border-teal-100 bg-[#f3fbf9] p-5 sm:p-8 lg:p-10"
+      >
+
+        <!-- Decoration -->
+
+        <div
+          class="pointer-events-none absolute right-[-80px] top-[-100px] h-64 w-64 rounded-full border-[30px] border-teal-100/50"
+        ></div>
+
+
+        <!-- Header -->
+
+        <div
+          class="relative flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between"
+        >
+
+          <div class="max-w-xl">
+
+            <div class="flex items-center gap-2">
+
+              <span class="h-2 w-2 rounded-full bg-teal-600"></span>
+
+              <span class="text-[10px] font-bold uppercase tracking-[0.16em] text-teal-700">
+                What We Work Towards
+              </span>
+
+            </div>
+
+            <h3
+              class="mt-3 text-2xl font-extrabold tracking-tight text-slate-900 sm:text-3xl"
+            >
+              Meaningful progress.
+              <span class="text-teal-700">
+                Real-world confidence.
+              </span>
+            </h3>
+
+            <p
+              class="mt-3 text-sm leading-relaxed text-slate-600"
+            >
+              Recovery is about more than finishing treatment — it's about
+              helping you return to the activities that matter in your everyday life.
+            </p>
+
+          </div>
+
+
+          <!-- Badge -->
+
+          <div
+            class="inline-flex shrink-0 items-center gap-3 self-start rounded-2xl border border-teal-100 bg-white px-4 py-3 shadow-sm"
+          >
+
+            <div
+              class="flex h-9 w-9 items-center justify-center rounded-xl bg-teal-700 text-sm font-bold text-white"
+            >
+              5
+            </div>
+
+            <div>
+
+              <div class="text-[10px] font-bold uppercase tracking-wider text-slate-400">
+                Core
+              </div>
+
+              <div class="text-xs font-bold text-slate-800">
+                Recovery Goals
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- GOALS -->
+
+        <div class="relative mt-6 sm:mt-7">
+
+          <div class="grid grid-cols-6 gap-2 sm:gap-3 lg:grid-cols-5 lg:gap-4">
+
+            {
+              patientGoals.map((goal, idx) => (
+
+                <div
+                  class={`recovery-goal-card flex items-center gap-2 sm:gap-3 rounded-xl sm:rounded-2xl border border-white bg-white/90 p-2 sm:p-3.5 shadow-[0_4px_14px_rgba(15,23,42,0.035)] ${
+                    idx < 3 ? "col-span-2 lg:col-span-1" : "col-span-3 lg:col-span-1"
+                  }`}
+                >
+
+                  <div
+                    class="flex h-7 w-7 sm:h-9 sm:w-9 shrink-0 items-center justify-center rounded-lg sm:rounded-xl bg-teal-50 text-[9px] sm:text-[10px] font-black text-teal-700"
+                  >
+                    {goal.icon}
+                  </div>
+
+                  <div class="min-w-0 flex-1">
+
+                    <div class="truncate text-[11px] sm:text-xs font-bold text-slate-900">
+                      {goal.title}
+                    </div>
+
+                    <div class="mt-0.5 truncate text-[9px] sm:text-[10px] leading-snug text-slate-500">
+                      {goal.text}
+                    </div>
+
+                  </div>
+
+                </div>
+
+              ))
+            }
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- BOTTOM REASSURANCE -->
+
+    <div
+      class="mx-auto mt-8 flex max-w-3xl flex-wrap items-center justify-center gap-x-5 gap-y-2 text-center"
+    >
+
+      <div class="flex items-center gap-2">
+        <span class="text-teal-600">✓</span>
+        <span class="text-xs font-medium text-slate-500">
+          Personalized care
+        </span>
+      </div>
+
+      <div class="flex items-center gap-2">
+        <span class="text-teal-600">✓</span>
+        <span class="text-xs font-medium text-slate-500">
+          Progress-focused rehabilitation
+        </span>
+      </div>
+
+      <div class="flex items-center gap-2">
+        <span class="text-teal-600">✓</span>
+        <span class="text-xs font-medium text-slate-500">
+          Long-term movement confidence
+        </span>
+      </div>
+
+    </div>
+
   </div>
+
 </section>
+
+
+<style>
+
+  /* =========================================
+     MOBILE JOURNEY
+  ========================================= */
+
+  .recovery-scroll {
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: none;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .recovery-scroll::-webkit-scrollbar {
+    display: none;
+  }
+
+  .recovery-mobile-card {
+    width: min(58vw, 215px);
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+  }
+
+
+
+
+
+  /* =========================================
+     TABLET
+  ========================================= */
+
+  @media (min-width: 640px) and (max-width: 1023px) {
+
+    .recovery-mobile-card {
+      width: min(35vw, 235px);
+    }
+
+  }
+
+
+  /* =========================================
+     PERFORMANCE
+  ========================================= */
+
+  .recovery-section {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 950px;
+  }
+
+  .recovery-mobile-card,
+  .recovery-goal-card {
+    contain: layout paint;
+  }
+
+
+  /* =========================================
+     TOUCH DEVICES
+  ========================================= */
+
+  @media (hover: none) {
+
+    .recovery-mobile-card,
+    .recovery-goal-card {
+      transform: none !important;
+    }
+
+  }
+
+
+  /* =========================================
+     REDUCED MOTION
+  ========================================= */
+
+  @media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+      scroll-behavior: auto !important;
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+
+  }
+
+</style>

@@ -3,47 +3,67 @@
 const currentYear = 2026;
 
 const quickLinks = [
-  { name: "Treatments", href: "#treatments" },
-  { name: "Conditions", href: "#conditions" },
+  { name: "Conditions & Symptoms", href: "#conditions" },
+  { name: "Treatments & Care", href: "#treatments" },
   { name: "Our 5-Stage Approach", href: "#approach" },
   { name: "Residential Hospital", href: "#residential-hospital" },
   { name: "Matrix Physio Gym", href: "#matrix-gym" },
   { name: "5-Year Story", href: "#our-story" },
-  { name: "Doctors", href: "#care-team" },
+  { name: "Meet the Doctors", href: "#care-team" },
   { name: "Patient Reviews", href: "#patient-stories" },
-  { name: "Appointment", href: "#appointment" },
+  { name: "Book Appointment", href: "#appointment" },
 ];
 
 const socialLinks = [
   {
-    name: "Clinic",
+    name: "Clinic Official",
     handle: "@healing_care_physio_matrix_gym",
     url: "https://www.instagram.com/healing_care_physio_matrix_gym",
     type: "instagram",
+    image: "/logo_.jpg",
+    imageFit: "object-contain",
+    imageBg: "bg-white",
+    alt: "Healing Care Physio Logo",
   },
   {
-    name: "Dr. Vrishabh",
+    name: "Dr. Vrishabh Kasar",
     handle: "@dr_vrishabh_kasar_",
     url: "https://www.instagram.com/dr_vrishabh_kasar_/",
     type: "instagram",
+    image: "/Avatar Dr vrishabh.png",
+    imageFit: "object-cover",
+    imageBg: "bg-slate-800",
+    alt: "Dr. Vrishabh Kasar Avatar",
   },
   {
-    name: "Dr. Tejaswini",
+    name: "Dr. Tejaswini Kasar",
     handle: "@dr.tejaswini_v_kasar",
     url: "https://www.instagram.com/dr.tejaswini_v_kasar/",
     type: "instagram",
+    image: "/Avatar Dr Tejashwini.png",
+    imageFit: "object-cover",
+    imageBg: "bg-slate-800",
+    alt: "Dr. Tejaswini Kasar Avatar",
   },
   {
     name: "Matrix Physio Gym",
     handle: "@matrix_physio_gym",
     url: "https://www.instagram.com/matrix_physio_gym/",
     type: "instagram",
+    image: "/MatrixPhysioGymLogo.jpg",
+    imageFit: "object-cover",
+    imageBg: "bg-slate-900",
+    alt: "Matrix Physio Gym Logo",
   },
   {
-    name: "YouTube",
+    name: "YouTube Videos",
     handle: "@healing_care_physio",
     url: "https://www.youtube.com/@healing_care_physio/videos",
     type: "youtube",
+    image: "/logo_.jpg",
+    imageFit: "object-contain",
+    imageBg: "bg-white",
+    alt: "Healing Care Physio YouTube",
   },
 ];
 ---
@@ -58,7 +78,7 @@ const socialLinks = [
       <div class="lg:col-span-4 space-y-4">
         <a href="#" class="inline-flex items-center gap-3 group">
           <div
-            class="w-10 h-10 rounded-xl overflow-hidden bg-white p-1 border border-teal-500/30 flex items-center justify-center shrink-0"
+            class="w-12 h-12 rounded-xl overflow-hidden bg-white p-1 border border-teal-500/30 flex items-center justify-center shrink-0 shadow-sm group-hover:border-teal-400 group-hover:scale-105 transition-all duration-200"
           >
             <img
               src="/logo_.jpg"
@@ -67,11 +87,16 @@ const socialLinks = [
               loading="lazy"
             />
           </div>
-          <span
-            class="text-xl font-bold tracking-tight text-white group-hover:text-teal-400 transition-colors"
-          >
-            Healing Care Physio
-          </span>
+          <div>
+            <span
+              class="text-xl font-bold tracking-tight text-white group-hover:text-teal-400 transition-colors block leading-tight"
+            >
+              Healing Care Physio
+            </span>
+            <span class="text-[11px] font-semibold text-teal-400 tracking-wider uppercase block">
+              & Matrix Physio Gym
+            </span>
+          </div>
         </a>
 
         <div
@@ -185,7 +210,7 @@ const socialLinks = [
       <!-- Col 4: Follow Us (lg: 3 cols) -->
       <div class="lg:col-span-3 space-y-3">
         <h4 class="text-xs font-bold uppercase tracking-wider text-slate-200">
-          Follow Us
+          Follow Us & Socials
         </h4>
         <ul class="space-y-2 text-xs">
           {
@@ -195,34 +220,47 @@ const socialLinks = [
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="flex items-center justify-between py-1.5 px-2.5 rounded-lg bg-slate-900/80 hover:bg-slate-850 border border-slate-800 hover:border-teal-500/40 text-slate-300 hover:text-white transition-all group"
+                  class="flex items-center justify-between p-2 rounded-xl bg-slate-900/90 hover:bg-slate-850 border border-slate-800 hover:border-teal-500/50 text-slate-300 hover:text-white transition-all duration-200 group shadow-xs"
                 >
-                  <div class="flex items-center gap-2 min-w-0">
-                    {social.type === "instagram" ? (
-                      <span class="w-4 h-4 rounded text-pink-400 shrink-0 flex items-center justify-center">
-                        <svg
-                          class="w-3.5 h-3.5 fill-current"
-                          viewBox="0 0 24 24"
-                        >
-                          <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-                        </svg>
+                  <div class="flex items-center gap-2.5 min-w-0">
+                    <!-- Avatar / Logo Image with Social Icon Badge -->
+                    <div class="relative shrink-0">
+                      <div class={`w-8 h-8 rounded-full overflow-hidden ${social.imageBg} border border-slate-700/80 group-hover:border-teal-400/80 transition-colors flex items-center justify-center p-0.5`}>
+                        <img
+                          src={social.image}
+                          alt={social.alt}
+                          class={`w-full h-full ${social.imageFit} rounded-full`}
+                          loading="lazy"
+                        />
+                      </div>
+                      <!-- Tiny Platform Badge -->
+                      {social.type === "instagram" ? (
+                        <div class="absolute -bottom-0.5 -right-0.5 w-3.5 h-3.5 rounded-full bg-gradient-to-tr from-[#f09433] via-[#dc2743] to-[#bc1888] flex items-center justify-center text-white ring-1 ring-slate-900">
+                          <svg class="w-2 h-2 fill-current" viewBox="0 0 24 24">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                          </svg>
+                        </div>
+                      ) : (
+                        <div class="absolute -bottom-0.5 -right-0.5 w-3.5 h-3.5 rounded-full bg-red-600 flex items-center justify-center text-white ring-1 ring-slate-900">
+                          <svg class="w-2 h-2 fill-current" viewBox="0 0 24 24">
+                            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                          </svg>
+                        </div>
+                      )}
+                    </div>
+
+                    <div class="flex flex-col min-w-0">
+                      <span class="font-semibold text-slate-200 group-hover:text-white truncate text-xs leading-tight">
+                        {social.name}
                       </span>
-                    ) : (
-                      <span class="w-4 h-4 rounded text-red-500 shrink-0 flex items-center justify-center">
-                        <svg
-                          class="w-3.5 h-3.5 fill-current"
-                          viewBox="0 0 24 24"
-                        >
-                          <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
-                        </svg>
+                      <span class="text-[10px] text-slate-400 group-hover:text-teal-400/90 truncate">
+                        {social.handle}
                       </span>
-                    )}
-                    <span class="font-medium text-slate-300 group-hover:text-white truncate">
-                      {social.name}
-                    </span>
+                    </div>
                   </div>
+
                   <svg
-                    class="w-3 h-3 text-slate-500 group-hover:text-teal-400 group-hover:translate-x-0.5 transition-all shrink-0 ml-1"
+                    class="w-3.5 h-3.5 text-slate-500 group-hover:text-teal-400 group-hover:translate-x-0.5 transition-all shrink-0 ml-1.5"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"

@@ -1,14 +1,13 @@
 ---
 // SymptomNavigator.astro
-// Interactive Conditions Directory & Body Symptom Navigator
 
 const categories = [
-  { id: "all", label: "All Conditions" },
+  { id: "all", label: "All Care" },
   { id: "spine", label: "Spine & Neck" },
   { id: "joints", label: "Joints & Knees" },
-  { id: "neuro", label: "Neurological & Stroke" },
-  { id: "sports", label: "Sports & Post-Surgery" },
-  { id: "women-pediatric", label: "Women & Specialized Care" },
+  { id: "neuro", label: "Neuro Rehab" },
+  { id: "sports", label: "Sports Rehab" },
+  { id: "women-pediatric", label: "Specialized Care" },
 ];
 
 const conditions = [
@@ -16,309 +15,881 @@ const conditions = [
     id: "back-pain",
     category: "spine",
     title: "Severe Back Pain & Sciatica",
-    region: "Lumbar Spine",
-    symptoms: ["Shooting leg pain", "Numbness", "Morning stiffness", "Inability to bend"],
-    recommendedTherapies: ["Robotic Traction", "Chiropractic Adjustment", "Dry Needling"],
-    recoveryTime: "2 to 6 Weeks",
+    region: "Spine Care",
+    image: "/SymptomNavigator/Severe Back Pain & Sciatica.jpg",
     description:
-      "Precision spinal decompression and gentle vertebral realignment to relieve pinched nerve roots, herniated discs, and chronic lower back spasms.",
+      "Specialized care for persistent back pain, nerve compression and sciatica.",
   },
   {
     id: "neck-pain",
     category: "spine",
     title: "Cervical Spondylosis & Neck Pain",
-    region: "Cervical Spine",
-    symptoms: ["Radiating shoulder ache", "Tension headaches", "Dizziness", "Restricted rotation"],
-    recommendedTherapies: ["Manual Mobilization", "Laser Therapy", "Ergonomic Posture Correction"],
-    recoveryTime: "1 to 4 Weeks",
+    region: "Neck Care",
+    image: "/SymptomNavigator/Cervical Spondylosis & Neck Pain.jpg",
     description:
-      "Targeted cervical decompression and deep soft-tissue release to eliminate tension headaches, numbness down the arm, and stiff neck posture.",
+      "Targeted treatment for neck stiffness, radiating pain and posture concerns.",
   },
   {
     id: "knee-osteoarthritis",
     category: "joints",
     title: "Knee Pain & Osteoarthritis",
-    region: "Knee Joint",
-    symptoms: ["Joint clicking", "Difficulty climbing stairs", "Swelling", "Morning rigidity"],
-    recommendedTherapies: ["Matrix Rhythm Therapy", "Strengthening Protocols", "Electro-Combo Therapy"],
-    recoveryTime: "3 to 8 Weeks",
+    region: "Joint Care",
+    image: "/SymptomNavigator/Knee Pain & Osteoarthritis.jpeg",
     description:
-      "Advanced non-surgical cartilage preservation protocols, muscular stabilization, and pain relief designed to delay or avoid knee replacement surgery.",
+      "Non-surgical rehabilitation focused on mobility, strength and pain relief.",
   },
   {
     id: "frozen-shoulder",
     category: "joints",
     title: "Frozen Shoulder & Rotator Cuff",
-    region: "Shoulder",
-    symptoms: ["Sharp reaching pain", "Sleep disturbance", "Severe motion loss", "Weak lift"],
-    recommendedTherapies: ["Advanced Dry Needling", "Joint Capsule Stretching", "Laser Therapy"],
-    recoveryTime: "4 to 8 Weeks",
+    region: "Shoulder Care",
+    image: "/SymptomNavigator/Frozen Shoulder & Rotator Cuff.webp",
     description:
-      "Gentle capsular distension techniques and neuromuscular activation to restore 360-degree pain-free shoulder elevation and reaching power.",
+      "Restore shoulder mobility, strength and comfortable everyday movement.",
   },
   {
     id: "stroke-paralysis",
     category: "neuro",
     title: "Stroke & Hemiplegia Rehabilitation",
-    region: "Neurological System",
-    symptoms: ["One-sided weakness", "Balance loss", "Gait disturbance", "Spasticity"],
-    recommendedTherapies: ["In-Patient Residential Rehab", "Gait Training", "Neuro-Muscular Facilitation"],
-    recoveryTime: "Custom Pathway",
+    region: "Neuro Rehabilitation",
+    image: "/SymptomNavigator/Stroke & Hemiplegia Rehabilitation.jpg",
     description:
-      "Comprehensive neuro-plasticity training, parallel-bar gait retraining, and residential in-patient therapy to help stroke survivors walk and live independently.",
+      "Structured rehabilitation focused on movement, balance and independence.",
   },
   {
     id: "sports-injuries",
     category: "sports",
-    title: "Sports Injuries & Ligament Tears (ACL/MCL)",
-    region: "Musculoskeletal",
-    symptoms: ["Sudden joint giving way", "Acute swelling", "Muscle tears", "Loss of explosive power"],
-    recommendedTherapies: ["Sports Medicine Triage", "Strength & Conditioning", "Return-to-Play Testing"],
-    recoveryTime: "4 to 12 Weeks",
+    title: "Sports Injuries & Ligament Tears",
+    region: "Sports Rehabilitation",
+    image: "/SymptomNavigator/Sports Injuries & Ligament Tears.jpg",
     description:
-      "Led by Dr. Vrishabh (MPT Sports Medicine) — high-performance athletic rehabilitation, biomechanics correction, and agility reconditioning for athletes.",
+      "Professional rehabilitation for athletes and active individuals.",
   },
   {
     id: "post-surgery-fracture",
     category: "sports",
-    title: "Post-Surgery & Total Joint Replacement Rehab",
-    region: "Post-Operative",
-    symptoms: ["Post-cast stiffness", "Surgical muscle atrophy", "Scar tissue tightness", "Limping"],
-    recommendedTherapies: ["Post-Op Mobility Protocols", "Continuous Passive Motion", "Gait Retraining"],
-    recoveryTime: "6 to 12 Weeks",
+    title: "Post-Surgery & Joint Replacement Rehab",
+    region: "Post-Operative Care",
+    image: "/SymptomNavigator/Post-Surgery & Total Joint Replacement Rehab.png",
     description:
-      "Early mobilization and structured progressive loading after knee/hip replacement, fracture fixation, or ligament reconstruction surgery.",
+      "Guided recovery after surgery, fractures and joint replacement.",
   },
   {
     id: "women-maternity",
     category: "women-pediatric",
     title: "Pre/Post-Natal & Women's Health Care",
-    region: "Pelvic & Core",
-    symptoms: ["Pregnancy pelvic girdle pain", "Postpartum diastasis recti", "Menopause joint aches"],
-    recommendedTherapies: ["Clinical Pilates", "Pelvic Floor Strengthening", "Certified Diet Planning"],
-    recoveryTime: "Personalized",
+    region: "Women's Health",
+    image: "/SymptomNavigator/PrePost-Natal & Women's Health Care.jpg",
     description:
-      "Under Dr. Tejaswini Kasar (BPT, Certified Dietitian) with dedicated private batches for women — safe trimester-safe exercise, core restoration, and menopause care.",
+      "Personalized movement and wellness support for every stage of life.",
   },
   {
     id: "cardiac-pediatric",
     category: "women-pediatric",
     title: "Cardiac & Pediatric Developmental Care",
-    region: "Cardio / Pediatric",
-    symptoms: ["Post-cardiac fatigue", "Child motor delay", "Postural deviations in kids"],
-    recommendedTherapies: ["Monitored Cardio Reconditioning", "Pediatric Motor Milestone Therapy"],
-    recoveryTime: "Ongoing Monitoring",
+    region: "Specialized Care",
+    image: "/SymptomNavigator/Cardiac Pediatric Developmental Care.jpg",
     description:
-      "Gentle cardiopulmonary endurance building for recovering cardiac patients and developmental motor therapy for growing children.",
+      "Gentle rehabilitation programs for cardiac recovery and child development.",
   },
 ];
 ---
 
 <section
   id="conditions"
-  class="relative overflow-hidden bg-[#f0f9f8] py-20 sm:py-24 lg:py-32"
+  class="relative overflow-hidden bg-[#f4fbfa] py-16 sm:py-20 lg:py-24"
 >
-  <!-- Background Highlights -->
+  <!-- =========================================
+       BACKGROUND
+  ========================================== -->
+
   <div class="pointer-events-none absolute inset-0 overflow-hidden">
     <div
-      class="absolute -right-40 top-20 h-96 w-96 rounded-full bg-teal-100/60 blur-3xl"
-    >
-    </div>
+      class="absolute -right-40 top-0 h-[450px] w-[450px] rounded-full bg-teal-200/25 blur-[110px]"
+    ></div>
+
     <div
-      class="absolute -left-40 bottom-20 h-96 w-96 rounded-full bg-cyan-100/50 blur-3xl"
-    >
-    </div>
+      class="absolute -left-40 bottom-0 h-[400px] w-[400px] rounded-full bg-cyan-200/20 blur-[100px]"
+    ></div>
   </div>
 
   <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-    <!-- Header -->
+
+    <!-- =========================================
+         HEADER
+    ========================================== -->
+
     <div class="mx-auto max-w-3xl text-center">
+
       <div
-        class="inline-flex items-center gap-2 rounded-full border border-teal-200 bg-white/90 px-4 py-1.5 shadow-xs backdrop-blur"
+        class="inline-flex items-center gap-2 rounded-full border border-teal-200 bg-white/80 px-4 py-2 shadow-sm backdrop-blur"
       >
-        <span class="h-2 w-2 rounded-full bg-teal-600"></span>
+        <span class="relative flex h-2 w-2">
+          <span
+            class="absolute inline-flex h-full w-full animate-ping rounded-full bg-teal-400 opacity-60"
+          ></span>
+
+          <span
+            class="relative inline-flex h-2 w-2 rounded-full bg-teal-600"
+          ></span>
+        </span>
+
         <span
-          class="text-xs font-bold uppercase tracking-wider text-teal-900"
+          class="text-[10px] font-bold uppercase tracking-[0.16em] text-teal-800"
         >
-          Clinical Directory & Symptom Navigator
+          Conditions We Treat
         </span>
       </div>
 
       <h2
-        class="mt-5 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl lg:text-5xl"
+        class="mt-5 text-3xl font-extrabold tracking-tight text-slate-950 sm:text-4xl lg:text-5xl"
       >
-        Conditions We Treat with
-        <span class="text-teal-700">Non-Surgical Precision</span>
+        Find Care for What
+        <span class="text-teal-700">You're Experiencing</span>
       </h2>
 
-      <p class="mt-4 text-base sm:text-lg text-slate-600">
-        Filter by body region or condition to see our specialized clinical
-        pathway and recommended therapies.
+      <p
+        class="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-slate-600 sm:text-base"
+      >
+        Explore the conditions we commonly help treat and discover
+        personalized physiotherapy designed around your recovery.
       </p>
+
     </div>
 
-    <!-- Category Filter Tabs -->
-    <div class="mt-10 flex flex-wrap items-center justify-center gap-2.5 sm:gap-3">
-      {
-        categories.map((cat, idx) => (
-          <button
-            type="button"
-            data-category-btn={cat.id}
-            class={`condition-filter-btn rounded-full px-5 py-2.5 text-xs sm:text-sm font-semibold transition-all duration-300 ${
-              idx === 0
-                ? "active-btn bg-teal-700 text-white shadow-md shadow-teal-700/20"
-                : "bg-white text-slate-700 hover:bg-teal-50 hover:text-teal-900 border border-slate-200/80"
-            }`}
-          >
-            {cat.label}
-          </button>
-        ))
-      }
+
+    <!-- =========================================
+         FILTERS
+    ========================================== -->
+
+    <div class="mt-10">
+
+      <div
+        id="condition-filters"
+        class="flex gap-2 overflow-x-auto pb-3 sm:justify-center sm:flex-wrap sm:overflow-visible"
+      >
+        {
+          categories.map((cat, index) => (
+            <button
+              type="button"
+              data-category-btn={cat.id}
+              class={`condition-filter-btn shrink-0 rounded-full px-4 py-2.5 text-xs font-semibold transition-all duration-300 ${
+                index === 0
+                  ? "active-filter bg-teal-700 text-white shadow-md shadow-teal-700/20"
+                  : "border border-slate-200 bg-white text-slate-600 hover:border-teal-300 hover:bg-teal-50 hover:text-teal-800"
+              }`}
+            >
+              {cat.label}
+            </button>
+          ))
+        }
+      </div>
+
     </div>
 
-    <!-- Condition Cards Grid -->
+
+    <!-- =========================================
+         CAROUSEL HEADER + CONTROLS
+    ========================================== -->
+
     <div
-      id="conditions-grid"
-      class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
+      class="mt-8 flex items-center justify-between gap-4 sm:mt-10"
     >
-      {
-        conditions.map((item) => (
-          <div
-            data-condition-card
-            data-cat={item.category}
-            class="group flex flex-col justify-between rounded-3xl border border-slate-200/90 bg-white p-6 shadow-[0_10px_30px_rgba(15,118,110,0.04)] transition-all duration-300 hover:-translate-y-1 hover:border-teal-400 hover:shadow-[0_20px_40px_rgba(15,118,110,0.12)]"
+
+      <div>
+
+        <p
+          class="text-[10px] font-bold uppercase tracking-[0.18em] text-teal-700"
+        >
+          Explore Our Care
+        </p>
+
+        <p class="mt-1 text-sm text-slate-500">
+          Swipe or use the arrows to explore.
+        </p>
+
+      </div>
+
+
+      <!-- Arrow Controls -->
+
+      <div class="flex items-center gap-2">
+
+        <button
+          id="conditions-prev"
+          type="button"
+          aria-label="Previous conditions"
+          class="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-700 shadow-sm transition-all duration-300 hover:border-teal-500 hover:bg-teal-700 hover:text-white active:scale-95"
+        >
+          <svg
+            class="h-4 w-4"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
           >
-            <div>
-              <!-- Top Row -->
-              <div class="flex items-center justify-between gap-2">
-                <span class="inline-flex items-center rounded-lg bg-teal-50 px-3 py-1 text-xs font-bold text-teal-800 border border-teal-100">
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M15 19l-7-7 7-7"
+            />
+          </svg>
+        </button>
+
+
+        <button
+          id="conditions-next"
+          type="button"
+          aria-label="Next conditions"
+          class="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-700 shadow-sm transition-all duration-300 hover:border-teal-500 hover:bg-teal-700 hover:text-white active:scale-95"
+        >
+          <svg
+            class="h-4 w-4"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M9 5l7 7-7 7"
+            />
+          </svg>
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <!-- =========================================
+         HORIZONTAL CAROUSEL
+    ========================================== -->
+
+    <div class="relative mt-5">
+
+      <!-- Edge fade desktop -->
+
+      <div
+        class="pointer-events-none absolute bottom-0 left-0 top-0 z-10 hidden w-10 bg-gradient-to-r from-[#f4fbfa] to-transparent lg:block"
+      ></div>
+
+      <div
+        class="pointer-events-none absolute bottom-0 right-0 top-0 z-10 hidden w-16 bg-gradient-to-l from-[#f4fbfa] to-transparent lg:block"
+      ></div>
+
+
+      <div
+        id="conditions-carousel"
+        class="
+          flex
+          gap-4
+          overflow-x-auto
+          scroll-smooth
+          pb-5
+          snap-x
+          snap-mandatory
+          sm:gap-5
+          lg:gap-6
+        "
+      >
+
+        {
+          conditions.map((item) => (
+
+            <article
+              data-condition-card
+              data-cat={item.category}
+              class="
+                condition-card
+                group
+                relative
+                flex
+                w-[260px]
+                min-w-[260px]
+                snap-start
+                flex-col
+                overflow-hidden
+                rounded-[22px]
+                border
+                border-white
+                bg-white
+                shadow-[0_10px_30px_rgba(15,118,110,0.07)]
+                transition-all
+                duration-300
+                hover:-translate-y-1
+                hover:shadow-[0_18px_45px_rgba(15,118,110,0.14)]
+                sm:w-[280px]
+                sm:min-w-[280px]
+                lg:w-[285px]
+                lg:min-w-[285px]
+              "
+            >
+
+              <!-- ================= IMAGE ================= -->
+
+              <div
+                class="relative h-[145px] overflow-hidden sm:h-[155px]"
+              >
+
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  loading="lazy"
+                  class="
+                    h-full
+                    w-full
+                    object-cover
+                    transition-transform
+                    duration-700
+                    group-hover:scale-105
+                  "
+                />
+
+                <!-- Image overlay -->
+
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-slate-950/50 via-transparent to-transparent"
+                ></div>
+
+
+                <!-- Region pill -->
+
+                <span
+                  class="
+                    absolute
+                    left-3
+                    top-3
+                    rounded-full
+                    border
+                    border-white/40
+                    bg-white/90
+                    px-2.5
+                    py-1
+                    text-[9px]
+                    font-bold
+                    uppercase
+                    tracking-wider
+                    text-teal-800
+                    backdrop-blur
+                  "
+                >
                   {item.region}
                 </span>
-                <span class="text-[11px] font-medium text-slate-400">
-                  Avg: {item.recoveryTime}
-                </span>
+
               </div>
 
-              <!-- Title -->
-              <h3 class="mt-4 text-xl font-bold text-slate-900 group-hover:text-teal-800 transition-colors">
-                {item.title}
-              </h3>
 
-              <p class="mt-2.5 text-xs sm:text-sm leading-relaxed text-slate-600">
-                {item.description}
-              </p>
+              <!-- ================= CONTENT ================= -->
 
-              <!-- Common Symptoms -->
-              <div class="mt-4 pt-4 border-t border-slate-100">
-                <p class="text-[11px] font-bold uppercase tracking-wider text-slate-400">
-                  Key Symptoms:
-                </p>
-                <div class="mt-2 flex flex-wrap gap-1.5">
-                  {item.symptoms.map((symp) => (
-                    <span class="rounded-md bg-slate-100 px-2 py-0.5 text-[11px] font-medium text-slate-700">
-                      • {symp}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
+              <div class="flex flex-1 flex-col p-4 sm:p-5">
 
-            <!-- Recommended Treatments & CTA -->
-            <div class="mt-6 pt-4 border-t border-slate-100">
-              <p class="text-[11px] font-bold uppercase tracking-wider text-teal-800">
-                Recommended Protocols:
-              </p>
-              <div class="mt-2 flex flex-wrap gap-1.5">
-                {item.recommendedTherapies.map((tx) => (
-                  <span class="rounded-full bg-teal-50/80 border border-teal-200/60 px-2.5 py-0.5 text-[11px] font-semibold text-teal-900">
-                    {tx}
-                  </span>
-                ))}
-              </div>
-
-              <a
-                href="#appointment"
-                class="mt-5 flex w-full items-center justify-center gap-2 rounded-xl bg-slate-900 py-2.5 text-xs font-bold text-white transition group-hover:bg-teal-700"
-              >
-                <span>Consult for This Condition</span>
-                <svg
-                  class="h-3.5 w-3.5 transition-transform group-hover:translate-x-1"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
+                <h3
+                  class="
+                    text-[15px]
+                    font-bold
+                    leading-snug
+                    tracking-tight
+                    text-slate-900
+                    transition-colors
+                    duration-300
+                    group-hover:text-teal-700
+                    sm:text-base
+                  "
                 >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M14 5l7 7m0 0l-7 7m7-7H3"
-                  />
-                </svg>
-              </a>
-            </div>
-          </div>
-        ))
-      }
+                  {item.title}
+                </h3>
+
+
+                <p
+                  class="
+                    mt-2
+                    text-xs
+                    leading-relaxed
+                    text-slate-500
+                  "
+                >
+                  {item.description}
+                </p>
+
+
+                <!-- Bottom CTA -->
+
+                <a
+                  href="#appointment"
+                  class="
+                    mt-4
+                    flex
+                    items-center
+                    justify-between
+                    border-t
+                    border-slate-100
+                    pt-3
+                    text-[11px]
+                    font-bold
+                    text-slate-700
+                    transition-colors
+                    hover:text-teal-700
+                  "
+                >
+
+                  <span>Explore care options</span>
+
+                  <span
+                    class="
+                      flex
+                      h-7
+                      w-7
+                      items-center
+                      justify-center
+                      rounded-full
+                      bg-teal-50
+                      text-sm
+                      text-teal-700
+                      transition-all
+                      duration-300
+                      group-hover:translate-x-1
+                      group-hover:bg-teal-700
+                      group-hover:text-white
+                    "
+                  >
+                    →
+                  </span>
+
+                </a>
+
+              </div>
+
+            </article>
+
+          ))
+        }
+
+      </div>
+
     </div>
 
-    <!-- Quick Help Banner -->
+
+    <!-- =========================================
+         BOTTOM HELP SECTION
+    ========================================== -->
+
     <div
-      class="mt-14 rounded-3xl bg-gradient-to-r from-teal-800 to-cyan-900 p-8 sm:p-10 text-white shadow-xl"
+      class="
+        relative
+        mt-10
+        overflow-hidden
+        rounded-[28px]
+        bg-slate-950
+        p-6
+        shadow-xl
+        sm:mt-12
+        sm:p-8
+        lg:p-9
+      "
     >
+
+      <!-- glow -->
+
       <div
-        class="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between"
+        class="
+          pointer-events-none
+          absolute
+          -right-24
+          -top-24
+          h-64
+          w-64
+          rounded-full
+          bg-teal-500/20
+          blur-[80px]
+        "
+      ></div>
+
+
+      <div
+        class="
+          relative
+          flex
+          flex-col
+          gap-5
+          lg:flex-row
+          lg:items-center
+          lg:justify-between
+        "
       >
-        <div>
-          <h4 class="text-xl sm:text-2xl font-extrabold text-white">
-            Not sure what is causing your pain?
-          </h4>
-          <p class="mt-2 text-sm text-teal-100 max-w-xl">
-            Our specialists conduct a comprehensive 45-minute musculoskeletal,
-            neurological, and postural assessment before prescribing any
-            treatment.
+
+        <div class="max-w-2xl">
+
+          <div
+            class="
+              flex
+              items-center
+              gap-2
+              text-[10px]
+              font-bold
+              uppercase
+              tracking-[0.16em]
+              text-teal-400
+            "
+          >
+            <span class="h-1.5 w-1.5 rounded-full bg-teal-400"></span>
+            Need guidance?
+          </div>
+
+
+          <h3
+            class="
+              mt-2
+              text-xl
+              font-bold
+              tracking-tight
+              text-white
+              sm:text-2xl
+            "
+          >
+            Not sure which treatment is right for you?
+          </h3>
+
+
+          <p
+            class="
+              mt-2
+              text-sm
+              leading-relaxed
+              text-slate-400
+            "
+          >
+            Tell us what you're experiencing. Our physiotherapy team will
+            help guide you toward the right next step.
           </p>
+
         </div>
 
+
         <a
-          href="tel:9607378772"
-          class="inline-flex shrink-0 items-center justify-center gap-2 rounded-2xl bg-white px-6 py-3.5 text-xs sm:text-sm font-bold text-slate-900 shadow-md transition hover:bg-teal-50 hover:scale-105"
+          href="#appointment"
+          class="
+            group
+            inline-flex
+            shrink-0
+            items-center
+            justify-center
+            gap-3
+            rounded-xl
+            bg-white
+            px-6
+            py-3.5
+            text-xs
+            font-bold
+            text-slate-900
+            shadow-lg
+            transition-all
+            duration-300
+            hover:-translate-y-1
+            hover:bg-teal-50
+          "
         >
-          <svg class="h-4 w-4 text-teal-700" fill="currentColor" viewBox="0 0 20 20">
-            <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 4V3z"/>
+
+          Talk to Our Team
+
+          <svg
+            class="
+              h-4
+              w-4
+              transition-transform
+              duration-300
+              group-hover:translate-x-1
+            "
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M13 5l7 7m0 0l-7 7m7-7H3"
+            />
           </svg>
-          <span>Speak to Dr. Kasar Directly</span>
+
         </a>
+
       </div>
+
     </div>
+
   </div>
 </section>
 
+
+<style>
+
+  /* Hide scrollbars */
+
+  #conditions-carousel::-webkit-scrollbar {
+    display: none;
+  }
+
+  #conditions-carousel {
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+
+  #condition-filters::-webkit-scrollbar {
+    display: none;
+  }
+
+  #condition-filters {
+    scrollbar-width: none;
+  }
+
+
+  /* Desktop mouse drag cursor */
+
+  #conditions-carousel {
+    cursor: grab;
+  }
+
+  #conditions-carousel.dragging {
+    cursor: grabbing;
+    scroll-snap-type: none;
+    user-select: none;
+  }
+
+
+  /* Mobile cards show next card slightly */
+
+  @media (max-width: 639px) {
+
+    #conditions-carousel {
+      padding-right: 2rem;
+    }
+
+  }
+
+
+  /* Desktop breathing room */
+
+  @media (min-width: 1024px) {
+
+    #conditions-carousel {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
+  }
+
+</style>
+
+
 <script>
-  // Filter Functionality
-  const filterButtons = document.querySelectorAll("[data-category-btn]");
-  const cards = document.querySelectorAll("[data-condition-card]");
 
-  filterButtons.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      const cat = btn.getAttribute("data-category-btn");
+  const carousel = document.getElementById(
+    "conditions-carousel"
+  );
 
-      // Update button active styles
-      filterButtons.forEach((b) => {
-        b.classList.remove("bg-teal-700", "text-white", "shadow-md", "shadow-teal-700/20");
-        b.classList.add("bg-white", "text-slate-700", "border", "border-slate-200/80");
-      });
-      btn.classList.add("bg-teal-700", "text-white", "shadow-md", "shadow-teal-700/20");
-      btn.classList.remove("bg-white", "text-slate-700", "border", "border-slate-200/80");
+  const prevButton = document.getElementById(
+    "conditions-prev"
+  );
 
-      // Filter cards
-      cards.forEach((card) => {
-        const cardCat = card.getAttribute("data-cat");
-        if (cat === "all" || cardCat === cat) {
-          (card as HTMLElement).style.display = "flex";
-        } else {
-          (card as HTMLElement).style.display = "none";
-        }
-      });
+  const nextButton = document.getElementById(
+    "conditions-next"
+  );
+
+  const filterButtons = document.querySelectorAll(
+    "[data-category-btn]"
+  );
+
+  const cards = document.querySelectorAll(
+    "[data-condition-card]"
+  );
+
+
+  /* =========================================
+     ARROW NAVIGATION
+  ========================================== */
+
+  function getScrollAmount() {
+
+    if (window.innerWidth >= 1024) {
+      return 310;
+    }
+
+    if (window.innerWidth >= 640) {
+      return 300;
+    }
+
+    return 280;
+  }
+
+
+  nextButton?.addEventListener("click", () => {
+
+    carousel?.scrollBy({
+      left: getScrollAmount(),
+      behavior: "smooth",
     });
+
   });
+
+
+  prevButton?.addEventListener("click", () => {
+
+    carousel?.scrollBy({
+      left: -getScrollAmount(),
+      behavior: "smooth",
+    });
+
+  });
+
+
+  /* =========================================
+     DESKTOP MOUSE DRAG
+  ========================================== */
+
+  let isDown = false;
+  let startX = 0;
+  let scrollLeft = 0;
+
+
+  carousel?.addEventListener("mousedown", (event) => {
+
+    isDown = true;
+
+    carousel.classList.add("dragging");
+
+    startX = event.pageX - carousel.offsetLeft;
+
+    scrollLeft = carousel.scrollLeft;
+
+  });
+
+
+  carousel?.addEventListener("mouseleave", () => {
+
+    isDown = false;
+
+    carousel.classList.remove("dragging");
+
+  });
+
+
+  carousel?.addEventListener("mouseup", () => {
+
+    isDown = false;
+
+    carousel.classList.remove("dragging");
+
+  });
+
+
+  carousel?.addEventListener("mousemove", (event) => {
+
+    if (!isDown) return;
+
+    event.preventDefault();
+
+    const x =
+      event.pageX - carousel.offsetLeft;
+
+    const walk =
+      (x - startX) * 1.5;
+
+    carousel.scrollLeft =
+      scrollLeft - walk;
+
+  });
+
+
+  /* =========================================
+     CATEGORY FILTER
+  ========================================== */
+
+  filterButtons.forEach((button) => {
+
+    button.addEventListener("click", () => {
+
+      const category =
+        button.getAttribute("data-category-btn");
+
+
+      /* Reset buttons */
+
+      filterButtons.forEach((btn) => {
+
+        btn.classList.remove(
+          "active-filter",
+          "bg-teal-700",
+          "text-white",
+          "shadow-md",
+          "shadow-teal-700/20"
+        );
+
+        btn.classList.add(
+          "border",
+          "border-slate-200",
+          "bg-white",
+          "text-slate-600"
+        );
+
+      });
+
+
+      /* Active button */
+
+      button.classList.add(
+        "active-filter",
+        "bg-teal-700",
+        "text-white",
+        "shadow-md",
+        "shadow-teal-700/20"
+      );
+
+      button.classList.remove(
+        "border",
+        "border-slate-200",
+        "bg-white",
+        "text-slate-600"
+      );
+
+
+      /* Filter cards */
+
+      cards.forEach((card) => {
+
+        const cardCategory =
+          card.getAttribute("data-cat");
+
+
+        if (
+          category === "all" ||
+          cardCategory === category
+        ) {
+
+          (card as HTMLElement).style.display =
+            "flex";
+
+        } else {
+
+          (card as HTMLElement).style.display =
+            "none";
+
+        }
+
+      });
+
+
+      /* Return carousel to beginning */
+
+      carousel?.scrollTo({
+        left: 0,
+        behavior: "smooth",
+      });
+
+    });
+
+  });
+
 </script>

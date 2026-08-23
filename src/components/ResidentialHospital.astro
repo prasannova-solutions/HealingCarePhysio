@@ -1,170 +1,491 @@
 ---
 // ResidentialHospital.astro
-// In-Patient Residential Rehabilitation Care for Regional & Distant Patients
 
 const hospitalFeatures = [
   {
-    icon: "🛏️",
+    image: "/ResidentialHospital/residential_recovery.jpg",
+    tag: "In-Patient Care",
     title: "24/7 Assisted Residential Recovery",
-    desc: "Comfortable in-patient stay facilities equipped for patients requiring dedicated assistance, daily monitoring, and intensive care.",
+    short: "Comfortable on-site stay with continuous assistance and monitoring.",
+    feature: "24/7 Supervision",
+    icon: "shield",
+    featured: true,
   },
   {
-    icon: "⚡",
-    title: "Multi-Session Daily Intensive Therapy",
-    desc: "Accelerated recovery protocols with 2 to 3 supervised physiotherapy sessions per day to dramatically shorten hospital stay and regain mobility.",
+    image: "/ResidentialHospital/intensive_therapy.jpg",
+    tag: "Accelerated Rehab",
+    title: "Multi-Session Daily Therapy",
+    short: "2–3 supervised therapy sessions designed for focused recovery.",
+    feature: "2–3 Sessions Daily",
+    icon: "bolt",
   },
   {
-    icon: "🗺️",
-    title: "Serving Maharashtra & Karnataka",
-    desc: "Specially established to support outstation families from Kolhapur, Belgaum, Nipani, Sankeshwar, Ajara, Chandgad, and rural belts.",
+    image: "/ResidentialHospital/regional_care.jpg",
+    tag: "Regional Outreach",
+    title: "Care for Outstation Families",
+    short: "Supporting patients travelling from Maharashtra and Karnataka.",
+    feature: "Outstation Support",
+    icon: "location",
   },
   {
-    icon: "🧠",
-    title: "Neurological & Stroke Care Center",
-    desc: "Specialized parallel bars, weight-supported harness, and neuro-developmental therapy for stroke, paralysis, and spinal trauma survivors.",
+    image: "/ResidentialHospital/neuro_stroke_care.jpg",
+    tag: "Neuro Rehab",
+    title: "Stroke & Neurological Recovery",
+    short: "Specialized rehabilitation for mobility, balance and gait training.",
+    feature: "Gait Training",
+    icon: "brain",
   },
   {
-    icon: "🩺",
-    title: "Post-Surgical Joint & Fracture Care",
-    desc: "Immediate post-op continuous passive motion (CPM), wound-safe mobilization, and rapid recovery after knee/hip replacement surgery.",
+    image: "/ResidentialHospital/post_surgical_care.jpg",
+    tag: "Post-Operative",
+    title: "Joint & Fracture Rehabilitation",
+    short: "Safe early mobilization following surgery and orthopedic treatment.",
+    feature: "CPM Mobilization",
+    icon: "joint",
   },
   {
-    icon: "🥗",
-    title: "Clinical Diet & In-House Nutrition",
-    desc: "Personalized anti-inflammatory meal planning managed directly by Dr. Tejaswini Kasar (Certified Clinical Dietitian) for fast tissue healing.",
+    image: "/ResidentialHospital/clinical_nutrition.jpg",
+    tag: "Diet & Healing",
+    title: "Clinical Nutrition Support",
+    short: "Dietitian-guided nutrition to support recovery and healing.",
+    feature: "Dietitian Guided",
+    icon: "nutrition",
   },
 ];
 ---
 
 <section
   id="residential-hospital"
-  class="relative overflow-hidden bg-gradient-to-b from-[#0a151d] to-[#0d1e29] py-20 sm:py-28 lg:py-32 text-white"
+  class="relative overflow-hidden bg-[#09141b] py-16 sm:py-20 lg:py-28 text-white"
 >
-  <!-- Background Glow Accents -->
-  <div class="pointer-events-none absolute inset-0 overflow-hidden">
+  <!-- Optimized Background -->
+  <div class="pointer-events-none absolute inset-0">
+    <div class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-teal-400/40 to-transparent"></div>
+
     <div
-      class="absolute left-1/4 top-10 h-[500px] w-[500px] rounded-full bg-teal-500/10 blur-[130px]"
-    >
-    </div>
+      class="absolute -right-40 top-20 h-[500px] w-[500px] rounded-full bg-teal-500/[0.06] blur-[100px]"
+    ></div>
+
     <div
-      class="absolute right-10 bottom-10 h-[400px] w-[400px] rounded-full bg-cyan-600/10 blur-[120px]"
-    >
-    </div>
+      class="absolute -left-40 bottom-0 h-[400px] w-[400px] rounded-full bg-cyan-500/[0.05] blur-[100px]"
+    ></div>
   </div>
 
   <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-    <!-- Header Grid -->
-    <div
-      class="grid items-end gap-8 lg:grid-cols-12 lg:gap-12 pb-12 border-b border-slate-800"
-    >
-      <div class="lg:col-span-7">
-        <div
-          class="inline-flex items-center gap-2 rounded-full border border-teal-500/40 bg-teal-950/70 px-4 py-1.5 backdrop-blur"
-        >
-          <span class="h-2 w-2 rounded-full bg-teal-400"></span>
-          <span
-            class="text-xs font-bold uppercase tracking-widest text-teal-300"
-          >
-            In-Patient Residential Hospital
-          </span>
-        </div>
 
-        <h2
-          class="mt-6 text-3xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-5xl leading-[1.1]"
-        >
-          Dedicated Residential Care for <br />
-          <span
-            class="bg-gradient-to-r from-teal-300 via-cyan-300 to-emerald-300 bg-clip-text text-transparent"
-          >
-            Distant & Complex Patients
-          </span>
-        </h2>
+    <!-- HEADER -->
+    <div class="max-w-4xl">
+
+      <div
+        class="inline-flex items-center gap-2 rounded-full border border-teal-400/20 bg-teal-400/[0.06] px-3.5 py-1.5"
+      >
+        <span class="relative flex h-2 w-2">
+          <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-teal-400 opacity-40"></span>
+          <span class="relative inline-flex h-2 w-2 rounded-full bg-teal-400"></span>
+        </span>
+
+        <span class="text-[10px] font-bold uppercase tracking-[0.18em] text-teal-300 sm:text-xs">
+          Residential Rehabilitation
+        </span>
       </div>
 
-      <div class="lg:col-span-5">
-        <p class="text-sm sm:text-base leading-relaxed text-slate-300">
-          Recognizing that patients from rural Kolhapur and Karnataka struggle
-          with daily commuting, Healing Care Physio established a dedicated
-          residential hospital. Patients stay on-site with round-the-clock
-          rehabilitation until they achieve complete physical independence.
+      <div class="mt-5 grid gap-5 lg:grid-cols-[1.3fr_.7fr] lg:items-end">
+
+        <div>
+          <h2
+            class="text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl lg:leading-[1.05]"
+          >
+            Recovery doesn't have to
+            <span class="block text-teal-300">
+              depend on distance.
+            </span>
+          </h2>
+        </div>
+
+        <p class="max-w-xl text-sm leading-relaxed text-slate-400 sm:text-base">
+          A dedicated residential rehabilitation experience for patients who
+          need focused, continuous care without the burden of daily travel.
         </p>
+
       </div>
     </div>
 
-    <!-- Hospital Features Grid -->
-    <div class="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-      {
-        hospitalFeatures.map((feat) => (
-          <div class="group relative flex flex-col justify-between rounded-3xl border border-slate-800/80 bg-slate-900/60 p-7 backdrop-blur-md transition duration-300 hover:border-teal-500/50 hover:bg-slate-900/90 hover:shadow-[0_20px_50px_rgba(13,148,136,0.12)]">
+
+    <!-- ========================= -->
+    <!-- DESKTOP LAYOUT -->
+    <!-- ========================= -->
+
+    <div class="mt-10 hidden lg:grid lg:grid-cols-12 lg:gap-5">
+
+      <!-- FEATURED CARD -->
+      <article
+        class="group relative col-span-7 min-h-[460px] overflow-hidden rounded-[2rem] border border-white/[0.08] bg-slate-900"
+      >
+        <img
+          src={hospitalFeatures[0].image}
+          alt={hospitalFeatures[0].title}
+          loading="lazy"
+          decoding="async"
+          class="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-[1.04]"
+        />
+
+        <div
+          class="absolute inset-0 bg-gradient-to-t from-[#081218] via-[#081218]/50 to-transparent"
+        ></div>
+
+        <div class="absolute inset-x-0 bottom-0 p-8 xl:p-10">
+
+          <div
+            class="mb-5 inline-flex items-center gap-2 rounded-full border border-teal-300/20 bg-black/30 px-3 py-1.5 text-xs font-semibold text-teal-200"
+          >
+            <span class="h-1.5 w-1.5 rounded-full bg-teal-300"></span>
+            {hospitalFeatures[0].tag}
+          </div>
+
+          <h3 class="max-w-xl text-3xl font-bold leading-tight text-white">
+            {hospitalFeatures[0].title}
+          </h3>
+
+          <p class="mt-3 max-w-lg text-sm leading-relaxed text-slate-300">
+            {hospitalFeatures[0].short}
+          </p>
+
+          <div class="mt-6 flex items-center gap-3">
+            <div
+              class="flex h-10 w-10 items-center justify-center rounded-xl bg-teal-400 text-slate-950"
+            >
+              <svg
+                class="h-5 w-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2.2"
+                  d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"
+                />
+              </svg>
+            </div>
+
             <div>
-              <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-teal-500/10 border border-teal-500/20 text-2xl group-hover:scale-110 transition-transform">
-                {feat.icon}
+              <div class="text-[10px] uppercase tracking-widest text-slate-400">
+                Dedicated Care
               </div>
 
-              <h3 class="mt-6 text-lg font-bold text-white group-hover:text-teal-300 transition-colors">
-                {feat.title}
+              <div class="text-sm font-bold text-white">
+                {hospitalFeatures[0].feature}
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </article>
+
+
+      <!-- COMPACT CARDS -->
+      <div class="col-span-5 grid grid-cols-2 gap-5">
+
+        {
+          hospitalFeatures.slice(1).map((feat, index) => (
+            <article
+              class:list={[
+                "group relative overflow-hidden rounded-[1.5rem] border border-white/[0.08] bg-[#0d1c24] transition duration-300 hover:-translate-y-1 hover:border-teal-400/30",
+                index === 4 ? "col-span-2" : "",
+              ]}
+            >
+
+              <div class:list={[
+                "relative overflow-hidden",
+                index === 4 ? "h-32" : "h-28",
+              ]}>
+                <img
+                  src={feat.image}
+                  alt={feat.title}
+                  loading="lazy"
+                  decoding="async"
+                  class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                />
+
+                <div class="absolute inset-0 bg-gradient-to-t from-[#0d1c24] to-transparent"></div>
+
+                <span
+                  class="absolute left-3 top-3 rounded-full bg-black/40 px-2.5 py-1 text-[9px] font-bold uppercase tracking-wider text-teal-200 backdrop-blur-sm"
+                >
+                  {feat.tag}
+                </span>
+              </div>
+
+              <div class="p-5">
+
+                <h3 class="text-sm font-bold leading-snug text-white">
+                  {feat.title}
+                </h3>
+
+                <p class="mt-2 text-xs leading-relaxed text-slate-400">
+                  {feat.short}
+                </p>
+
+                <div class="mt-4 flex items-center gap-2 text-[10px] font-bold uppercase tracking-wider text-teal-300">
+                  <span class="h-1.5 w-1.5 rounded-full bg-teal-400"></span>
+                  {feat.feature}
+                </div>
+
+              </div>
+            </article>
+          ))
+        }
+
+      </div>
+
+    </div>
+
+
+    <!-- ========================= -->
+    <!-- MOBILE SWIPE EXPERIENCE -->
+    <!-- ========================= -->
+
+    <div class="mt-8 lg:hidden">
+
+      <div
+        class="scrollbar-hide flex snap-x snap-mandatory gap-3 overflow-x-auto pb-3 -mx-4 px-4"
+      >
+        {
+          hospitalFeatures.map((feat, index) => (
+            <article
+              class:list={[
+                "group relative w-[68vw] max-w-[260px] shrink-0 snap-start overflow-hidden rounded-2xl border border-white/[0.08]",
+                index === 0
+                  ? "bg-gradient-to-b from-teal-950/80 to-[#0d1c24]"
+                  : "bg-[#0d1c24]",
+              ]}
+            >
+
+              <!-- Image -->
+              <div class="relative h-28 sm:h-32 overflow-hidden">
+
+                <img
+                  src={feat.image}
+                  alt={feat.title}
+                  loading={index < 2 ? "eager" : "lazy"}
+                  decoding="async"
+                  class="h-full w-full object-cover"
+                />
+
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-[#0d1c24] via-transparent to-black/20"
+                ></div>
+
+                <span
+                  class="absolute left-2.5 top-2.5 rounded-full border border-white/10 bg-black/50 px-2 py-0.5 text-[8px] font-bold uppercase tracking-wider text-teal-200 backdrop-blur-sm"
+                >
+                  {feat.tag}
+                </span>
+
+                <div
+                  class="absolute bottom-2 left-2.5 flex h-6 w-6 items-center justify-center rounded-full bg-teal-400 text-[10px] font-black text-slate-950 shadow-sm"
+                >
+                  {String(index + 1).padStart(2, "0")}
+                </div>
+
+              </div>
+
+              <!-- Content -->
+              <div class="p-3.5">
+
+                <h3 class="text-sm font-bold leading-snug text-white line-clamp-1">
+                  {feat.title}
+                </h3>
+
+                <p class="mt-1 text-[11px] leading-relaxed text-slate-400 line-clamp-2">
+                  {feat.short}
+                </p>
+
+                <div
+                  class="mt-3 flex items-center justify-between border-t border-white/[0.06] pt-2.5"
+                >
+                  <span class="text-[9px] font-bold uppercase tracking-wider text-teal-300">
+                    {feat.feature}
+                  </span>
+
+                  <svg
+                    class="h-3.5 w-3.5 text-teal-400"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M9 5l7 7-7 7"
+                    />
+                  </svg>
+                </div>
+
+              </div>
+            </article>
+          ))
+        }
+      </div>
+
+
+      <!-- Swipe Indicator -->
+      <div class="mt-2 flex items-center justify-between px-1">
+
+        <span class="text-[10px] font-bold uppercase tracking-[0.15em] text-slate-500">
+          Explore Residential Care
+        </span>
+
+        <div class="flex items-center gap-2 text-[10px] font-semibold text-teal-300">
+          <span>Swipe</span>
+
+          <svg
+            class="h-4 w-4"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M13 5l7 7-7 7m-7 0h11"
+            />
+          </svg>
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- ========================= -->
+    <!-- COMPACT ADMISSION CTA -->
+    <!-- ========================= -->
+
+    <div
+      class="mt-10 overflow-hidden rounded-[1.75rem] border border-teal-400/15 bg-[#0c2026]"
+    >
+
+      <div class="grid lg:grid-cols-[1fr_auto] lg:items-center">
+
+        <!-- Left -->
+        <div class="p-6 sm:p-8">
+
+          <div class="flex items-start gap-4">
+
+            <div
+              class="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-teal-400/10 text-teal-300"
+            >
+              <svg
+                class="h-5 w-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M17.657 16.657L13.414 20.9a2 2 0 01-2.828 0l-4.243-4.243a8 8 0 1111.314 0z"
+                />
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                />
+              </svg>
+            </div>
+
+            <div>
+              <span
+                class="text-[10px] font-bold uppercase tracking-[0.16em] text-teal-300"
+              >
+                Travelling for Treatment?
+              </span>
+
+              <h3 class="mt-1 text-xl font-bold text-white sm:text-2xl">
+                Plan your residential recovery with us.
               </h3>
 
-              <p class="mt-3 text-xs sm:text-sm leading-relaxed text-slate-300">
-                {feat.desc}
+              <p class="mt-2 max-w-2xl text-xs leading-relaxed text-slate-400 sm:text-sm">
+                Pre-admission consultation, residential stay arrangements and
+                structured rehabilitation planning for patients travelling from
+                Maharashtra and Karnataka.
               </p>
             </div>
 
-            <div class="mt-6 pt-4 border-t border-slate-800/70 flex items-center gap-2 text-xs font-semibold text-teal-400">
-              <span>Full Medical Supervision</span>
-              <span class="text-slate-600">•</span>
-              <span>24/7 Support</span>
-            </div>
           </div>
-        ))
-      }
-    </div>
 
-    <!-- Distance & Admission Action Bar -->
-    <div
-      class="mt-14 rounded-3xl border border-teal-500/30 bg-gradient-to-r from-teal-950/80 via-slate-900 to-teal-950/80 p-8 sm:p-10 backdrop-blur-xl"
-    >
-      <div
-        class="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between"
-      >
-        <div>
-          <div class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-teal-300">
-            <span>📍 Regional Coverage</span>
-          </div>
-          <h4 class="mt-1 text-xl sm:text-2xl font-bold text-white">
-            Traveling from Kolhapur, Belgaum, or Karnataka?
-          </h4>
-          <p class="mt-2 text-xs sm:text-sm text-slate-300 max-w-2xl">
-            We provide pre-admission evaluations, room bookings for patients and
-            accompanying attendants, and comprehensive in-patient recovery
-            packages.
-          </p>
         </div>
 
-        <div class="flex flex-wrap items-center gap-3">
+
+        <!-- Actions -->
+        <div
+          class="flex flex-col gap-2 border-t border-white/[0.06] p-5 sm:flex-row sm:p-6 lg:border-l lg:border-t-0"
+        >
+
           <a
             href="tel:9607378772"
-            class="inline-flex items-center gap-2 rounded-xl bg-teal-500 px-5 py-3 text-xs font-bold text-slate-950 shadow-lg shadow-teal-500/20 transition hover:bg-teal-400 hover:scale-105"
+            class="inline-flex items-center justify-center gap-2 rounded-xl bg-teal-400 px-5 py-3 text-xs font-bold text-[#071317] transition hover:bg-teal-300"
           >
-            <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 4V3z"/>
+            <svg
+              class="h-4 w-4"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 4V3z"
+              />
             </svg>
-            <span>Inquire About In-Patient Stay</span>
+
+            Call Us
           </a>
 
+
           <a
-            href="https://wa.me/919607378772?text=Hello%20Healing%20Care%20Physio,%20I%20would%20like%20to%20inquire%20about%20Residential%20Hospital%20In-Patient%20admission."
+            href="https://wa.me/919607378772?text=Hello%20Healing%20Care%20Physio,%20I%20would%20like%20to%20know%20more%20about%20Residential%20Hospital%20admission%20and%20in-patient%20rehabilitation."
             target="_blank"
             rel="noopener noreferrer"
-            class="inline-flex items-center gap-2 rounded-xl border border-teal-500/40 bg-teal-500/10 px-5 py-3 text-xs font-bold text-teal-300 transition hover:bg-teal-500/20"
+            class="inline-flex items-center justify-center gap-2 rounded-xl border border-teal-400/20 bg-teal-400/[0.05] px-5 py-3 text-xs font-bold text-teal-200 transition hover:bg-teal-400/10"
           >
-            <span>Chat on WhatsApp</span>
-            <svg class="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+            WhatsApp
+
+            <svg
+              class="h-4 w-4"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M13 5l7 7-7 7m0 0H3"
+              />
             </svg>
           </a>
+
         </div>
+
       </div>
+
     </div>
+
   </div>
 </section>
+
+
+<style>
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+</style>
