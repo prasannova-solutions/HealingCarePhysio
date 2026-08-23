@@ -1936,6 +1936,7 @@
 
 <script>
     let treatmentVideoObserver = null;
+    let treatmentScrollHandler = null;
 
     function initTreatmentVideos() {
         // 1. Setup Sound Toggle Buttons
@@ -1977,26 +1978,37 @@
         if (treatmentVideoObserver) {
             treatmentVideoObserver.disconnect();
         }
+        if (treatmentScrollHandler) {
+            window.removeEventListener("scroll", treatmentScrollHandler);
+        }
 
         if ("IntersectionObserver" in window) {
             treatmentVideoObserver = new IntersectionObserver(
                 (entries) => {
+                    const isMobile = window.innerWidth < 1024;
+                    
                     entries.forEach((entry) => {
                         const video = entry.target;
                         const isVisible = video.offsetParent !== null;
 
-                        if (entry.isIntersecting && isVisible) {
-                            if (video.paused) {
-                                const playPromise = video.play();
-                                if (playPromise !== undefined) {
-                                    playPromise.catch(() => {
-                                        // Ignore autoplay suppression or interruption
-                                    });
-                                }
+                        if (isMobile) {
+                            // On mobile, just track visibility. Play/pause is handled by scroll event.
+                            if (!entry.isIntersecting || !isVisible) {
+                                if (!video.paused) video.pause();
                             }
                         } else {
-                            if (!video.paused) {
-                                video.pause();
+                            // Desktop behavior
+                            if (entry.isIntersecting && isVisible) {
+                                if (video.paused) {
+                                    const playPromise = video.play();
+                                    if (playPromise !== undefined) {
+                                        playPromise.catch(() => {});
+                                    }
+                                }
+                            } else {
+                                if (!video.paused) {
+                                    video.pause();
+                                }
                             }
                         }
                     });
@@ -2011,6 +2023,60 @@
                 treatmentVideoObserver.observe(vid);
             });
         }
+
+        // 3. Mobile Scroll Handler for Center Video Playback
+        let ticking = false;
+        treatmentScrollHandler = () => {
+            if (window.innerWidth >= 1024) return; // Only apply on mobile
+            
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                    let closestVideo = null;
+                    let minDistance = Infinity;
+                    const viewportCenter = window.innerHeight / 2;
+
+                    // Find closest video to center
+                    videos.forEach((video) => {
+                        if (video.offsetParent === null) return; // not visible
+                        const rect = video.getBoundingClientRect();
+                        
+                        // Skip if outside viewport entirely
+                        if (rect.bottom < 0 || rect.top > window.innerHeight) return;
+                        
+                        const videoCenter = rect.top + rect.height / 2;
+                        const distance = Math.abs(viewportCenter - videoCenter);
+
+                        if (distance < minDistance) {
+                            minDistance = distance;
+                            closestVideo = video;
+                        }
+                    });
+
+                    // Play closest, pause others
+                    videos.forEach((video) => {
+                        if (video.offsetParent === null) return;
+                        if (video === closestVideo) {
+                            if (video.paused) {
+                                const playPromise = video.play();
+                                if (playPromise !== undefined) playPromise.catch(() => {});
+                            }
+                        } else {
+                            if (!video.paused) video.pause();
+                        }
+                    });
+
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        };
+
+        window.addEventListener("scroll", treatmentScrollHandler, { passive: true });
+        
+        // Initial check for mobile
+        if (window.innerWidth < 1024) {
+            treatmentScrollHandler();
+        }
     }
 
     // Handle viewport resize (mobile <-> desktop breakpoint switch)
@@ -2018,11 +2084,17 @@
         "resize",
         () => {
             const videos = document.querySelectorAll("#treatments video");
+            const isMobile = window.innerWidth < 1024;
+            
             videos.forEach((video) => {
                 if (video.offsetParent === null && !video.paused) {
                     video.pause();
                 }
             });
+            
+            if (isMobile && treatmentScrollHandler) {
+                treatmentScrollHandler();
+            }
         },
         { passive: true },
     );
@@ -2034,6 +2106,11 @@
             videos.forEach((video) => {
                 if (!video.paused) video.pause();
             });
+        } else {
+             // On tab active, re-trigger logic to play appropriate videos
+             if (window.innerWidth < 1024 && treatmentScrollHandler) {
+                 treatmentScrollHandler();
+             }
         }
     });
 
