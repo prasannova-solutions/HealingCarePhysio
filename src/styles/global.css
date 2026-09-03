@@ -11,21 +11,39 @@ body {
 }
 
 /* ============================================================
-   MOBILE SCROLL PERFORMANCE OPTIMIZATIONS
+   MOBILE SCROLL & GPU OPTIMIZATIONS
    ============================================================ */
 
-/* Disable expensive backdrop-filter on touch/mobile devices to eliminate GPU compositing bottlenecks while scrolling */
-@media (max-width: 768px), (hover: none) and (pointer: coarse) {
-  .backdrop-blur,
-  .backdrop-blur-xs,
-  .backdrop-blur-sm,
-  .backdrop-blur-md,
-  .backdrop-blur-lg,
-  .backdrop-blur-xl,
-  .backdrop-blur-2xl,
-  .backdrop-blur-3xl {
-    -webkit-backdrop-filter: none !important;
-    backdrop-filter: none !important;
+/* Disable all backdrop-filter blur rendering on entire site for zero compositor stalls */
+.backdrop-blur,
+.backdrop-blur-xs,
+.backdrop-blur-sm,
+.backdrop-blur-md,
+.backdrop-blur-lg,
+.backdrop-blur-xl,
+.backdrop-blur-2xl,
+.backdrop-blur-3xl {
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+}
+
+/* On mobile / touch screens, hide heavy decorative blur orbs and simplify heavy shadows */
+@media (max-width: 1024px), (hover: none) and (pointer: coarse) {
+  /* Hide decorative giant blur orbs that cause mobile rasterization bottleneck */
+  [class*="blur-"],
+  [class*="blur-["] {
+    display: none !important;
+  }
+
+  /* Simplify heavy drop shadows during scroll */
+  * {
+    text-shadow: none !important;
+  }
+
+  /* Prevent jittery animations on mobile */
+  .animate-pulse,
+  .animate-ping {
+    animation: none !important;
   }
 }
 
