@@ -33,44 +33,52 @@
         </div>
 
         <!-- =================================================
-             PILLAR CARDS (Distinct, High-Value Clinical Pillars)
+             PILLAR CARDS (Clean, Ultra-Fast Medical Pillars)
         ================================================== -->
         <div
-            class="mx-auto mt-8 sm:mt-10 grid max-w-6xl grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-5"
+            class="mx-auto mt-8 sm:mt-10 grid max-w-6xl grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-5"
         >
             <!-- =============================================
                  PILLAR 1: MPT & BPT Experts
             ============================================== -->
             <div
-                class="group relative overflow-hidden rounded-2xl
-                       border border-teal-100/90 bg-slate-900
-                       p-4 sm:p-6 min-h-[240px] sm:min-h-[280px] flex flex-col
-                       [contain:paint] [transform:translateZ(0)]"
+                class="group relative flex flex-col justify-between rounded-2xl
+                       border border-slate-200 bg-[#f8fcfb]
+                       p-4 sm:p-5 transition-colors duration-200
+                       hover:border-teal-300 hover:bg-white"
             >
-                <img
-                    src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=75&w=600"
-                    alt="MPT & BPT Specialists"
-                    loading="lazy"
-                    decoding="async"
-                    class="absolute inset-0 h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
-                />
-                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/45 to-slate-950/15 pointer-events-none"></div>
-                
-                <div class="relative z-10 flex flex-col h-full flex-1">
-                    <div class="flex items-start justify-end">
-                        <span class="text-[9px] sm:text-[10px] font-extrabold uppercase tracking-wider text-teal-900 bg-teal-100/95 px-2 sm:px-2.5 py-1 rounded-full">
+                <div>
+                    <div class="flex items-center justify-between gap-2">
+                        <div
+                            class="flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center rounded-xl bg-teal-100/80 text-teal-700"
+                        >
+                            <svg
+                                class="h-5 w-5"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="1.8"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            >
+                                <path d="M12 2l3 7h7l-5.5 4.5 2 7.5-6.5-5-6.5 5 2-7.5L2 9h7z"></path>
+                            </svg>
+                        </div>
+
+                        <span
+                            class="text-[9px] sm:text-[10px] font-bold uppercase tracking-wider text-teal-800 bg-teal-50 border border-teal-100 px-2 py-0.5 rounded-full"
+                        >
                             Expert Led
                         </span>
                     </div>
 
-                    <div class="mt-auto pt-4">
-                        <h3 class="text-sm sm:text-base font-bold text-white leading-snug">
-                            MPT & BPT Specialists
-                        </h3>
-                        <p class="mt-1.5 text-[11px] sm:text-sm text-slate-200 leading-relaxed font-medium">
-                            Dedicated masters in Sports Medicine and clinical rehabilitation tailored to your specific condition.
-                        </p>
-                    </div>
+                    <h3 class="mt-4 text-sm sm:text-base font-bold text-slate-900 leading-snug">
+                        MPT & BPT Specialists
+                    </h3>
+
+                    <p class="mt-1.5 text-[11px] sm:text-xs text-slate-600 leading-relaxed">
+                        Dedicated masters in Sports Medicine and clinical rehabilitation tailored to your specific condition.
+                    </p>
                 </div>
             </div>
 
@@ -78,35 +86,44 @@
                  PILLAR 2: Multi-Disciplinary Care
             ============================================== -->
             <div
-                class="group relative overflow-hidden rounded-2xl
-                       border border-teal-100/90 bg-slate-900
-                       p-4 sm:p-6 min-h-[240px] sm:min-h-[280px] flex flex-col
-                       [contain:paint] [transform:translateZ(0)]"
+                class="group relative flex flex-col justify-between rounded-2xl
+                       border border-slate-200 bg-[#f8fcfb]
+                       p-4 sm:p-5 transition-colors duration-200
+                       hover:border-teal-300 hover:bg-white"
             >
-                <img
-                    src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&fit=crop&q=75&w=600"
-                    alt="Ortho Neuro Sports Care"
-                    loading="lazy"
-                    decoding="async"
-                    class="absolute inset-0 h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
-                />
-                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/45 to-slate-950/15 pointer-events-none"></div>
+                <div>
+                    <div class="flex items-center justify-between gap-2">
+                        <div
+                            class="flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center rounded-xl bg-teal-100/80 text-teal-700"
+                        >
+                            <svg
+                                class="h-5 w-5"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="1.8"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            >
+                                <circle cx="12" cy="12" r="9"></circle>
+                                <path d="M12 8v8M8 12h8"></path>
+                            </svg>
+                        </div>
 
-                <div class="relative z-10 flex flex-col h-full flex-1">
-                    <div class="flex items-start justify-end">
-                        <span class="text-[9px] sm:text-[10px] font-extrabold uppercase tracking-wider text-teal-900 bg-teal-100/95 px-2 sm:px-2.5 py-1 rounded-full">
+                        <span
+                            class="text-[9px] sm:text-[10px] font-bold uppercase tracking-wider text-teal-800 bg-teal-50 border border-teal-100 px-2 py-0.5 rounded-full"
+                        >
                             Complete Care
                         </span>
                     </div>
 
-                    <div class="mt-auto pt-4">
-                        <h3 class="text-sm sm:text-base font-bold text-white leading-snug">
-                            Ortho · Neuro · Sports
-                        </h3>
-                        <p class="mt-1.5 text-[11px] sm:text-sm text-slate-200 leading-relaxed font-medium">
-                            Evidence-based treatment protocols for spine issues, joint pain, paralysis recovery, and sports injuries.
-                        </p>
-                    </div>
+                    <h3 class="mt-4 text-sm sm:text-base font-bold text-slate-900 leading-snug">
+                        Ortho · Neuro · Sports
+                    </h3>
+
+                    <p class="mt-1.5 text-[11px] sm:text-xs text-slate-600 leading-relaxed">
+                        Evidence-based treatment protocols for spine issues, joint pain, paralysis recovery, and sports injuries.
+                    </p>
                 </div>
             </div>
 
@@ -114,35 +131,45 @@
                  PILLAR 3: In-Patient Hospital Stay
             ============================================== -->
             <div
-                class="group relative overflow-hidden rounded-2xl
-                       border border-teal-100/90 bg-slate-900
-                       p-4 sm:p-6 min-h-[240px] sm:min-h-[280px] flex flex-col
-                       [contain:paint] [transform:translateZ(0)]"
+                class="group relative flex flex-col justify-between rounded-2xl
+                       border border-slate-200 bg-[#f8fcfb]
+                       p-4 sm:p-5 transition-colors duration-200
+                       hover:border-teal-300 hover:bg-white"
             >
-                <img
-                    src="/ResidentialHospital/residential_recovery.jpg"
-                    alt="Residential Hospital Recovery"
-                    loading="lazy"
-                    decoding="async"
-                    class="absolute inset-0 h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
-                />
-                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/45 to-slate-950/15 pointer-events-none"></div>
+                <div>
+                    <div class="flex items-center justify-between gap-2">
+                        <div
+                            class="flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center rounded-xl bg-teal-100/80 text-teal-700"
+                        >
+                            <svg
+                                class="h-5 w-5"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="1.8"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            >
+                                <path d="M3 7v11a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V7"></path>
+                                <path d="M12 3v8"></path>
+                                <path d="M8 7h8"></path>
+                            </svg>
+                        </div>
 
-                <div class="relative z-10 flex flex-col h-full flex-1">
-                    <div class="flex items-start justify-end">
-                        <span class="text-[9px] sm:text-[10px] font-extrabold uppercase tracking-wider text-teal-900 bg-teal-100/95 px-2 sm:px-2.5 py-1 rounded-full">
+                        <span
+                            class="text-[9px] sm:text-[10px] font-bold uppercase tracking-wider text-teal-800 bg-teal-50 border border-teal-100 px-2 py-0.5 rounded-full"
+                        >
                             24/7 Facility
                         </span>
                     </div>
 
-                    <div class="mt-auto pt-4">
-                        <h3 class="text-sm sm:text-base font-bold text-white leading-snug">
-                            Residential Hospital
-                        </h3>
-                        <p class="mt-1.5 text-[11px] sm:text-sm text-slate-200 leading-relaxed font-medium">
-                            Assisted in-patient stay with 2-3 daily intensive sessions for outstation and stroke recovery patients.
-                        </p>
-                    </div>
+                    <h3 class="mt-4 text-sm sm:text-base font-bold text-slate-900 leading-snug">
+                        Residential Hospital
+                    </h3>
+
+                    <p class="mt-1.5 text-[11px] sm:text-xs text-slate-600 leading-relaxed">
+                        Assisted in-patient stay with 2–3 daily intensive sessions for outstation and stroke recovery patients.
+                    </p>
                 </div>
             </div>
 
@@ -150,35 +177,47 @@
                  PILLAR 4: Matrix Gym & Medical Fitness
             ============================================== -->
             <div
-                class="group relative overflow-hidden rounded-2xl
-                       border border-teal-100/90 bg-slate-900
-                       p-4 sm:p-6 min-h-[240px] sm:min-h-[280px] flex flex-col
-                       [contain:paint] [transform:translateZ(0)]"
+                class="group relative flex flex-col justify-between rounded-2xl
+                       border border-slate-200 bg-[#f8fcfb]
+                       p-4 sm:p-5 transition-colors duration-200
+                       hover:border-teal-300 hover:bg-white"
             >
-                <img
-                    src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&q=75&w=600"
-                    alt="Matrix Physio Gym"
-                    loading="lazy"
-                    decoding="async"
-                    class="absolute inset-0 h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
-                />
-                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/45 to-slate-950/15 pointer-events-none"></div>
+                <div>
+                    <div class="flex items-center justify-between gap-2">
+                        <div
+                            class="flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center rounded-xl bg-teal-100/80 text-teal-700"
+                        >
+                            <svg
+                                class="h-5 w-5"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="1.8"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            >
+                                <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
+                                <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
+                                <line x1="6" y1="1" x2="6" y2="4"></line>
+                                <line x1="10" y1="1" x2="10" y2="4"></line>
+                                <line x1="14" y1="1" x2="14" y2="4"></line>
+                            </svg>
+                        </div>
 
-                <div class="relative z-10 flex flex-col h-full flex-1">
-                    <div class="flex items-start justify-end">
-                        <span class="text-[9px] sm:text-[10px] font-extrabold uppercase tracking-wider text-teal-900 bg-teal-100/95 px-2 sm:px-2.5 py-1 rounded-full">
+                        <span
+                            class="text-[9px] sm:text-[10px] font-bold uppercase tracking-wider text-teal-800 bg-teal-50 border border-teal-100 px-2 py-0.5 rounded-full"
+                        >
                             Integrated
                         </span>
                     </div>
 
-                    <div class="mt-auto pt-4">
-                        <h3 class="text-sm sm:text-base font-bold text-white leading-snug">
-                            Matrix Physio Gym
-                        </h3>
-                        <p class="mt-1.5 text-[11px] sm:text-sm text-slate-200 leading-relaxed font-medium">
-                            Seamless post-rehab transition with medical-grade equipment, steam therapy, and clinical nutrition.
-                        </p>
-                    </div>
+                    <h3 class="mt-4 text-sm sm:text-base font-bold text-slate-900 leading-snug">
+                        Matrix Physio Gym
+                    </h3>
+
+                    <p class="mt-1.5 text-[11px] sm:text-xs text-slate-600 leading-relaxed">
+                        Seamless post-rehab transition with medical-grade equipment, steam therapy, and clinical nutrition.
+                    </p>
                 </div>
             </div>
         </div>
