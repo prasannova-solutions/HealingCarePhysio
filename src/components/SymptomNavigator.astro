@@ -103,16 +103,6 @@ const conditions = [
        BACKGROUND
   ========================================== -->
 
-  <div class="pointer-events-none absolute inset-0 overflow-hidden">
-    <div
-      class="absolute -right-40 top-0 h-[450px] w-[450px] rounded-full bg-teal-200/25 blur-[110px]"
-    ></div>
-
-    <div
-      class="absolute -left-40 bottom-0 h-[400px] w-[400px] rounded-full bg-cyan-200/20 blur-[100px]"
-    ></div>
-  </div>
-
   <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
     <!-- =========================================
@@ -122,7 +112,7 @@ const conditions = [
     <div class="mx-auto max-w-3xl text-center">
 
       <div
-        class="inline-flex items-center gap-2 rounded-full border border-teal-200 bg-white/80 px-4 py-2 shadow-sm backdrop-blur"
+        class="inline-flex items-center gap-2 rounded-full border border-teal-200 bg-white/80 px-4 py-2"
       >
         <span class="relative flex h-2 w-2">
           <span
@@ -175,7 +165,7 @@ const conditions = [
               data-category-btn={cat.id}
               class={`condition-filter-btn shrink-0 rounded-full px-4 py-2.5 text-xs font-semibold transition-all duration-300 ${
                 index === 0
-                  ? "active-filter bg-teal-700 text-white shadow-md shadow-teal-700/20"
+                  ? "active-filter bg-teal-700 text-white"
                   : "border border-slate-200 bg-white text-slate-600 hover:border-teal-300 hover:bg-teal-50 hover:text-teal-800"
               }`}
             >
@@ -219,7 +209,7 @@ const conditions = [
           id="conditions-prev"
           type="button"
           aria-label="Previous conditions"
-          class="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-700 shadow-sm transition-all duration-300 hover:border-teal-500 hover:bg-teal-700 hover:text-white active:scale-95"
+          class="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-700 transition-all duration-300 hover:border-teal-500 hover:bg-teal-700 hover:text-white active:scale-95"
         >
           <svg
             class="h-4 w-4"
@@ -241,7 +231,7 @@ const conditions = [
           id="conditions-next"
           type="button"
           aria-label="Next conditions"
-          class="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-700 shadow-sm transition-all duration-300 hover:border-teal-500 hover:bg-teal-700 hover:text-white active:scale-95"
+          class="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-700 transition-all duration-300 hover:border-teal-500 hover:bg-teal-700 hover:text-white active:scale-95"
         >
           <svg
             class="h-4 w-4"
@@ -313,13 +303,12 @@ const conditions = [
                 overflow-hidden
                 rounded-[22px]
                 border
-                border-white
+                border-slate-200
                 bg-white
-                shadow-[0_10px_30px_rgba(15,118,110,0.07)]
                 transition-all
                 duration-300
                 hover:-translate-y-1
-                hover:shadow-[0_18px_45px_rgba(15,118,110,0.14)]
+                hover:border-teal-300
                 sm:w-[280px]
                 sm:min-w-[280px]
                 lg:w-[285px]
@@ -364,7 +353,7 @@ const conditions = [
                     rounded-full
                     border
                     border-white/40
-                    bg-white/90
+                    bg-white/95
                     px-2.5
                     py-1
                     text-[9px]
@@ -372,7 +361,6 @@ const conditions = [
                     uppercase
                     tracking-wider
                     text-teal-800
-                    backdrop-blur
                   "
                 >
                   {item.region}
@@ -483,29 +471,11 @@ const conditions = [
         rounded-[28px]
         bg-slate-950
         p-6
-        shadow-xl
         sm:mt-12
         sm:p-8
         lg:p-9
       "
     >
-
-      <!-- glow -->
-
-      <div
-        class="
-          pointer-events-none
-          absolute
-          -right-24
-          -top-24
-          h-64
-          w-64
-          rounded-full
-          bg-teal-500/20
-          blur-[80px]
-        "
-      ></div>
-
 
       <div
         class="
@@ -583,7 +553,6 @@ const conditions = [
             text-xs
             font-bold
             text-slate-900
-            shadow-lg
             transition-all
             duration-300
             hover:-translate-y-1
@@ -822,9 +791,7 @@ const conditions = [
         btn.classList.remove(
           "active-filter",
           "bg-teal-700",
-          "text-white",
-          "shadow-md",
-          "shadow-teal-700/20"
+          "text-white"
         );
 
         btn.classList.add(
@@ -842,9 +809,7 @@ const conditions = [
       button.classList.add(
         "active-filter",
         "bg-teal-700",
-        "text-white",
-        "shadow-md",
-        "shadow-teal-700/20"
+        "text-white"
       );
 
       button.classList.remove(

@@ -74,17 +74,6 @@ const gymFeatures = [
   id="matrix-gym"
   class="relative overflow-hidden bg-[#f4faf9] py-12 sm:py-20 lg:py-28"
 >
-  <!-- Background decoration -->
-  <div class="pointer-events-none absolute inset-0 overflow-hidden">
-    <div
-      class="absolute -right-32 top-20 h-72 w-72 rounded-full bg-emerald-100/60 blur-[100px]"
-    ></div>
-
-    <div
-      class="absolute -left-32 bottom-20 h-72 w-72 rounded-full bg-teal-100/50 blur-[100px]"
-    ></div>
-  </div>
-
   <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
     <!-- ================================================= -->
@@ -99,7 +88,7 @@ const gymFeatures = [
         <div class="flex items-center gap-2.5">
 
           <div
-            class="flex h-11 w-[78px] items-center justify-center overflow-hidden rounded-xl border border-teal-100 bg-white shadow-sm"
+            class="flex h-11 w-[78px] items-center justify-center overflow-hidden rounded-xl border border-teal-100 bg-white"
           >
             <img
               src="/MatrixPhysioGymLogo.jpg"
@@ -123,7 +112,7 @@ const gymFeatures = [
         </div>
 
         <div
-          class="flex items-center gap-1.5 rounded-full border border-emerald-100 bg-white px-2.5 py-1.5 shadow-sm"
+          class="flex items-center gap-1.5 rounded-full border border-emerald-100 bg-white px-2.5 py-1.5"
         >
           <span class="relative flex h-1.5 w-1.5">
             <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-70"></span>
@@ -140,7 +129,7 @@ const gymFeatures = [
 
       <!-- Mobile Hero Card -->
       <div
-        class="relative mt-5 overflow-hidden rounded-[1.75rem] bg-slate-950 shadow-[0_20px_60px_rgba(15,23,42,0.18)]"
+        class="relative mt-5 overflow-hidden rounded-[1.75rem] bg-slate-950 border border-slate-800"
       >
 
         <!-- Background -->
@@ -160,7 +149,7 @@ const gymFeatures = [
         <div class="relative min-h-[310px] p-5">
 
           <div
-            class="inline-flex items-center gap-2 rounded-full border border-teal-300/20 bg-slate-950/60 px-2.5 py-1 text-[9px] font-bold uppercase tracking-[0.14em] text-teal-200 backdrop-blur-sm"
+            class="inline-flex items-center gap-2 rounded-full border border-teal-300/20 bg-slate-950/60 px-2.5 py-1 text-[9px] font-bold uppercase tracking-[0.14em] text-teal-200"
           >
             <span class="h-1.5 w-1.5 rounded-full bg-teal-400"></span>
             Integrated Medical Fitness
@@ -195,7 +184,7 @@ const gymFeatures = [
 
         <!-- Bottom Stats -->
         <div
-          class="relative grid grid-cols-3 border-t border-white/10 bg-slate-950/75 backdrop-blur-md"
+          class="relative grid grid-cols-3 border-t border-white/10 bg-slate-950/75"
         >
 
           <div class="px-3 py-3 text-center">
@@ -287,7 +276,7 @@ const gymFeatures = [
         {
           gymFeatures.map((feat, index) => (
             <article
-              class="matrix-mobile-card relative shrink-0 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-[0_8px_25px_rgba(15,118,110,0.06)]"
+              class="matrix-mobile-card relative shrink-0 overflow-hidden rounded-2xl border border-slate-200 bg-white"
             >
 
               <!-- Image -->
@@ -307,7 +296,7 @@ const gymFeatures = [
 
                 <!-- Number -->
                 <span
-                  class="absolute left-2.5 top-2.5 flex h-6 w-6 items-center justify-center rounded-full border border-white/20 bg-slate-950/60 text-[9px] font-bold text-white backdrop-blur-md"
+                  class="absolute left-2.5 top-2.5 flex h-6 w-6 items-center justify-center rounded-full border border-white/20 bg-slate-950/60 text-[9px] font-bold text-white"
                 >
                   {String(index + 1).padStart(2, "0")}
                 </span>
@@ -315,7 +304,7 @@ const gymFeatures = [
 
                 <!-- Badge -->
                 <span
-                  class="absolute bottom-2 left-2.5 rounded-full bg-white/95 px-2 py-0.5 text-[7.5px] font-bold uppercase tracking-wide text-teal-800 shadow-sm"
+                  class="absolute bottom-2 left-2.5 rounded-full bg-white/95 px-2 py-0.5 text-[7.5px] font-bold uppercase tracking-wide text-teal-800"
                 >
                   {feat.badge}
                 </span>
@@ -397,7 +386,7 @@ const gymFeatures = [
     <!-- ================================================= -->
 
     <div
-      class="relative hidden overflow-hidden rounded-[2rem] border border-teal-900/30 bg-slate-950 p-8 text-white shadow-xl sm:block lg:p-11"
+      class="relative hidden overflow-hidden rounded-[2rem] border border-teal-900/30 bg-slate-950 p-8 text-white sm:block lg:p-11"
     >
 
       <img
@@ -419,13 +408,13 @@ const gymFeatures = [
           <img
             src="/MatrixPhysioGymLogo.jpg"
             alt="Matrix Physio Gym Logo"
-            class="aspect-[16/9] h-12 w-auto rounded-2xl border border-teal-400/40 bg-white/95 p-1 object-contain shadow-lg"
+            class="aspect-[16/9] h-12 w-auto rounded-2xl border border-teal-400/40 bg-white/95 p-1 object-contain"
             loading="eager"
             decoding="async"
           />
 
           <div
-            class="inline-flex items-center gap-2 rounded-full border border-teal-400/30 bg-slate-950/60 px-3 py-1.5 text-xs font-bold uppercase tracking-[0.14em] text-teal-300 backdrop-blur-md"
+            class="inline-flex items-center gap-2 rounded-full border border-teal-400/30 bg-slate-950/60 px-3 py-1.5 text-xs font-bold uppercase tracking-[0.14em] text-teal-300"
           >
             <span class="h-2 w-2 rounded-full bg-emerald-400"></span>
             Integrated Medical Fitness
@@ -481,7 +470,7 @@ const gymFeatures = [
       {
         gymFeatures.map((feat) => (
           <article
-            class="group flex flex-col justify-between overflow-hidden rounded-3xl border border-slate-200/90 bg-white shadow-[0_8px_30px_rgba(15,118,110,0.04)] transition duration-300 hover:-translate-y-1.5 hover:border-teal-400 hover:shadow-[0_20px_40px_rgba(15,118,110,0.12)]"
+            class="group flex flex-col justify-between overflow-hidden rounded-3xl border border-slate-200/90 bg-white transition duration-300 hover:-translate-y-1.5 hover:border-teal-400"
           >
 
             <div>
@@ -499,7 +488,7 @@ const gymFeatures = [
                 <div class="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent"></div>
 
                 <span
-                  class="absolute left-3.5 top-3.5 rounded-full bg-white/95 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-teal-800 shadow-sm"
+                  class="absolute left-3.5 top-3.5 rounded-full bg-white/95 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-teal-800"
                 >
                   {feat.badge}
                 </span>
@@ -564,7 +553,7 @@ const gymFeatures = [
     <!-- ================================================= -->
 
     <div
-      class="mt-10 rounded-[1.75rem] border border-teal-200 bg-gradient-to-br from-slate-900 via-teal-950 to-slate-900 p-5 shadow-xl sm:mt-14 sm:rounded-3xl sm:p-10"
+      class="mt-10 rounded-[1.75rem] border border-teal-200 bg-gradient-to-br from-slate-900 via-teal-950 to-slate-900 p-5 sm:mt-14 sm:rounded-3xl sm:p-10"
     >
 
       <div
@@ -606,7 +595,7 @@ const gymFeatures = [
 
           <a
             href="tel:7798202182"
-            class="inline-flex items-center justify-center gap-2 rounded-xl bg-teal-400 px-5 py-3.5 text-xs font-bold text-slate-950 shadow-lg shadow-teal-400/20 transition hover:scale-[1.02] hover:bg-teal-300"
+            class="inline-flex items-center justify-center gap-2 rounded-xl bg-teal-400 px-5 py-3.5 text-xs font-bold text-slate-950 transition hover:scale-[1.02] hover:bg-teal-300"
           >
             <svg
               class="h-4 w-4"

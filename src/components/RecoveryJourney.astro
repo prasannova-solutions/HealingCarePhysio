@@ -62,21 +62,6 @@ const patientGoals = [
   id="approach"
   class="recovery-section relative overflow-hidden bg-[#fcfdfd] py-16 sm:py-20 lg:py-24"
 >
-  <!-- Background -->
-  <div class="pointer-events-none absolute inset-0 overflow-hidden">
-    <div
-      class="absolute left-1/2 top-[-180px] h-[500px] w-[850px] -translate-x-1/2 rounded-full bg-teal-100/30 blur-3xl"
-    ></div>
-
-    <div
-      class="absolute -right-32 top-1/2 h-72 w-72 rounded-full bg-cyan-100/30 blur-3xl"
-    ></div>
-
-    <div
-      class="absolute -left-32 bottom-0 h-72 w-72 rounded-full bg-teal-50 blur-3xl"
-    ></div>
-  </div>
-
   <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
     <!-- HEADER -->
@@ -84,7 +69,7 @@ const patientGoals = [
     <div class="mx-auto max-w-3xl text-center">
 
       <div
-        class="inline-flex items-center gap-2 rounded-full border border-teal-100 bg-white px-4 py-2 shadow-sm"
+        class="inline-flex items-center gap-2 rounded-full border border-teal-100 bg-white px-4 py-2"
       >
         <span class="relative flex h-2 w-2">
           <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-teal-400 opacity-50"></span>
@@ -134,7 +119,7 @@ const patientGoals = [
 
                 <!-- Step Number -->
 
-                <div class="relative z-10 mx-auto flex h-[62px] w-[62px] items-center justify-center rounded-[20px] border-4 border-[#fcfdfd] bg-white shadow-md">
+                <div class="relative z-10 mx-auto flex h-[62px] w-[62px] items-center justify-center rounded-[20px] border-4 border-[#fcfdfd] bg-white border border-slate-200">
 
                   <div
                     class={`flex h-10 w-10 items-center justify-center rounded-xl text-[11px] font-black ${
@@ -152,7 +137,7 @@ const patientGoals = [
                 <!-- CARD -->
 
                 <div
-                  class="mt-4 flex flex-1 flex-col overflow-hidden rounded-[22px] border border-slate-200/80 bg-white shadow-[0_10px_30px_rgba(15,23,42,0.045)] transition duration-300 group-hover:-translate-y-1.5 group-hover:border-teal-200 group-hover:shadow-[0_20px_40px_rgba(13,148,136,0.12)]"
+                  class="mt-4 flex flex-1 flex-col overflow-hidden rounded-[22px] border border-slate-200/80 bg-white transition duration-300 group-hover:-translate-y-1.5 group-hover:border-teal-200"
                 >
 
                   <!-- IMAGE (Vertical Portrait) -->
@@ -172,7 +157,7 @@ const patientGoals = [
                     <!-- Badge -->
                     <div class="absolute left-3 top-3">
                       <span
-                        class="rounded-full bg-white/95 px-2.5 py-1 text-[9px] font-bold uppercase tracking-wide text-teal-700 shadow-sm backdrop-blur-sm"
+                        class="rounded-full bg-white/95 px-2.5 py-1 text-[9px] font-bold uppercase tracking-wide text-teal-700"
                       >
                         {item.badge}
                       </span>
@@ -180,7 +165,7 @@ const patientGoals = [
 
                     <!-- Stage -->
                     <div class="absolute bottom-3 left-3 right-3">
-                      <span class="text-[9px] font-black uppercase tracking-[0.14em] text-teal-200 drop-shadow-sm">
+                      <span class="text-[9px] font-black uppercase tracking-[0.14em] text-teal-200">
                         Stage {item.step}
                       </span>
                     </div>
@@ -249,7 +234,7 @@ const patientGoals = [
           steps.map((item, idx) => (
 
             <article
-              class="recovery-mobile-card group shrink-0 flex flex-col overflow-hidden rounded-[18px] border border-slate-200/90 bg-white shadow-[0_8px_25px_rgba(15,23,42,0.05)]"
+              class="recovery-mobile-card group shrink-0 flex flex-col overflow-hidden rounded-[18px] border border-slate-200/90 bg-white"
             >
 
               <!-- IMAGE (Vertical Portrait) -->
@@ -270,7 +255,7 @@ const patientGoals = [
                 <!-- Number -->
 
                 <div
-                  class={`absolute left-2.5 top-2.5 flex h-7 w-7 items-center justify-center rounded-lg border border-white/40 text-[10px] font-black shadow-md backdrop-blur-md ${
+                  class={`absolute left-2.5 top-2.5 flex h-7 w-7 items-center justify-center rounded-lg border border-white/40 text-[10px] font-black ${
                     idx === 4
                       ? "bg-teal-700 text-white"
                       : "bg-white/95 text-teal-700"
@@ -283,7 +268,7 @@ const patientGoals = [
                 <!-- Badge -->
 
                 <span
-                  class="absolute right-2.5 top-2.5 rounded-full bg-white/95 px-2 py-0.5 text-[8px] font-bold uppercase tracking-wide text-teal-700 shadow-sm backdrop-blur"
+                  class="absolute right-2.5 top-2.5 rounded-full bg-white/95 px-2 py-0.5 text-[8px] font-bold uppercase tracking-wide text-teal-700"
                 >
                   {item.badge}
                 </span>
@@ -418,7 +403,7 @@ const patientGoals = [
           <!-- Badge -->
 
           <div
-            class="inline-flex shrink-0 items-center gap-3 self-start rounded-2xl border border-teal-100 bg-white px-4 py-3 shadow-sm"
+            class="inline-flex shrink-0 items-center gap-3 self-start rounded-2xl border border-teal-100 bg-white px-4 py-3"
           >
 
             <div
@@ -454,7 +439,7 @@ const patientGoals = [
               patientGoals.map((goal, idx) => (
 
                 <div
-                  class={`recovery-goal-card flex items-center gap-2 sm:gap-3 rounded-xl sm:rounded-2xl border border-white bg-white/90 p-2 sm:p-3.5 shadow-[0_4px_14px_rgba(15,23,42,0.035)] ${
+                  class={`recovery-goal-card flex items-center gap-2 sm:gap-3 rounded-xl sm:rounded-2xl border border-slate-200/80 bg-white/90 p-2 sm:p-3.5 ${
                     idx < 3 ? "col-span-2 lg:col-span-1" : "col-span-3 lg:col-span-1"
                   }`}
                 >
