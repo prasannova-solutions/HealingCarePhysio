@@ -282,7 +282,7 @@
                 ================================================== -->
 
                 <article
-                    class="group relative mb-7 overflow-hidden rounded-[30px] bg-slate-900 shadow-[0_25px_60px_rgba(15,23,42,0.16)] [contain:paint] [transform:translateZ(0)]"
+                    class="group relative mb-7 overflow-hidden rounded-[30px] bg-slate-900 shadow-[0_25px_60px_rgba(15,23,42,0.16)]"
                 >
                     <!-- Video -->
                     <div class="relative h-[430px]">
@@ -290,10 +290,10 @@
                             loop
                             muted
                             playsinline
-                            preload="metadata"
+                            preload="none"
                             disablepictureinpicture
                             disableremoteplayback
-                            class="treatment-video h-full w-full object-cover [transform:translateZ(0)] [will-change:transform] transition duration-700 group-hover:scale-105"
+                            class="treatment-video h-full w-full object-cover transition duration-700 group-hover:scale-105"
                         >
                             <source
                                 src="/Vedios/AdvanceDryNeeding.mp4"
@@ -429,17 +429,17 @@
                 ================================================== -->
 
                 <article
-                    class="group relative mb-7 overflow-hidden rounded-[30px] bg-slate-900 shadow-[0_25px_60px_rgba(15,23,42,0.16)] [contain:paint] [transform:translateZ(0)]"
+                    class="group relative mb-7 overflow-hidden rounded-[30px] bg-slate-900 shadow-[0_25px_60px_rgba(15,23,42,0.16)]"
                 >
                     <div class="relative h-[410px]">
                         <video
                             loop
                             muted
                             playsinline
-                            preload="metadata"
+                            preload="none"
                             disablepictureinpicture
                             disableremoteplayback
-                            class="treatment-video h-full w-full object-cover [transform:translateZ(0)] [will-change:transform] transition duration-700 group-hover:scale-105"
+                            class="treatment-video h-full w-full object-cover transition duration-700 group-hover:scale-105"
                         >
                             <source
                                 src="/Vedios/chiropractic%20Adjustment.mp4"
@@ -447,7 +447,6 @@
                             />
                             Your browser does not support the video tag.
                         </video>
-
                         <!-- premium gradient -->
                         <div
                             class="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/30 to-slate-950/5"
@@ -573,17 +572,17 @@
                 ================================================== -->
 
                 <article
-                    class="group relative mb-8 overflow-hidden rounded-[30px] bg-slate-900 shadow-[0_25px_60px_rgba(15,23,42,0.16)] [contain:paint] [transform:translateZ(0)]"
+                    class="group relative mb-8 overflow-hidden rounded-[30px] bg-slate-900 shadow-[0_25px_60px_rgba(15,23,42,0.16)]"
                 >
                     <div class="relative h-[410px]">
                         <video
                             loop
                             muted
                             playsinline
-                            preload="metadata"
+                            preload="none"
                             disablepictureinpicture
                             disableremoteplayback
-                            class="treatment-video h-full w-full object-cover [transform:translateZ(0)] [will-change:transform] transition duration-700 group-hover:scale-105"
+                            class="treatment-video h-full w-full object-cover transition duration-700 group-hover:scale-105"
                         >
                             <source
                                 src="/Vedios/Cupping%20&%20Hijama%20Therapy.mp4"
@@ -591,7 +590,6 @@
                             />
                             Your browser does not support the video tag.
                         </video>
-
                         <!-- premium gradient -->
                         <div
                             class="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/30 to-slate-950/5"
@@ -1971,7 +1969,7 @@
             });
         });
 
-        // 2. High-Performance IntersectionObserver for Video Autoplay & Pause
+        // 2. High-Performance Single Video Playback via IntersectionObserver
         const videos = document.querySelectorAll("#treatments video");
         if (videos.length === 0) return;
 
@@ -1980,42 +1978,64 @@
         }
         if (treatmentScrollHandler) {
             window.removeEventListener("scroll", treatmentScrollHandler);
+            treatmentScrollHandler = null;
         }
+
+        // Keep track of currently visible ratios
+        const videoVisibilityMap = new Map();
+        let activePlayingVideo = null;
+
+        const evaluateActiveVideo = () => {
+            let maxRatio = 0;
+            let candidate = null;
+
+            videoVisibilityMap.forEach((ratio, video) => {
+                if (video.offsetParent !== null && ratio > maxRatio && ratio >= 0.3) {
+                    maxRatio = ratio;
+                    candidate = video;
+                }
+            });
+
+            if (candidate && candidate !== activePlayingVideo) {
+                // Pause currently playing video
+                if (activePlayingVideo && !activePlayingVideo.paused) {
+                    activePlayingVideo.pause();
+                }
+                activePlayingVideo = candidate;
+                const playPromise = candidate.play();
+                if (playPromise !== undefined) {
+                    playPromise.catch(() => {});
+                }
+            } else if (!candidate && activePlayingVideo) {
+                if (!activePlayingVideo.paused) {
+                    activePlayingVideo.pause();
+                }
+                activePlayingVideo = null;
+            }
+        };
 
         if ("IntersectionObserver" in window) {
             treatmentVideoObserver = new IntersectionObserver(
                 (entries) => {
-                    const isMobile = window.innerWidth < 1024;
-                    
                     entries.forEach((entry) => {
                         const video = entry.target;
-                        const isVisible = video.offsetParent !== null;
-
-                        if (isMobile) {
-                            // On mobile, just track visibility. Play/pause is handled by scroll event.
-                            if (!entry.isIntersecting || !isVisible) {
-                                if (!video.paused) video.pause();
-                            }
+                        if (entry.isIntersecting) {
+                            videoVisibilityMap.set(video, entry.intersectionRatio);
                         } else {
-                            // Desktop behavior
-                            if (entry.isIntersecting && isVisible) {
-                                if (video.paused) {
-                                    const playPromise = video.play();
-                                    if (playPromise !== undefined) {
-                                        playPromise.catch(() => {});
-                                    }
-                                }
-                            } else {
-                                if (!video.paused) {
-                                    video.pause();
-                                }
+                            videoVisibilityMap.delete(video);
+                            if (!video.paused) {
+                                video.pause();
+                            }
+                            if (activePlayingVideo === video) {
+                                activePlayingVideo = null;
                             }
                         }
                     });
+                    evaluateActiveVideo();
                 },
                 {
-                    threshold: 0.15,
-                    rootMargin: "50px 0px 50px 0px",
+                    threshold: [0, 0.2, 0.4, 0.6, 0.8, 1.0],
+                    rootMargin: "0px 0px 0px 0px",
                 },
             );
 
@@ -2023,81 +2043,7 @@
                 treatmentVideoObserver.observe(vid);
             });
         }
-
-        // 3. Mobile Scroll Handler for Center Video Playback
-        let ticking = false;
-        treatmentScrollHandler = () => {
-            if (window.innerWidth >= 1024) return; // Only apply on mobile
-            
-            if (!ticking) {
-                window.requestAnimationFrame(() => {
-                    let closestVideo = null;
-                    let minDistance = Infinity;
-                    const viewportCenter = window.innerHeight / 2;
-
-                    // Find closest video to center
-                    videos.forEach((video) => {
-                        if (video.offsetParent === null) return; // not visible
-                        const rect = video.getBoundingClientRect();
-                        
-                        // Skip if outside viewport entirely
-                        if (rect.bottom < 0 || rect.top > window.innerHeight) return;
-                        
-                        const videoCenter = rect.top + rect.height / 2;
-                        const distance = Math.abs(viewportCenter - videoCenter);
-
-                        if (distance < minDistance) {
-                            minDistance = distance;
-                            closestVideo = video;
-                        }
-                    });
-
-                    // Play closest, pause others
-                    videos.forEach((video) => {
-                        if (video.offsetParent === null) return;
-                        if (video === closestVideo) {
-                            if (video.paused) {
-                                const playPromise = video.play();
-                                if (playPromise !== undefined) playPromise.catch(() => {});
-                            }
-                        } else {
-                            if (!video.paused) video.pause();
-                        }
-                    });
-
-                    ticking = false;
-                });
-                ticking = true;
-            }
-        };
-
-        window.addEventListener("scroll", treatmentScrollHandler, { passive: true });
-        
-        // Initial check for mobile
-        if (window.innerWidth < 1024) {
-            treatmentScrollHandler();
-        }
     }
-
-    // Handle viewport resize (mobile <-> desktop breakpoint switch)
-    window.addEventListener(
-        "resize",
-        () => {
-            const videos = document.querySelectorAll("#treatments video");
-            const isMobile = window.innerWidth < 1024;
-            
-            videos.forEach((video) => {
-                if (video.offsetParent === null && !video.paused) {
-                    video.pause();
-                }
-            });
-            
-            if (isMobile && treatmentScrollHandler) {
-                treatmentScrollHandler();
-            }
-        },
-        { passive: true },
-    );
 
     // Pause all when tab is not active to save battery & CPU
     document.addEventListener("visibilitychange", () => {
@@ -2106,11 +2052,6 @@
             videos.forEach((video) => {
                 if (!video.paused) video.pause();
             });
-        } else {
-             // On tab active, re-trigger logic to play appropriate videos
-             if (window.innerWidth < 1024 && treatmentScrollHandler) {
-                 treatmentScrollHandler();
-             }
         }
     });
 

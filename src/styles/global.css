@@ -29,15 +29,14 @@ body {
   }
 }
 
-/* Auto content-visibility for offscreen sections to skip off-screen rendering work */
-section {
-  content-visibility: auto;
-  contain-intrinsic-size: 1px 700px;
+/* Ensure smooth hardware accelerated scrolling */
+html, body {
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
 }
 
-/* Ensure above-the-fold hero renders immediately */
-section:first-of-type,
-#main-header {
-  content-visibility: visible;
-  contain-intrinsic-size: none;
+video {
+  /* Prevent video elements from triggering repaint storms */
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
 }
