@@ -265,15 +265,22 @@
         });
     });
 
-    // Header scroll background elevation
+    // Header scroll background elevation with requestAnimationFrame throttling
+    let headerTicking = false;
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 20) {
-            header?.classList.add('shadow-sm', 'bg-white/95');
-            header?.classList.remove('bg-white/85');
-        } else {
-            header?.classList.remove('shadow-sm', 'bg-white/95');
-            header?.classList.add('bg-white/85');
+        if (!headerTicking) {
+            window.requestAnimationFrame(() => {
+                if (window.scrollY > 20) {
+                    header?.classList.add('shadow-sm', 'bg-white/95');
+                    header?.classList.remove('bg-white/85');
+                } else {
+                    header?.classList.remove('shadow-sm', 'bg-white/95');
+                    header?.classList.add('bg-white/85');
+                }
+                headerTicking = false;
+            });
+            headerTicking = true;
         }
-    });
+    }, { passive: true });
 </script>
 

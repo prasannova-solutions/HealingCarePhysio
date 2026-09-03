@@ -9,3 +9,35 @@ body {
   font-family: 'Plus Jakarta Sans', 'Inter', system-ui, -apple-system, sans-serif;
   color: #1e293b;
 }
+
+/* ============================================================
+   MOBILE SCROLL PERFORMANCE OPTIMIZATIONS
+   ============================================================ */
+
+/* Disable expensive backdrop-filter on touch/mobile devices to eliminate GPU compositing bottlenecks while scrolling */
+@media (max-width: 768px), (hover: none) and (pointer: coarse) {
+  .backdrop-blur,
+  .backdrop-blur-xs,
+  .backdrop-blur-sm,
+  .backdrop-blur-md,
+  .backdrop-blur-lg,
+  .backdrop-blur-xl,
+  .backdrop-blur-2xl,
+  .backdrop-blur-3xl {
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+  }
+}
+
+/* Auto content-visibility for offscreen sections to skip off-screen rendering work */
+section {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 700px;
+}
+
+/* Ensure above-the-fold hero renders immediately */
+section:first-of-type,
+#main-header {
+  content-visibility: visible;
+  contain-intrinsic-size: none;
+}
